@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Jiachen Zhang, I graduated from Rutgers University this May with a double major in computer science and statistics. But I did not start with those majors in the first place. Instead, I started with a major in business. As I went on the business journey, I realized how statistics is the key to many industries and how powerful of a tool it can be in modern society. Moreover, as I started my class in statistics, I got more intrigued by how those methods can make a simile of useless data to tell a story and create a connection between different variables. As I was learning statistics, I discovered that coding plays an essential role in advancing statistics and data processing; as a result, I started computer science as a junior in college. I started late for a major and had to use my summer vacation to finish all required classes."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HW1",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "Introduction.html#radioecology-nuclear-energy-and-the-environment",
+    "href": "Introduction.html#radioecology-nuclear-energy-and-the-environment",
+    "title": "Nuclear Energy",
+    "section": "Radioecology: nuclear energy and the environment",
+    "text": "Radioecology: nuclear energy and the environment\nRadioecology is the field of study in which elements of physical and biological sciences are combined to pursue knowledge of radioactivity in the environment, including movement of radioactive materials and the effects of ionizing radiation on populations and on ecological organization. Volume I contains chapters on ecological principles, radiological principles, environmental radioactivity and radionuclide behavior in ecosystems. Chapter Four on environmental radioactivity characterizes sources, types, and amounts of material and man-made radioactive materials and radiation in the environment. Concepts of radionuclide behavior in ecosystems and behavior (movements and concentrations) of several important element groups in selected ecosystems are surveyed. A chapter on methods used for quantitative predictions of radionuclide transport in the environment gives a reasonably complete treatment to environmental transport processes, radionuclide kinetics in ecosystem compartments, and the use of transport models. Two chapters summarize the known effects of ionizing radiation on species, populations, and higher levels of ecological organization. This information is put into perspective in terms of risk and other consequences. Both volumes are well referenced. Appendices contain listings of major proceedings and books, reviews of specific radionuclides in the environment, and physical data used to characterize radionuclides. Radioecology: nuclear energy and the environment"
+  },
+  {
+    "objectID": "Introduction.html#materials-for-future-nuclear-energy-systems",
+    "href": "Introduction.html#materials-for-future-nuclear-energy-systems",
+    "title": "Nuclear Energy",
+    "section": "Materials for future nuclear energy systems",
+    "text": "Materials for future nuclear energy systems\nMaterials for future nuclear energy systems must operate under more extreme conditions than those in current Gen II or Gen III systems. These conditions include higher temperature, higher dpa, and more corrosive environments. This paper reviews some of the fuels and structural materials used in advanced nuclear energy systems and identifies promising candidates for these systems. Fuel systems includes metallic fuels for the sodium cooled reactor, TRISO-coated particle fuel for the high temperature gas reactor, molten salt reactor fuels, and accident tolerant fuels for light water reactors. Structural materials applications include the sodium fast reactor, lead fast reactor, high temperature gas reactor, molten salt reactor and extended life light water reactors. A final section focuses on plasma-facing and blanket materials for deuterium-tritium fusion reactors.Materials for future nuclear energy systems"
+  },
+  {
+    "objectID": "Introduction.html",
+    "href": "Introduction.html",
+    "title": "Nuclear Energy",
+    "section": "",
+    "text": "What is nuclear energy?\nWhy are we using nuclear energy?\nAdvantages of nuclear energy?\nDisadvantages of nuclear energy?\nHow to radioactive waste is managed?\nIs nuclear energy safe?\nIs there any environmental problem with nuclear energy?\nWhat is the difference between fission and fusion?\nHow do nuclear power plant work?\nWhat is the future for nuclear power?"
+  },
+  {
+    "objectID": "Code.html",
+    "href": "Code.html",
+    "title": "Code",
+    "section": "",
+    "text": "jackyzhang1008\n\n\n\nThis is my GitHub"
+  },
+  {
+    "objectID": "Code.html#username",
+    "href": "Code.html#username",
+    "title": "Code",
+    "section": "",
+    "text": "jackyzhang1008"
+  },
+  {
+    "objectID": "Code.html#repo",
+    "href": "Code.html#repo",
+    "title": "Code",
+    "section": "",
+    "text": "This is my GitHub"
+  }
+]

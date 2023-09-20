@@ -1,0 +1,9 @@
+---
+title: "About Me"
+---
+
+Jiachen Zhang, I graduated from Rutgers University this May with a double major in computer science and statistics. But I did not start with those majors in the first place. Instead, I started with a major in business. As I went on the business journey, I realized how statistics is the key to many industries and how powerful of a tool it can be in modern society. Moreover, as I started my class in statistics, I got more intrigued by how those methods can make a simile of useless data to tell a story and create a connection between different variables. As I was learning statistics, I discovered that coding plays an essential role in advancing statistics and data processing; as a result, I started computer science as a junior in college. I started late for a major and had to use my summer vacation to finish all required classes.
+
+GUID: jz922
+GU Email: jz922@georgetown.edu
+

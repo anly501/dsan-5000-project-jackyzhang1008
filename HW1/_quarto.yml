@@ -1,0 +1,29 @@
+project:
+  type: website
+
+website:
+  title: "DSAN 5000 Final Project"
+  sidebar:
+    contents:
+      - href: Introduction.qmd
+        text: Introduction
+      - about.qmd
+      - Code.qmd
+      - Data.qmd
+      - Gathering.qmd
+      - Cleaning.qmd
+      - Exploration.qmd
+      - Clustering.qmd
+      - Reduction.qmd
+      - Classification.qmd
+      - Regression.qmd
+      - ARM.qmd
+      - Conclusion.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+
+

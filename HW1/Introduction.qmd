@@ -1,0 +1,35 @@
+---
+title: "Nuclear Energy"
+bibliography: reference.bib
+---
+
+# Questions
+
+1.  What is nuclear energy?
+
+2.  Why are we using nuclear energy?
+
+3.  Advantages of nuclear energy?
+
+4.  Disadvantages of nuclear energy?
+
+5.  How to radioactive waste is managed?
+
+6.  Is nuclear energy safe?
+
+7.  Is there any environmental problem with nuclear energy?
+
+8.  What is the difference between fission and fusion?
+
+9.  How do nuclear power plant work?
+
+10. What is the future for nuclear power?
+
+# Publications
+
+## Radioecology: nuclear energy and the environment
+Radioecology is the field of study in which elements of physical and biological sciences are combined to pursue knowledge of radioactivity in the environment, including movement of radioactive materials and the effects of ionizing radiation on populations and on ecological organization. Volume I contains chapters on ecological principles, radiological principles, environmental radioactivity and radionuclide behavior in ecosystems. Chapter Four on environmental radioactivity characterizes sources, types, and amounts of material and man-made radioactive materials and radiation in the environment. Concepts of radionuclide behavior in ecosystems and behavior (movements and concentrations) of several important element groups in selected ecosystems are surveyed. A chapter on methods used for quantitative predictions of radionuclide transport in the environment gives a reasonably complete treatment to environmental transport processes, radionuclide kinetics in ecosystem compartments, and the use of transport models. Two chapters summarize the known effects of ionizing radiation on species, populations, and higher levels of ecological organization. This information is put into perspective in terms of risk and other consequences. Both volumes are well referenced. Appendices contain listings of major proceedings and books, reviews of specific radionuclides in the environment, and physical data used to characterize radionuclides.
+[Radioecology: nuclear energy and the environment](https://www.osti.gov/biblio/5575540)
+
+## Materials for future nuclear energy systems
+Materials for future nuclear energy systems must operate under more extreme conditions than those in current Gen II or Gen III systems. These conditions include higher temperature, higher dpa, and more corrosive environments. This paper reviews some of the fuels and structural materials used in advanced nuclear energy systems and identifies promising candidates for these systems. Fuel systems includes metallic fuels for the sodium cooled reactor, TRISO-coated particle fuel for the high temperature gas reactor, molten salt reactor fuels, and accident tolerant fuels for light water reactors. Structural materials applications include the sodium fast reactor, lead fast reactor, high temperature gas reactor, molten salt reactor and extended life light water reactors. A final section focuses on plasma-facing and blanket materials for deuterium-tritium fusion reactors.[Materials for future nuclear energy systems](https://www.osti.gov/biblio/1378001)
