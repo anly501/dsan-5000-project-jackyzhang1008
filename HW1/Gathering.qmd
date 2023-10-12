@@ -1,3 +1,79 @@
 ---
 title: "Gathering"
 ---
+
+# Nuclear Energy Utilization Factor
+
+There are 9 .xlsx file that shows the nuclear energy utilization for power plants in from 2013 to 2022. Within each table there are 20 columns.
+
+State: US State
+
+Plant ID: unique ID for a Nuclear power plant
+
+Plant Name: Nuclear power plant name
+
+Unit: reactor unit number
+
+January - December: generating of electricity in Megawatthours
+
+Year_to_Date: generating of electricity in Megawatthours in the entire year
+
+Nameplate:
+
+Summer:
+
+Utilization Factor: Summer/Nameplate, this shows how much of the power generated are been used
+
+[Data website](https://www.eia.gov/nuclear/generation/index.html)
+
+# **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
+
+period: years 2013-2022
+
+location: US state, US
+
+stateDescription: description of the location
+
+sectorid: unique ID for planet
+
+sectorDescription: planet name
+
+fueltypeid: all nuclear
+
+fuelTypeDescription: all nuclear
+
+consumption-for-eg-btu: fuel usage
+
+consumption-for-eg-btu-units: units in million MMBtu
+
+total-consumption-btu: total fuel usage
+
+total-consumption-btu-units: units in million MMBtu
+
+[Data website](https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=NUC;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;)
+
+# **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**
+
+period: years 2013-2022
+
+location: US state, US
+
+stateDescription: description of the location
+
+sectorid: unique ID for planet
+
+sectorDescription: planet name
+
+fueltypeid: all coal
+
+fuelTypeDescription: all coal
+
+consumption-for-eg-btu: fuel usage
+
+consumption-for-eg-btu-units: units in million MMBtu
+
+total-consumption-btu: total fuel usage
+
+total-consumption-btu-units: units in million MMBtu
+
+[Data website](https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=COW;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;)

@@ -1,3 +1,23 @@
 ---
 title: "Cleaning"
 ---
+
+# Nuclear Energy Utilization Factor
+
+## Cleaning:
+
+### Code:
+
+## Link:
+
+# **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
+
+## Cleaning:
+
+## Link:
+
+# **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**
+
+## Cleaning:
+
+## Link:
