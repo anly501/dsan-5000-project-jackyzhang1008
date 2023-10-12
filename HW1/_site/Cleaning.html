@@ -187,18 +187,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor">Nuclear Energy Utilization Factor</a>
   <ul class="collapse">
-  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning:</a></li>
-  <li><a href="#link" id="toc-link" class="nav-link" data-scroll-target="#link">Link:</a></li>
+  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning:</a>
+  <ul class="collapse">
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code:</a></li>
+  </ul></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result:</a></li>
   </ul></li>
   <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></a>
   <ul class="collapse">
   <li><a href="#cleaning-1" id="toc-cleaning-1" class="nav-link" data-scroll-target="#cleaning-1">Cleaning:</a></li>
-  <li><a href="#link-1" id="toc-link-1" class="nav-link" data-scroll-target="#link-1">Link:</a></li>
+  <li><a href="#result-1" id="toc-result-1" class="nav-link" data-scroll-target="#result-1">Result:</a></li>
   </ul></li>
   <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)</strong></a>
   <ul class="collapse">
   <li><a href="#cleaning-2" id="toc-cleaning-2" class="nav-link" data-scroll-target="#cleaning-2">Cleaning:</a></li>
-  <li><a href="#link-2" id="toc-link-2" class="nav-link" data-scroll-target="#link-2">Link:</a></li>
+  <li><a href="#result-2" id="toc-result-2" class="nav-link" data-scroll-target="#result-2">Result:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -227,27 +230,197 @@ ul.task-list li input[type="checkbox"] {
 <h1>Nuclear Energy Utilization Factor</h1>
 <section id="cleaning" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning">Cleaning:</h2>
+<section id="code" class="level3">
+<h3 class="anchored" data-anchor-id="code">Code:</h3>
+<pre class="{txt}"><code># From https://www.eia.gov/nuclear/generation/index.html
+import pandas as pd
+import numpy as np
+#pd read xlsx
+usreact13 = pd.read_excel('HW1/file/Nuclear_Generation/usreact13.xlsx')
+usreact14 = pd.read_excel('HW1/file/Nuclear_Generation/usreact14.xlsx')
+usreact15 = pd.read_excel('HW1/file/Nuclear_Generation/usreact15.xlsx')
+usreact16 = pd.read_excel('HW1/file/Nuclear_Generation/usreact16.xlsx')
+usreact17 = pd.read_excel('HW1/file/Nuclear_Generation/usreact17.xlsx')
+usreact18 = pd.read_excel('HW1/file/Nuclear_Generation/usreact18.xlsx')
+usreact19 = pd.read_excel('HW1/file/Nuclear_Generation/usreact19.xlsx')
+usreact20 = pd.read_excel('HW1/file/Nuclear_Generation/usreact20.xlsx')
+usreact21 = pd.read_excel('HW1/file/Nuclear_Generation/usreact21.xlsx')
+usreact22 = pd.read_excel('HW1/file/Nuclear_Generation/usreact22.xlsx')
+
+# create a function make row 5 as column names and remove row 0-4 and reset index and drop colum 4-17
+def make_header(df):
+    df.columns = df.iloc[4]
+    df = df.drop(df.index[0:5])
+    df = df.reset_index(drop=True)
+    df = df.drop(df.columns[4:17], axis=1)
+    return df
+
+# apply the function to all dataframes
+usreact13 = make_header(usreact13)
+usreact14 = make_header(usreact14)
+usreact15 = make_header(usreact15)
+usreact16 = make_header(usreact16)
+usreact17 = make_header(usreact17)
+usreact18 = make_header(usreact18)
+usreact19 = make_header(usreact19)
+usreact20 = make_header(usreact20)
+usreact21 = make_header(usreact21)
+usreact22 = make_header(usreact22)
+
+# create a function to replace "." and empty space with NaN, drop "Plant ID" column and rename "Plant Name" to "Plant", make colum "Nameplate","Summer", "Utilization Factor" as numeric
+def clean_df(df):
+    df = df.replace(r'^\s*$', np.nan, regex=True)
+    df = df.drop(columns=['Plant ID'])
+    df = df.rename(columns={'Plant Name':'Plant'})
+    df['Nameplate'] = pd.to_numeric(df['Nameplate'], errors='coerce')
+    df['Summer'] = pd.to_numeric(df['Summer'], errors='coerce')
+    df['Utilization Factor'] = pd.to_numeric(df['Utilization Factor'], errors='coerce')
+    return df
+
+# apply the function to all dataframes
+usreact13 = clean_df(usreact13)
+usreact14 = clean_df(usreact14)
+usreact15 = clean_df(usreact15)
+usreact16 = clean_df(usreact16)
+usreact17 = clean_df(usreact17)
+usreact18 = clean_df(usreact18)
+usreact19 = clean_df(usreact19)
+usreact20 = clean_df(usreact20)
+usreact21 = clean_df(usreact21)
+usreact22 = clean_df(usreact22)
+
+# drop rows that colum "State" end with "Total" and reset index
+def drop_total(df):
+    df = df[~df['State'].str.contains("Total")]
+    df = df.reset_index(drop=True)
+    df = df.drop(columns=['Unit ID'])
+    return df
+
+# apply the function to all dataframes
+usreact13 = drop_total(usreact13)
+usreact14 = drop_total(usreact14)
+usreact15 = drop_total(usreact15)
+usreact16 = drop_total(usreact16)
+usreact17 = drop_total(usreact17)
+usreact18 = drop_total(usreact18)
+usreact19 = drop_total(usreact19)
+usreact20 = drop_total(usreact20)
+usreact21 = drop_total(usreact21)
+usreact22 = drop_total(usreact22)
+
+# drop state column, Nameplate, Summer than group by plant and average the data to one decimal place and reset index
+def group_plant(df):
+    df = df.drop(columns=['State', 'Nameplate', 'Summer'])
+    df = df.groupby(['Plant'], as_index=False).mean().round(1)
+    df = df.reset_index(drop=True)
+    return df
+# apply the function to all dataframes
+usreact13 = group_plant(usreact13)
+usreact14 = group_plant(usreact14)
+usreact15 = group_plant(usreact15)
+usreact16 = group_plant(usreact16)
+usreact17 = group_plant(usreact17)
+usreact18 = group_plant(usreact18)
+usreact19 = group_plant(usreact19)
+usreact20 = group_plant(usreact20)
+usreact21 = group_plant(usreact21)
+usreact22 = group_plant(usreact22)
+
+# merge all dataframes based on "Plant" column, create new columns 2013-2022 and fill in the data
+usreact = pd.merge(usreact13, usreact14, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor_x':'2013', 'Utilization Factor_y':'2014'})
+usreact = pd.merge(usreact, usreact15, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2015'})
+usreact = pd.merge(usreact, usreact16, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2016'})
+usreact = pd.merge(usreact, usreact17, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2017'})
+usreact = pd.merge(usreact, usreact18, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2018'})
+usreact = pd.merge(usreact, usreact19, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2019'})
+usreact = pd.merge(usreact, usreact20, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2020'})
+usreact = pd.merge(usreact, usreact21, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2021'})
+usreact = pd.merge(usreact, usreact22, on='Plant', how='outer')
+usreact = usreact.rename(columns={'Utilization Factor':'2022'})
+
+# drop rows with NaN values and reset index
+usreact = usreact.dropna()
+usreact = usreact.reset_index(drop=True)
+
+# output the dataframe to csv
+usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)</code></pre>
 </section>
-<section id="link" class="level2">
-<h2 class="anchored" data-anchor-id="link">Link:</h2>
+</section>
+<section id="result" class="level2">
+<h2 class="anchored" data-anchor-id="result">Result:</h2>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="level1">
 <h1><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></h1>
 <section id="cleaning-1" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-1">Cleaning:</h2>
+<pre class="{txt}"><code># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;
+# API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
+import requests
+import pandas as pd
+import numpy as np 
+import json
+import csv
+thor_url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=NUC&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
+resp = requests.get(thor_url)
+data = resp.text
+data = json.loads(data)
+details=data['response']['data']
+rows=[]
+for chunk in details:
+    row=[]
+    for key,value in chunk.items():
+        value=value if value else np.nan
+        row.append(value)
+        # print('row',row)
+    rows.append(row)
+
+# Columns
+columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescription', 'fueltypeid', 'fuelTypeDescription', 'consumption-for-eg-btu', 'consumption-for-eg-btu-units', 'total-consumption-btu', 'total-consumption-btu-units']
+
+# import to pandas dataframe
+df = pd.DataFrame(rows, columns=columns)
+df = df.drop(columns=['consumption-for-eg-btu-units', 'total-consumption-btu-units', 'fueltypeid', 'location', 'fuelTypeDescription', 'consumption-for-eg-btu', 'sectorid', 'stateDescription'])
+# export to csv
+df.to_csv('EIA_API_py.csv', index=False)</code></pre>
 </section>
-<section id="link-1" class="level2">
-<h2 class="anchored" data-anchor-id="link-1">Link:</h2>
+<section id="result-1" class="level2">
+<h2 class="anchored" data-anchor-id="result-1">Result:</h2>
+<p><img src="images/paste-2.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="level1">
 <h1><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)</strong></h1>
 <section id="cleaning-2" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-2">Cleaning:</h2>
+<pre class="{txt}"><code># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=COW;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;
+library(httr)
+library(jsonlite)
+library(tidyverse)
+res &lt;- GET("https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=COW&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu")
+data &lt;- fromJSON(rawToChar(res$content))
+data &lt;- data$response
+period &lt;- c(data$data$period)
+location &lt;- c(data$data$location)
+stateDescription &lt;- c(data$data$stateDescription)
+sectorid &lt;- c(data$data$sectorid)
+sectorDescription &lt;- c(data$data$sectorDescription)
+total_consumption_btu &lt;- c(data$data$`total-consumption-btu`)
+df &lt;- data.frame(period, location, stateDescription, sectorid, sectorDescription, total_consumption_btu)
+write.csv(df, "/Users/jackyzhang/Documents/Python/DSAN-5000/HW/HW2/Part2/Code/EIA_API_r.csv", row.names=FALSE)</code></pre>
 </section>
-<section id="link-2" class="level2">
-<h2 class="anchored" data-anchor-id="link-2">Link:</h2>
+<section id="result-2" class="level2">
+<h2 class="anchored" data-anchor-id="result-2">Result:</h2>
+<p><img src="images/paste-4.png" class="img-fluid"></p>
 
 
 </section>

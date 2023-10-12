@@ -185,9 +185,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor">Nuclear Energy Utilization Factor</a></li>
-  <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></a></li>
-  <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)</strong></a></li>
+  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor">Nuclear Energy Utilization Factor</a>
+  <ul class="collapse">
+  <li><a href="#description-of-the-data" id="toc-description-of-the-data" class="nav-link" data-scroll-target="#description-of-the-data">Description of the data</a></li>
+  <li><a href="#use-excel-to-get-the-data" id="toc-use-excel-to-get-the-data" class="nav-link" data-scroll-target="#use-excel-to-get-the-data">Use excel to get the data</a></li>
+  </ul></li>
+  <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></a>
+  <ul class="collapse">
+  <li><a href="#description-of-the-data-1" id="toc-description-of-the-data-1" class="nav-link" data-scroll-target="#description-of-the-data-1">Description of the data</a></li>
+  <li><a href="#use-python-api-to-get-the-data" id="toc-use-python-api-to-get-the-data" class="nav-link" data-scroll-target="#use-python-api-to-get-the-data">Use python API to get the data</a></li>
+  </ul></li>
+  <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)</strong></a>
+  <ul class="collapse">
+  <li><a href="#description-of-the-data-2" id="toc-description-of-the-data-2" class="nav-link" data-scroll-target="#description-of-the-data-2">Description of the data</a></li>
+  <li><a href="#use-r-api-to-get-the-data" id="toc-use-r-api-to-get-the-data" class="nav-link" data-scroll-target="#use-r-api-to-get-the-data">Use r API to get the data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -213,6 +225,8 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="nuclear-energy-utilization-factor" class="level1">
 <h1>Nuclear Energy Utilization Factor</h1>
+<section id="description-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-the-data">Description of the data</h2>
 <p>There are 9 .xlsx file that shows the nuclear energy utilization for power plants in from 2013 to 2022. Within each table there are 20 columns.</p>
 <p>State: US State</p>
 <p>Plant ID: unique ID for a Nuclear power plant</p>
@@ -225,8 +239,28 @@ ul.task-list li input[type="checkbox"] {
 <p>Utilization Factor: Summer/Nameplate, this shows how much of the power generated are been used</p>
 <p><a href="https://www.eia.gov/nuclear/generation/index.html">Data website</a></p>
 </section>
+<section id="use-excel-to-get-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="use-excel-to-get-the-data">Use excel to get the data</h2>
+<pre class="{txt}"><code># From https://www.eia.gov/nuclear/generation/index.html
+import pandas as pd
+import numpy as np
+#pd read xlsx
+usreact13 = pd.read_excel('HW1/file/Nuclear_Generation/usreact13.xlsx')
+usreact14 = pd.read_excel('HW1/file/Nuclear_Generation/usreact14.xlsx')
+usreact15 = pd.read_excel('HW1/file/Nuclear_Generation/usreact15.xlsx')
+usreact16 = pd.read_excel('HW1/file/Nuclear_Generation/usreact16.xlsx')
+usreact17 = pd.read_excel('HW1/file/Nuclear_Generation/usreact17.xlsx')
+usreact18 = pd.read_excel('HW1/file/Nuclear_Generation/usreact18.xlsx')
+usreact19 = pd.read_excel('HW1/file/Nuclear_Generation/usreact19.xlsx')
+usreact20 = pd.read_excel('HW1/file/Nuclear_Generation/usreact20.xlsx')
+usreact21 = pd.read_excel('HW1/file/Nuclear_Generation/usreact21.xlsx')
+usreact22 = pd.read_excel('HW1/file/Nuclear_Generation/usreact22.xlsx')</code></pre>
+</section>
+</section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="level1">
 <h1><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></h1>
+<section id="description-of-the-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-the-data-1">Description of the data</h2>
 <p>period: years 2013-2022</p>
 <p>location: US state, US</p>
 <p>stateDescription: description of the location</p>
@@ -240,8 +274,37 @@ ul.task-list li input[type="checkbox"] {
 <p>total-consumption-btu-units: units in million MMBtu</p>
 <p><a href="https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;">Data website</a></p>
 </section>
+<section id="use-python-api-to-get-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="use-python-api-to-get-the-data">Use python API to get the data</h2>
+<pre class="{txt}"><code># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;
+# API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
+import requests
+import pandas as pd
+import numpy as np 
+import json
+import csv
+thor_url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=NUC&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
+resp = requests.get(thor_url)
+data = resp.text
+data = json.loads(data)
+details=data['response']['data']
+rows=[]
+for chunk in details:
+    row=[]
+    for key,value in chunk.items():
+        value=value if value else np.nan
+        row.append(value)
+        # print('row',row)
+    rows.append(row)
+
+# Columns
+columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescription', 'fueltypeid', 'fuelTypeDescription', 'consumption-for-eg-btu', 'consumption-for-eg-btu-units', 'total-consumption-btu', 'total-consumption-btu-units']</code></pre>
+</section>
+</section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="level1">
 <h1><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)</strong></h1>
+<section id="description-of-the-data-2" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-the-data-2">Description of the data</h2>
 <p>period: years 2013-2022</p>
 <p>location: US state, US</p>
 <p>stateDescription: description of the location</p>
@@ -254,8 +317,18 @@ ul.task-list li input[type="checkbox"] {
 <p>total-consumption-btu: total fuel usage</p>
 <p>total-consumption-btu-units: units in million MMBtu</p>
 <p><a href="https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=COW;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;">Data website</a></p>
+</section>
+<section id="use-r-api-to-get-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="use-r-api-to-get-the-data">Use r API to get the data</h2>
+<pre class="{txt}"><code># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=COW;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;
+library(httr)
+library(jsonlite)
+library(tidyverse)
+res &lt;- GET("https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=COW&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu")
+data &lt;- fromJSON(rawToChar(res$content))</code></pre>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
