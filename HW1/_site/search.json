@@ -166,5 +166,12 @@
     "title": "Gathering",
     "section": "Use r API to get the data",
     "text": "Use r API to get the data\n# https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=COW;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;\nlibrary(httr)\nlibrary(jsonlite)\nlibrary(tidyverse)\nres &lt;- GET(\"https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&data[0]=consumption-for-eg-btu&data[1]=total-consumption-btu&facets[fueltypeid][]=COW&start=2013&end=2022&sort[0][column]=period&sort[0][direction]=desc&offset=0&length=5000&api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu\")\ndata &lt;- fromJSON(rawToChar(res$content))"
+  },
+  {
+    "objectID": "Naïve_Bayes.html",
+    "href": "Naïve_Bayes.html",
+    "title": "Naïve Bayes",
+    "section": "",
+    "text": "Introduction to Naive Bayes"
   }
 ]

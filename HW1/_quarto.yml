@@ -13,6 +13,7 @@ website:
       - Gathering.qmd
       - Cleaning.qmd
       - Exploration.qmd
+      - Naïve_Bayes.qmd
       - Clustering.qmd
       - Reduction.qmd
       - Classification.qmd

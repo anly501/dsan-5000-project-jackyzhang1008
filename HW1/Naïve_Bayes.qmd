@@ -1,0 +1,66 @@
+---
+title: "Naïve Bayes"
+---
+
+# **Introduction to Naive Bayes**
+
+Naive Bayes is a st
+
+# **Prepare for Naïve Bayes**
+
+```{txt}
+# handling the outliers
+# Set any utilization factor in colum 2013-2022 above 100 to 100 in df
+df[df.columns[1:]] = df[df.columns[1:]].apply(lambda x: np.where(x > 100, 100, x))
+print(df.describe())
+```
+
+This part is just liket clean
+
+# **Feature selection**
+
+## *Feature selection for record data*
+
+```{txt}
+# Calculate the mean utilization factor from 2013 to 2021
+df['Mean_Utilization_2013_2021'] = df.loc[:, '2013':'2021'].mean(axis=1)
+
+# Convert the utilization factor for 2022 into categories
+df['Utilization_2022_Category'] = df['2022'].apply(lambda x: 'High' if x >= 90 else 'Low')
+
+# Prepare the data
+X = df[['Mean_Utilization_2013_2021']]
+y = df['Utilization_2022_Category']
+
+# Split the data into training and testing sets (80% training, 20% testing)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+This part prepare data for
+
+## *Feature selection for text data*
+
+for this part
+
+# **Naïve Bayes (NB)**
+
+```{txt}
+# Initialize the Gaussian Naive Bayes classifier
+gnb = GaussianNB()
+
+# Train the classifier
+gnb.fit(X_train, y_train)
+
+# Make predictions on the testing set
+y_pred = gnb.predict(X_test)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+classification_rep = classification_report(y_test, y_pred)
+print(f'Accuracy: {accuracy}')
+print(f'Classification Report: \n{classification_rep}')
+```
+
+call NB and evaluation
+
+#
