@@ -4,24 +4,83 @@ title: "Naïve Bayes"
 
 # **Introduction to Naive Bayes**
 
-Naive Bayes is a st
+## Overview
+
+Naive Bayes is a classification technique based on applying Bayes’ theorem with a strong (naive) assumption that all the features are independent of each other. Despite its simplicity, Naive Bayes classifiers have worked quite well in many real-world situations, famously document classification and spam filtering.
+
+## How it Works
+
+The model is trained on the training dataset using Bayes’ theorem, and the maximum likelihood method is used to estimate the parameters. To classify a new instance, the likelihood of that instance is calculated for each class, and the class with the highest likelihood is assigned to the instance.
+
+## Bayes’ Theorem
+
+$$
+P(C \mid X)=\frac{P(X \mid C) \cdot P(C)}{P(X)}
+$$
+
+As,
+
+-   $P(C \mid X)$ is the posterior probability of class $C$ given predictor $X$.
+-   $P(C)$ is the prior probability of class.
+-   $P(X \mid C)$ is the likelihood which is the probability of predictor given class.
+-   $P(X)$ is the prior probability of predictor.
+
+## Objectives
+
+The main objective of using Naive Bayes classification is to classify based on utilization of power plant in the future based on the observed characteristics, in this case will be the mean from 2013-2021; assuming the features are independent.
+
+## Aim to Achieve
+
+1.  Predict the 2022 utilization for each reactor based on the mean from 2013-2021, anything that is over 90 will satisfy as High utilization and below 90 will be Low utilization.
+
+## Variants of Naive Bayes
+
+1.  **Gaussian Naive Bayes**: Assumes that the features follow a normal distribution. This variant is used in cases where continuous values are associated with each class.
+
+2.  **Multinomial Naive Bayes**: It is used for discrete counts. For example, let’s say we have a text classification problem. Here we can consider the occurrence of words as an event. In such a case, we will use a Multinomial Naive Bayes classifier.
+
+3.  **Bernoulli Naive Bayes**: This is similar to the Multinomial Naive Bayes but the predictors are boolean variables. So, the parameters that are learned are the probabilities of the different categories and the probabilities of the predictors in each category. This variant is used when the feature vectors are binary (i.e., zeros and ones).
 
 # **Prepare for Naïve Bayes**
 
-```{txt}
+## Record Data
+
+```{python}
 # handling the outliers
 # Set any utilization factor in colum 2013-2022 above 100 to 100 in df
+import numpy as np
+import pandas as pd
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+
+
+df = pd.read_csv('../Data/EDA/Nuclear_Energy_Utilization_Factor.csv')
+print(df.describe())
 df[df.columns[1:]] = df[df.columns[1:]].apply(lambda x: np.where(x > 100, 100, x))
 print(df.describe())
 ```
 
-This part is just liket clean
+This part is just like data cleaning, I am aiming to make sure that the utilization fill into the range from 0 to 100%. But in the real world there are cases where utilization goes over 100%, meaning that there could be more places that need more electrocites that the power plane can generate. For this case I am just going to make anything that is over 100% to 100%.
 
-# **Feature selection**
+## Text Data
 
-## *Feature selection for record data*
+```{python}
 
-```{txt}
+```
+
+This part show that ...
+
+# **Feature Selection**
+
+## Record Data
+
+```{python}
 # Calculate the mean utilization factor from 2013 to 2021
 df['Mean_Utilization_2013_2021'] = df.loc[:, '2013':'2021'].mean(axis=1)
 
@@ -36,15 +95,21 @@ y = df['Utilization_2022_Category']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 
-This part prepare data for
+This part prepares data for the Naive Bayes Classifier, as all the columns are concerning each other as they are just utilization reports of each year. Our goal for the Native Bayes Classifier is to find out the utilization rate of future years from that date of the year before.
 
-## *Feature selection for text data*
+## Text Data
+
+```{python}
+
+```
 
 for this part
 
-# **Naïve Bayes (NB)**
+# **Naïve Bayes**
 
-```{txt}
+## Record Data
+
+```{python}
 # Initialize the Gaussian Naive Bayes classifier
 gnb = GaussianNB()
 
@@ -55,12 +120,43 @@ gnb.fit(X_train, y_train)
 y_pred = gnb.predict(X_test)
 
 # Evaluate the model
-accuracy = accuracy_score(y_test, y_pred)
-classification_rep = classification_report(y_test, y_pred)
-print(f'Accuracy: {accuracy}')
-print(f'Classification Report: \n{classification_rep}')
+print(classification_report(y_test, y_pred))
+cm = confusion_matrix(y_test, y_pred)
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
+plt.show()
 ```
 
-call NB and evaluation
+### **Accuracy and General Performance**
+
+-   The model achieved an accuracy of 80%, which indicates a relatively high level of accuracy in predictions. However, this is based on a small test set of 10 instances, which might not be sufficient to generalize the model’s performance to unseen data.
+
+### **Precision and Recall**
+
+-   The model showed better precision and recall for the 'High' category compared to the 'Low' category. This indicates that the model is more reliable when predicting high utilization factors.
+
+    -   **High Utilization Category**: Both precision and recall are 0.86, showing a balanced performance.
+
+    -   **Low Utilization Category**: Both precision and recall are 0.67, which is lower compared to the 'High' category. This could be a point of improvement for the model.
+
+### **F1-Score**
+
+-   The F1-Score is also higher for the 'High' category (0.86) compared to the 'Low' category (0.67). Since F1-Score is the harmonic mean of precision and recall, this again highlights the model's stronger performance in predicting high utilization factors.
+
+### **Confusion Matrix**
+
+-   The confusion matrix reveals that the model made very few mistakes, with only one false positive and one false negative. However, due to the small size of the test set, each mistake has a significant impact on the performance metrics.
+
+### **Conclusion**
+
+-   The Gaussian Naive Bayes classifier provides a good starting point for predicting nuclear energy utilization categories based on historical data. The model demonstrates decent accuracy, but there is potential for enhancement, particularly in improving precision and recall for the "Low" category. The exploratory data analysis and visualizations offer valuable insights into the distribution and trends of utilization factors across different power plants. Future work could explore more sophisticated models, feature engineering, or additional data sources to further refine the predictions and gain deeper insights.​
+
+## Text Data
+
+```{python}
+
+```
 
 #

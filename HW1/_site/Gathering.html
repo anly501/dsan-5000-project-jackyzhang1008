@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -141,6 +175,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Naïve_Bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
   </div>
@@ -241,20 +281,22 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="use-excel-to-get-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="use-excel-to-get-the-data">Use excel to get the data</h2>
-<pre class="{txt}"><code># From https://www.eia.gov/nuclear/generation/index.html
-import pandas as pd
-import numpy as np
-#pd read xlsx
-usreact13 = pd.read_excel('HW1/file/Nuclear_Generation/usreact13.xlsx')
-usreact14 = pd.read_excel('HW1/file/Nuclear_Generation/usreact14.xlsx')
-usreact15 = pd.read_excel('HW1/file/Nuclear_Generation/usreact15.xlsx')
-usreact16 = pd.read_excel('HW1/file/Nuclear_Generation/usreact16.xlsx')
-usreact17 = pd.read_excel('HW1/file/Nuclear_Generation/usreact17.xlsx')
-usreact18 = pd.read_excel('HW1/file/Nuclear_Generation/usreact18.xlsx')
-usreact19 = pd.read_excel('HW1/file/Nuclear_Generation/usreact19.xlsx')
-usreact20 = pd.read_excel('HW1/file/Nuclear_Generation/usreact20.xlsx')
-usreact21 = pd.read_excel('HW1/file/Nuclear_Generation/usreact21.xlsx')
-usreact22 = pd.read_excel('HW1/file/Nuclear_Generation/usreact22.xlsx')</code></pre>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From https://www.eia.gov/nuclear/generation/index.html</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#pd read xlsx</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact13.xlsx'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact14.xlsx'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact15.xlsx'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact16.xlsx'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact17.xlsx'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact18.xlsx'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact19.xlsx'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact20.xlsx'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact21.xlsx'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact22.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="level1">
@@ -276,29 +318,31 @@ usreact22 = pd.read_excel('HW1/file/Nuclear_Generation/usreact22.xlsx')</code></
 </section>
 <section id="use-python-api-to-get-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="use-python-api-to-get-the-data">Use python API to get the data</h2>
-<pre class="{txt}"><code># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;
-# API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
-import requests
-import pandas as pd
-import numpy as np 
-import json
-import csv
-thor_url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=NUC&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
-resp = requests.get(thor_url)
-data = resp.text
-data = json.loads(data)
-details=data['response']['data']
-rows=[]
-for chunk in details:
-    row=[]
-    for key,value in chunk.items():
-        value=value if value else np.nan
-        row.append(value)
-        # print('row',row)
-    rows.append(row)
-
-# Columns
-columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescription', 'fueltypeid', 'fuelTypeDescription', 'consumption-for-eg-btu', 'consumption-for-eg-btu-units', 'total-consumption-btu', 'total-consumption-btu-units']</code></pre>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>thor_url <span class="op">=</span> <span class="st">"https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=NUC&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>resp <span class="op">=</span> requests.get(thor_url)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> resp.text</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> json.loads(data)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>details<span class="op">=</span>data[<span class="st">'response'</span>][<span class="st">'data'</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>rows<span class="op">=</span>[]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chunk <span class="kw">in</span> details:</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    row<span class="op">=</span>[]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key,value <span class="kw">in</span> chunk.items():</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>value <span class="cf">if</span> value <span class="cf">else</span> np.nan</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        row.append(value)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># print('row',row)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    rows.append(row)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [<span class="st">'period'</span>, <span class="st">'location'</span>, <span class="st">'stateDescription'</span>, <span class="st">'sectorid'</span>, <span class="st">'sectorDescription'</span>, <span class="st">'fueltypeid'</span>, <span class="st">'fuelTypeDescription'</span>, <span class="st">'consumption-for-eg-btu'</span>, <span class="st">'consumption-for-eg-btu-units'</span>, <span class="st">'total-consumption-btu'</span>, <span class="st">'total-consumption-btu-units'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="level1">

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -141,6 +175,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Naïve_Bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
   </div>
@@ -232,126 +272,128 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="cleaning">Cleaning:</h2>
 <section id="code" class="level3">
 <h3 class="anchored" data-anchor-id="code">Code:</h3>
-<pre class="{txt}"><code># From https://www.eia.gov/nuclear/generation/index.html
-import pandas as pd
-import numpy as np
-#pd read xlsx
-usreact13 = pd.read_excel('HW1/file/Nuclear_Generation/usreact13.xlsx')
-usreact14 = pd.read_excel('HW1/file/Nuclear_Generation/usreact14.xlsx')
-usreact15 = pd.read_excel('HW1/file/Nuclear_Generation/usreact15.xlsx')
-usreact16 = pd.read_excel('HW1/file/Nuclear_Generation/usreact16.xlsx')
-usreact17 = pd.read_excel('HW1/file/Nuclear_Generation/usreact17.xlsx')
-usreact18 = pd.read_excel('HW1/file/Nuclear_Generation/usreact18.xlsx')
-usreact19 = pd.read_excel('HW1/file/Nuclear_Generation/usreact19.xlsx')
-usreact20 = pd.read_excel('HW1/file/Nuclear_Generation/usreact20.xlsx')
-usreact21 = pd.read_excel('HW1/file/Nuclear_Generation/usreact21.xlsx')
-usreact22 = pd.read_excel('HW1/file/Nuclear_Generation/usreact22.xlsx')
-
-# create a function make row 5 as column names and remove row 0-4 and reset index and drop colum 4-17
-def make_header(df):
-    df.columns = df.iloc[4]
-    df = df.drop(df.index[0:5])
-    df = df.reset_index(drop=True)
-    df = df.drop(df.columns[4:17], axis=1)
-    return df
-
-# apply the function to all dataframes
-usreact13 = make_header(usreact13)
-usreact14 = make_header(usreact14)
-usreact15 = make_header(usreact15)
-usreact16 = make_header(usreact16)
-usreact17 = make_header(usreact17)
-usreact18 = make_header(usreact18)
-usreact19 = make_header(usreact19)
-usreact20 = make_header(usreact20)
-usreact21 = make_header(usreact21)
-usreact22 = make_header(usreact22)
-
-# create a function to replace "." and empty space with NaN, drop "Plant ID" column and rename "Plant Name" to "Plant", make colum "Nameplate","Summer", "Utilization Factor" as numeric
-def clean_df(df):
-    df = df.replace(r'^\s*$', np.nan, regex=True)
-    df = df.drop(columns=['Plant ID'])
-    df = df.rename(columns={'Plant Name':'Plant'})
-    df['Nameplate'] = pd.to_numeric(df['Nameplate'], errors='coerce')
-    df['Summer'] = pd.to_numeric(df['Summer'], errors='coerce')
-    df['Utilization Factor'] = pd.to_numeric(df['Utilization Factor'], errors='coerce')
-    return df
-
-# apply the function to all dataframes
-usreact13 = clean_df(usreact13)
-usreact14 = clean_df(usreact14)
-usreact15 = clean_df(usreact15)
-usreact16 = clean_df(usreact16)
-usreact17 = clean_df(usreact17)
-usreact18 = clean_df(usreact18)
-usreact19 = clean_df(usreact19)
-usreact20 = clean_df(usreact20)
-usreact21 = clean_df(usreact21)
-usreact22 = clean_df(usreact22)
-
-# drop rows that colum "State" end with "Total" and reset index
-def drop_total(df):
-    df = df[~df['State'].str.contains("Total")]
-    df = df.reset_index(drop=True)
-    df = df.drop(columns=['Unit ID'])
-    return df
-
-# apply the function to all dataframes
-usreact13 = drop_total(usreact13)
-usreact14 = drop_total(usreact14)
-usreact15 = drop_total(usreact15)
-usreact16 = drop_total(usreact16)
-usreact17 = drop_total(usreact17)
-usreact18 = drop_total(usreact18)
-usreact19 = drop_total(usreact19)
-usreact20 = drop_total(usreact20)
-usreact21 = drop_total(usreact21)
-usreact22 = drop_total(usreact22)
-
-# drop state column, Nameplate, Summer than group by plant and average the data to one decimal place and reset index
-def group_plant(df):
-    df = df.drop(columns=['State', 'Nameplate', 'Summer'])
-    df = df.groupby(['Plant'], as_index=False).mean().round(1)
-    df = df.reset_index(drop=True)
-    return df
-# apply the function to all dataframes
-usreact13 = group_plant(usreact13)
-usreact14 = group_plant(usreact14)
-usreact15 = group_plant(usreact15)
-usreact16 = group_plant(usreact16)
-usreact17 = group_plant(usreact17)
-usreact18 = group_plant(usreact18)
-usreact19 = group_plant(usreact19)
-usreact20 = group_plant(usreact20)
-usreact21 = group_plant(usreact21)
-usreact22 = group_plant(usreact22)
-
-# merge all dataframes based on "Plant" column, create new columns 2013-2022 and fill in the data
-usreact = pd.merge(usreact13, usreact14, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor_x':'2013', 'Utilization Factor_y':'2014'})
-usreact = pd.merge(usreact, usreact15, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2015'})
-usreact = pd.merge(usreact, usreact16, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2016'})
-usreact = pd.merge(usreact, usreact17, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2017'})
-usreact = pd.merge(usreact, usreact18, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2018'})
-usreact = pd.merge(usreact, usreact19, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2019'})
-usreact = pd.merge(usreact, usreact20, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2020'})
-usreact = pd.merge(usreact, usreact21, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2021'})
-usreact = pd.merge(usreact, usreact22, on='Plant', how='outer')
-usreact = usreact.rename(columns={'Utilization Factor':'2022'})
-
-# drop rows with NaN values and reset index
-usreact = usreact.dropna()
-usreact = usreact.reset_index(drop=True)
-
-# output the dataframe to csv
-usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)</code></pre>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From https://www.eia.gov/nuclear/generation/index.html</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#pd read xlsx</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact13.xlsx'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact14.xlsx'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact15.xlsx'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact16.xlsx'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact17.xlsx'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact18.xlsx'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact19.xlsx'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact20.xlsx'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact21.xlsx'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact22.xlsx'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># create a function make row 5 as column names and remove row 0-4 and reset index and drop colum 4-17</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_header(df):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    df.columns <span class="op">=</span> df.iloc[<span class="dv">4</span>]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.drop(df.index[<span class="dv">0</span>:<span class="dv">5</span>])</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.drop(df.columns[<span class="dv">4</span>:<span class="dv">17</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the function to all dataframes</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> make_header(usreact13)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> make_header(usreact14)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> make_header(usreact15)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> make_header(usreact16)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> make_header(usreact17)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> make_header(usreact18)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> make_header(usreact19)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> make_header(usreact20)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> make_header(usreact21)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> make_header(usreact22)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># create a function to replace "." and empty space with NaN, drop "Plant ID" column and rename "Plant Name" to "Plant", make colum "Nameplate","Summer", "Utilization Factor" as numeric</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_df(df):</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.replace(<span class="vs">r'^\s*$'</span>, np.nan, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Plant ID'</span>])</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'Plant Name'</span>:<span class="st">'Plant'</span>})</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'Nameplate'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'Nameplate'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'Summer'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'Summer'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'Utilization Factor'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'Utilization Factor'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the function to all dataframes</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> clean_df(usreact13)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> clean_df(usreact14)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> clean_df(usreact15)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> clean_df(usreact16)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> clean_df(usreact17)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> clean_df(usreact18)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> clean_df(usreact19)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> clean_df(usreact20)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> clean_df(usreact21)</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> clean_df(usreact22)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co"># drop rows that colum "State" end with "Total" and reset index</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drop_total(df):</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df[<span class="op">~</span>df[<span class="st">'State'</span>].<span class="bu">str</span>.contains(<span class="st">"Total"</span>)]</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Unit ID'</span>])</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the function to all dataframes</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> drop_total(usreact13)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> drop_total(usreact14)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> drop_total(usreact15)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> drop_total(usreact16)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> drop_total(usreact17)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> drop_total(usreact18)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> drop_total(usreact19)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> drop_total(usreact20)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> drop_total(usreact21)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> drop_total(usreact22)</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co"># drop state column, Nameplate, Summer than group by plant and average the data to one decimal place and reset index</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> group_plant(df):</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'State'</span>, <span class="st">'Nameplate'</span>, <span class="st">'Summer'</span>])</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.groupby([<span class="st">'Plant'</span>], as_index<span class="op">=</span><span class="va">False</span>).mean().<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the function to all dataframes</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> group_plant(usreact13)</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> group_plant(usreact14)</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> group_plant(usreact15)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> group_plant(usreact16)</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> group_plant(usreact17)</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> group_plant(usreact18)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> group_plant(usreact19)</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> group_plant(usreact20)</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> group_plant(usreact21)</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> group_plant(usreact22)</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="co"># merge all dataframes based on "Plant" column, create new columns 2013-2022 and fill in the data</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact13, usreact14, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor_x'</span>:<span class="st">'2013'</span>, <span class="st">'Utilization Factor_y'</span>:<span class="st">'2014'</span>})</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact15, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2015'</span>})</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact16, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2016'</span>})</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact17, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2017'</span>})</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact18, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2018'</span>})</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact19, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2019'</span>})</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact20, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2020'</span>})</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact21, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2021'</span>})</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> pd.merge(usreact, usreact22, on<span class="op">=</span><span class="st">'Plant'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.rename(columns<span class="op">=</span>{<span class="st">'Utilization Factor'</span>:<span class="st">'2022'</span>})</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="co"># drop rows with NaN values and reset index</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.dropna()</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>usreact <span class="op">=</span> usreact.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="co"># output the dataframe to csv</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="co">#usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 <section id="result" class="level2">
@@ -363,35 +405,37 @@ usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)</code></pre
 <h1><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></h1>
 <section id="cleaning-1" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-1">Cleaning:</h2>
-<pre class="{txt}"><code># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;
-# API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
-import requests
-import pandas as pd
-import numpy as np 
-import json
-import csv
-thor_url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=NUC&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
-resp = requests.get(thor_url)
-data = resp.text
-data = json.loads(data)
-details=data['response']['data']
-rows=[]
-for chunk in details:
-    row=[]
-    for key,value in chunk.items():
-        value=value if value else np.nan
-        row.append(value)
-        # print('row',row)
-    rows.append(row)
-
-# Columns
-columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescription', 'fueltypeid', 'fuelTypeDescription', 'consumption-for-eg-btu', 'consumption-for-eg-btu-units', 'total-consumption-btu', 'total-consumption-btu-units']
-
-# import to pandas dataframe
-df = pd.DataFrame(rows, columns=columns)
-df = df.drop(columns=['consumption-for-eg-btu-units', 'total-consumption-btu-units', 'fueltypeid', 'location', 'fuelTypeDescription', 'consumption-for-eg-btu', 'sectorid', 'stateDescription'])
-# export to csv
-df.to_csv('EIA_API_py.csv', index=False)</code></pre>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&amp;data=consumption-for-eg-btu;total-consumption-btu;&amp;facets=fueltypeid;&amp;fueltypeid=NUC;&amp;start=2013&amp;end=2022&amp;sortColumn=period;&amp;sortDirection=desc;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>thor_url <span class="op">=</span> <span class="st">"https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=NUC&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>resp <span class="op">=</span> requests.get(thor_url)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> resp.text</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> json.loads(data)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>details<span class="op">=</span>data[<span class="st">'response'</span>][<span class="st">'data'</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>rows<span class="op">=</span>[]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chunk <span class="kw">in</span> details:</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    row<span class="op">=</span>[]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key,value <span class="kw">in</span> chunk.items():</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>value <span class="cf">if</span> value <span class="cf">else</span> np.nan</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        row.append(value)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># print('row',row)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    rows.append(row)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [<span class="st">'period'</span>, <span class="st">'location'</span>, <span class="st">'stateDescription'</span>, <span class="st">'sectorid'</span>, <span class="st">'sectorDescription'</span>, <span class="st">'fueltypeid'</span>, <span class="st">'fuelTypeDescription'</span>, <span class="st">'consumption-for-eg-btu'</span>, <span class="st">'consumption-for-eg-btu-units'</span>, <span class="st">'total-consumption-btu'</span>, <span class="st">'total-consumption-btu-units'</span>]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># import to pandas dataframe</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(rows, columns<span class="op">=</span>columns)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'consumption-for-eg-btu-units'</span>, <span class="st">'total-consumption-btu-units'</span>, <span class="st">'fueltypeid'</span>, <span class="st">'location'</span>, <span class="st">'fuelTypeDescription'</span>, <span class="st">'consumption-for-eg-btu'</span>, <span class="st">'sectorid'</span>, <span class="st">'stateDescription'</span>])</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># export to csv</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#df.to_csv('EIA_API_py.csv', index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="result-1" class="level2">
 <h2 class="anchored" data-anchor-id="result-1">Result:</h2>

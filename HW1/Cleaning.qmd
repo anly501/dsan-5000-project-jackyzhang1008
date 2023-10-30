@@ -10,21 +10,21 @@ title: "Cleaning"
 
 ### Code:
 
-```{txt}
+```{python}
 # From https://www.eia.gov/nuclear/generation/index.html
 import pandas as pd
 import numpy as np
 #pd read xlsx
-usreact13 = pd.read_excel('HW1/file/Nuclear_Generation/usreact13.xlsx')
-usreact14 = pd.read_excel('HW1/file/Nuclear_Generation/usreact14.xlsx')
-usreact15 = pd.read_excel('HW1/file/Nuclear_Generation/usreact15.xlsx')
-usreact16 = pd.read_excel('HW1/file/Nuclear_Generation/usreact16.xlsx')
-usreact17 = pd.read_excel('HW1/file/Nuclear_Generation/usreact17.xlsx')
-usreact18 = pd.read_excel('HW1/file/Nuclear_Generation/usreact18.xlsx')
-usreact19 = pd.read_excel('HW1/file/Nuclear_Generation/usreact19.xlsx')
-usreact20 = pd.read_excel('HW1/file/Nuclear_Generation/usreact20.xlsx')
-usreact21 = pd.read_excel('HW1/file/Nuclear_Generation/usreact21.xlsx')
-usreact22 = pd.read_excel('HW1/file/Nuclear_Generation/usreact22.xlsx')
+usreact13 = pd.read_excel('../Data/Nuclear_Generation/usreact13.xlsx')
+usreact14 = pd.read_excel('../Data/Nuclear_Generation/usreact14.xlsx')
+usreact15 = pd.read_excel('../Data/Nuclear_Generation/usreact15.xlsx')
+usreact16 = pd.read_excel('../Data/Nuclear_Generation/usreact16.xlsx')
+usreact17 = pd.read_excel('../Data/Nuclear_Generation/usreact17.xlsx')
+usreact18 = pd.read_excel('../Data/Nuclear_Generation/usreact18.xlsx')
+usreact19 = pd.read_excel('../Data/Nuclear_Generation/usreact19.xlsx')
+usreact20 = pd.read_excel('../Data/Nuclear_Generation/usreact20.xlsx')
+usreact21 = pd.read_excel('../Data/Nuclear_Generation/usreact21.xlsx')
+usreact22 = pd.read_excel('../Data/Nuclear_Generation/usreact22.xlsx')
 
 # create a function make row 5 as column names and remove row 0-4 and reset index and drop colum 4-17
 def make_header(df):
@@ -130,7 +130,7 @@ usreact = usreact.dropna()
 usreact = usreact.reset_index(drop=True)
 
 # output the dataframe to csv
-usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)
+#usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)
 ```
 
 ## Result:
@@ -141,7 +141,7 @@ usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)
 
 ## Cleaning:
 
-```{txt}
+```{python}
 # https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=NUC;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;
 # API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
 import requests
@@ -170,7 +170,7 @@ columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescript
 df = pd.DataFrame(rows, columns=columns)
 df = df.drop(columns=['consumption-for-eg-btu-units', 'total-consumption-btu-units', 'fueltypeid', 'location', 'fuelTypeDescription', 'consumption-for-eg-btu', 'sectorid', 'stateDescription'])
 # export to csv
-df.to_csv('EIA_API_py.csv', index=False)
+#df.to_csv('EIA_API_py.csv', index=False)
 ```
 
 ## Result:

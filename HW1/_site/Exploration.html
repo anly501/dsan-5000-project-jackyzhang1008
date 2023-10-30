@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -141,6 +175,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Naïve_Bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
   </div>
@@ -181,7 +221,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor"><strong>Nuclear Energy Utilization Factor</strong></a>
+  <ul class="collapse">
+  <li><a href="#data-import-and-understanding" id="toc-data-import-and-understanding" class="nav-link" data-scroll-target="#data-import-and-understanding"><strong>Data Import and Understanding</strong></a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><strong>Descriptive Statistics</strong></a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization"><strong>Data Visualization</strong></a>
+  <ul class="collapse">
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
+  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots">Box Plots</a></li>
+  </ul></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis"><strong>Correlation Analysis</strong></a></li>
+  <li><a href="#hypothesis-generation" id="toc-hypothesis-generation" class="nav-link" data-scroll-target="#hypothesis-generation"><strong>Hypothesis Generation</strong></a></li>
+  <li><a href="#identifying-outliers" id="toc-identifying-outliers" class="nav-link" data-scroll-target="#identifying-outliers"><strong>Identifying Outliers</strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -203,8 +262,404 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="nuclear-energy-utilization-factor" class="level1">
+<h1><strong>Nuclear Energy Utilization Factor</strong></h1>
+<section id="data-import-and-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="data-import-and-understanding"><strong>Data Import and Understanding</strong></h2>
+<ul>
+<li><p><strong>Rows</strong>: Each row corresponds to a different nuclear plant.</p></li>
+<li><p><strong>Columns</strong>: The columns include the plant’s name and its utilization factor for each year from 2013 to 2022.</p></li>
+<li><p><strong>Data Types</strong>: The “Plant” column is of object data type (string), and the rest of the columns (2013 to 2022) are numerical.</p></li>
+<li><p><strong>Missing Values</strong>: We need to check for any missing values in the dataset.</p></li>
+</ul>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in data</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>nuclear_data <span class="op">=</span> pd.read_csv(<span class="st">'../Data/EDA/Nuclear_Energy_Utilization_Factor.csv'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking for missing values</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>missing_values <span class="op">=</span> nuclear_data.isnull().<span class="bu">sum</span>()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Plant    0
+2013     0
+2014     0
+2015     0
+2016     0
+2017     0
+2018     0
+2019     0
+2020     0
+2021     0
+2022     0
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics"><strong>Descriptive Statistics</strong></h2>
+<p>We will calculate and report the following summary statistics for the numerical variables (utilization factor for the years 2013 to 2022):</p>
+<ul>
+<li><p>Mean</p></li>
+<li><p>Median</p></li>
+<li><p>Mode</p></li>
+<li><p>Standard Deviation</p></li>
+<li><p>Variance</p></li>
+</ul>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating descriptive statistics for the numerical variables</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>descriptive_stats <span class="op">=</span> nuclear_data.describe(include<span class="op">=</span>[<span class="bu">float</span>]).T</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>descriptive_stats[<span class="st">'mode'</span>] <span class="op">=</span> nuclear_data.mode().iloc[<span class="dv">0</span>, <span class="dv">1</span>:]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>descriptive_stats[<span class="st">'variance'</span>] <span class="op">=</span> descriptive_stats[<span class="st">'std'</span>]<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the descriptive statistics</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(descriptive_stats[[<span class="st">'mean'</span>, <span class="st">'50%'</span>, <span class="st">'mode'</span>, <span class="st">'std'</span>, <span class="st">'variance'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        mean    50%  mode       std   variance
+2013  90.836  92.55  89.8  7.809381  60.986433
+2014  91.314  92.15  97.2  6.001123  36.013473
+2015  91.376  93.10  94.3  6.188091  38.292473
+2016  91.856  94.60  90.2  9.806769  96.172718
+2017  91.498  93.80  97.4  8.357314  69.844690
+2018  92.078  92.90  92.8  7.834078  61.372771
+2019  92.916  94.05  91.8  6.336366  40.149535
+2020  92.062  95.00  95.4  9.486788  89.999139
+2021  91.818  93.35  88.4  9.272643  85.981914
+2022  92.318  94.40  94.4  7.336815  53.828853</code></pre>
+</div>
+</div>
+<p>Here are the descriptive statistics for the nuclear plants’ utilization factors from 2013 to 2022:</p>
+<ul>
+<li><p><strong>Mean</strong>: The average utilization factor for each year. It ranges from 90.836 in 2013 to 92.916 in 2019.</p></li>
+<li><p><strong>Median (50%)</strong>: The middle value of the utilization factor for each year. It ranges from 92.55 in 2013 to 94.40 in 2022.</p></li>
+<li><p><strong>Mode</strong>: The value that appears most frequently in each year. It varies across years, with some years having more common utilization factors than others.</p></li>
+<li><p><strong>Standard Deviation (std)</strong>: Measures the amount of variation or dispersion from the average. A low standard deviation indicates that the values tend to be close to the mean, while a high standard deviation indicates that the values are spread out over a wider range.</p></li>
+<li><p><strong>Variance</strong>: The square of the standard deviation. It provides a measure of how spread out the values are.</p></li>
+</ul>
+</section>
+<section id="data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization"><strong>Data Visualization</strong></h2>
+<p>In this section, we’ll create visualizations to further explore the data’s distribution, relationships between variables, and potential patterns or trends.</p>
+<ol type="1">
+<li><p><strong>Histograms</strong>: To visualize the distribution of utilization factors for each year.</p></li>
+<li><p><strong>Box Plots</strong>: To observe the spread of the data and identify any potential outliers.</p></li>
+</ol>
+<section id="histograms" class="level3">
+<h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting the aesthetic style of the plots</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating histograms for the utilization factors of each year</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">3</span>, ncols<span class="op">=</span><span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Flattening the 2D array of axes for easy iteration</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the histograms</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, year <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">range</span>(<span class="dv">2013</span>, <span class="dv">2023</span>)):</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    sns.histplot(nuclear_data[<span class="bu">str</span>(year)], bins<span class="op">=</span><span class="dv">20</span>, kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[i])</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(<span class="ss">f'Distribution in </span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">'Utilization Factor'</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    axes[i].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusting layout for better readability</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Exploration_files/figure-html/cell-4-output-1.png" width="1431" height="950"></p>
+</div>
+</div>
+<p>The histograms above depict the distribution of utilization factors for each nuclear plant across different years. Here are some observations:</p>
+<ul>
+<li><p>The distribution of utilization factors is fairly symmetric in most years, with a slight skewness in some years.</p></li>
+<li><p>The majority of the nuclear plants seem to operate with a high utilization factor, mostly around 90 to 100.</p></li>
+<li><p>There are a few years (e.g., 2016, 2020) where the distribution appears to be more spread out, indicating higher variability in the utilization factors.</p></li>
+</ul>
+</section>
+<section id="box-plots" class="level3">
+<h3 class="anchored" data-anchor-id="box-plots">Box Plots</h3>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">3</span>, ncols<span class="op">=</span><span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Flattening the 2D array of axes for easy iteration</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the box plots</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, year <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">range</span>(<span class="dv">2013</span>, <span class="dv">2023</span>)):</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    sns.boxplot(x<span class="op">=</span>nuclear_data[<span class="bu">str</span>(year)], ax<span class="op">=</span>axes[i])</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(<span class="ss">f'Box Plot in </span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">'Utilization Factor'</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusting layout for better readability</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Exploration_files/figure-html/cell-5-output-1.png" width="1430" height="950"></p>
+</div>
+</div>
+<p>The box plots above provide a visual representation of the distribution of utilization factors for each year, highlighting the spread of the data and any potential outliers.</p>
+<ul>
+<li><p>The median (represented by the line inside the box) is consistently high across all years, mostly above 90.</p></li>
+<li><p>The interquartile range (IQR, represented by the height of the box) is relatively narrow, indicating that the middle 50% of the data points are close to each other.</p></li>
+<li><p>There are some potential outliers in various years, particularly in 2016 and 2020, where the utilization factors are significantly lower than the rest of the data.</p></li>
+</ul>
+</section>
+</section>
+<section id="correlation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-analysis"><strong>Correlation Analysis</strong></h2>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the correlation matrix</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> nuclear_data.iloc[:, <span class="dv">1</span>:].corr()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a heatmap to visualize the correlation matrix</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">".2f"</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>, vmin<span class="op">=-</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix of Utilization Factors (2013-2022)'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Exploration_files/figure-html/cell-6-output-1.png" width="746" height="651"></p>
+</div>
+</div>
+<ul>
+<li><p>Most of the correlations between different years are positive, suggesting that a higher utilization factor in one year is generally associated with a higher utilization factor in another year.</p></li>
+<li><p>The correlation coefficients are mostly in the range of 0.2 to 0.8, indicating a moderate positive relationship between the years.</p></li>
+<li><p>There are some years with higher correlations to each other (e.g., 2017 and 2019 with a correlation of 0.84), suggesting a stronger relationship in performance between these years.</p></li>
+</ul>
+</section>
+<section id="hypothesis-generation" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-generation"><strong>Hypothesis Generation</strong></h2>
+<p>Based on the observed patterns and relationships in the data, we might formulate hypotheses such as:</p>
+<ol type="1">
+<li><p><strong>H1</strong>: The utilization factor of a nuclear plant in one year is positively related to its utilization factor in the subsequent year.</p></li>
+<li><p><strong>H2</strong>: There are certain nuclear plants that consistently perform better or worse than others across all years.</p></li>
+<li><p><strong>H3</strong>: The variability in utilization factors has decreased or increased over the years.</p></li>
+</ol>
+</section>
+<section id="identifying-outliers" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-outliers"><strong>Identifying Outliers</strong></h2>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the average utilization factor for each nuclear plant over the years</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>nuclear_data[<span class="st">'Average'</span>] <span class="op">=</span> nuclear_data.iloc[:, <span class="dv">1</span>:].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the nuclear plants sorted by their average utilization factor</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>sorted_plants <span class="op">=</span> nuclear_data[[<span class="st">'Plant'</span>, <span class="st">'Average'</span>]].sort_values(by<span class="op">=</span><span class="st">'Average'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_plants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                 Plant  Average
+32                        Peach Bottom    99.24
+6   Calvert Cliffs Nuclear Power Plant    98.61
+14          Dresden Generating Station    97.56
+23                            Limerick    97.48
+4             Byron Generating Station    97.41
+36      Quad Cities Generating Station    97.28
+2         Braidwood Generation Station    97.23
+28                              Oconee    96.19
+46                              Vogtle    95.82
+22          LaSalle Generating Station    95.60
+24                             McGuire    95.06
+34           Point Beach Nuclear Plant    94.76
+7                              Catawba    94.67
+26     Nine Mile Point Nuclear Station    94.46
+35                      Prairie Island    94.27
+37       R E Ginna Nuclear Power Plant    94.23
+43                               Surry    94.19
+39                            Seabrook    94.09
+1                        Beaver Valley    93.91
+29  PSEG Hope Creek Generating Station    93.65
+27                          North Anna    93.62
+8                Clinton Power Station    93.27
+19                              Harris    93.11
+15                       Edwin I Hatch    92.77
+41                 South Texas Project    92.73
+10                       Comanche Peak    92.57
+31                          Palo Verde    92.48
+11                         Davis Besse    92.38
+21                     Joseph M Farley    92.21
+33                               Perry    91.67
+44                        Turkey Point    91.17
+3                         Browns Ferry    91.13
+25                           Millstone    90.92
+18                        H B Robinson    90.59
+40                            Sequoyah    90.56
+13                       Donald C Cook    90.50
+42                            St Lucie    89.98
+20                 James A Fitzpatrick    89.85
+45                          V C Summer    89.73
+9          Columbia Generating Station    89.21
+12                       Diablo Canyon    89.13
+30       PSEG Salem Generating Station    88.34
+47                         Waterford 3    87.99
+38                          River Bend    87.07
+48             Watts Bar Nuclear Plant    85.61
+0                 Arkansas Nuclear One    85.13
+49       Wolf Creek Generating Station    84.91
+5                             Callaway    82.47
+16                               Fermi    79.67
+17                          Grand Gulf    73.88</code></pre>
+</div>
+</div>
+<section id="high-performers" class="level4">
+<h4 class="anchored" data-anchor-id="high-performers"><strong>High Performers:</strong></h4>
+<p>The nuclear plants with the highest average utilization factors over the years are:</p>
+<ol type="1">
+<li><p><strong>Peach Bottom</strong>: 99.24</p></li>
+<li><p><strong>Calvert Cliffs Nuclear Power Plant</strong>: 98.61</p></li>
+<li><p><strong>Dresden Generating Station</strong>: 97.56</p></li>
+<li><p><strong>Limerick</strong>: 97.48</p></li>
+<li><p><strong>Byron Generating Station</strong>: 97.41</p></li>
+</ol>
+</section>
+<section id="low-performers" class="level4">
+<h4 class="anchored" data-anchor-id="low-performers"><strong>Low Performers:</strong></h4>
+<p>The nuclear plants with the lowest average utilization factors are:</p>
+<ol type="1">
+<li><p><strong>Grand Gulf</strong>: 73.88</p></li>
+<li><p><strong>Fermi</strong>: 79.67</p></li>
+<li><p><strong>Callaway</strong>: 82.47</p></li>
+<li><p><strong>Wolf Creek Generating Station</strong>: 84.91</p></li>
+<li><p><strong>Arkansas Nuclear One</strong>: 85.13</p></li>
+</ol>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining performance tiers based on the average utilization factor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">95</span>, <span class="dv">100</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'Low Performer (&lt;80)'</span>, <span class="st">'Below Average (80-90)'</span>, <span class="st">'Above Average (90-95)'</span>, <span class="st">'High Performer (&gt;95)'</span>]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>nuclear_data[<span class="st">'Performance Tier'</span>] <span class="op">=</span> pd.cut(nuclear_data[<span class="st">'Average'</span>], bins<span class="op">=</span>bins, labels<span class="op">=</span>labels, right<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the number of plants in each performance tier</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>performance_tiers <span class="op">=</span> nuclear_data[<span class="st">'Performance Tier'</span>].value_counts().sort_index()</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the number of plants in each performance tier</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(performance_tiers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Performance Tier
+Low Performer (&lt;80)       2
+Below Average (80-90)    12
+Above Average (90-95)    25
+High Performer (&gt;95)     11
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>The nuclear plants have been categorized into different performance tiers based on their average utilization factor:</p>
+<ol type="1">
+<li><p><strong>Low Performer (&lt;80)</strong>: 2 plants</p></li>
+<li><p><strong>Below Average (80-90)</strong>: 12 plants</p></li>
+<li><p><strong>Above Average (90-95)</strong>: 25 plants</p></li>
+<li><p><strong>High Performer (&gt;95)</strong>: 11 plants</p></li>
+</ol>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to identify outliers using the IQR method</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> identify_outliers(data, column):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    Q1 <span class="op">=</span> data[column].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    Q3 <span class="op">=</span> data[column].quantile(<span class="fl">0.75</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    outliers <span class="op">=</span> data[(data[column] <span class="op">&lt;</span> (Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR)) <span class="op">|</span> (data[column] <span class="op">&gt;</span> (Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR))]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> outliers[[<span class="st">'Plant'</span>, column]]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Identifying outliers for each year</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>outliers_dict <span class="op">=</span> {}</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2013</span>, <span class="dv">2023</span>):</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    outliers <span class="op">=</span> identify_outliers(nuclear_data, <span class="bu">str</span>(year))</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> outliers.empty:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        outliers_dict[year] <span class="op">=</span> outliers</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the outliers for each year</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(outliers_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{2013:                             Plant  2013
+0            Arkansas Nuclear One  73.5
+16                          Fermi  69.4
+49  Wolf Creek Generating Station  69.6, 2014:           Plant  2014
+11  Davis Besse  74.4, 2016:                             Plant  2016
+17                     Grand Gulf  47.9
+30  PSEG Salem Generating Station  76.8
+48        Watts Bar Nuclear Plant  62.6, 2017:                           Plant  2017
+9   Columbia Generating Station  78.8
+17                   Grand Gulf  60.0
+48      Watts Bar Nuclear Plant  69.0, 2018:          Plant  2018
+16       Fermi  74.2
+17  Grand Gulf  56.4, 2019:           Plant  2019
+38   River Bend  75.8
+47  Waterford 3  74.1, 2020:          Plant  2020
+5     Callaway  70.7
+16       Fermi  60.6
+17  Grand Gulf  52.6, 2021:          Plant  2021
+5     Callaway  39.3
+45  V C Summer  76.5, 2022:           Plant  2022
+16        Fermi  66.7
+17   Grand Gulf  70.1
+47  Waterford 3  77.0}</code></pre>
+</div>
+</div>
+</section>
+<section id="outliers-identification" class="level4">
+<h4 class="anchored" data-anchor-id="outliers-identification"><strong>Outliers Identification:</strong></h4>
+<p>Outliers have been identified for each year based on the IQR method. Here are the plants that were identified as outliers in each year:</p>
+<ul>
+<li><p><strong>2013</strong>:</p>
+<ul>
+<li><p>Arkansas Nuclear One (73.5)</p></li>
+<li><p>Fermi (69.4)</p></li>
+<li><p>Wolf Creek Generating Station (69.6)</p></li>
+</ul></li>
+<li><p><strong>2014</strong>:</p>
+<ul>
+<li>Davis Besse (74.4)</li>
+</ul></li>
+<li><p><strong>2016</strong>:</p>
+<ul>
+<li><p>Grand Gulf (47.9)</p></li>
+<li><p>PSEG Salem Generating Station (76.8)</p></li>
+<li><p>Watts Bar Nuclear Plant (62.6)</p></li>
+</ul></li>
+<li><p><strong>2017</strong>:</p>
+<ul>
+<li><p>Columbia Generating Station (78.8)</p></li>
+<li><p>Grand Gulf (60.0)</p></li>
+<li><p>Watts Bar Nuclear Plant (69.0)</p></li>
+</ul></li>
+<li><p><strong>2018</strong>:</p>
+<ul>
+<li><p>Fermi (74.2)</p></li>
+<li><p>Grand Gulf (56.4)</p></li>
+</ul></li>
+<li><p><strong>2019</strong>:</p>
+<ul>
+<li><p>River Bend (75.8)</p></li>
+<li><p>Waterford 3 (74.1)</p></li>
+</ul></li>
+<li><p><strong>2020</strong>:</p>
+<ul>
+<li><p>Callaway (70.7)</p></li>
+<li><p>Fermi (60.6)</p></li>
+<li><p>Grand Gulf (52.6)</p></li>
+</ul></li>
+<li><p><strong>2021</strong>:</p>
+<ul>
+<li><p>Callaway (39.3)</p></li>
+<li><p>V C Summer (76.5)</p></li>
+</ul></li>
+<li><p><strong>2022</strong>:</p>
+<ul>
+<li><p>Fermi (66.7)</p></li>
+<li><p>Grand Gulf (70.1)</p></li>
+<li><p>Waterford 3 (77.0)</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
