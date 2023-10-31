@@ -1,0 +1,341 @@
+---
+title: "Exploration"
+---
+
+# **Nuclear Energy Utilization Factor**
+
+## **Data Import and Understanding**
+
+-   **Rows**: Each row corresponds to a different nuclear plant.
+
+-   **Columns**: The columns include the plant's name and its utilization factor for each year from 2013 to 2022.
+
+-   **Data Types**: The "Plant" column is of object data type (string), and the rest of the columns (2013 to 2022) are numerical.
+
+-   **Missing Values**: We need to check for any missing values in the dataset.
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+
+# Read in data
+nuclear_data = pd.read_csv('../Data/EDA/Nuclear_Energy_Utilization_Factor.csv')
+
+# Checking for missing values
+missing_values = nuclear_data.isnull().sum()
+print(missing_values)
+```
+
+## **Descriptive Statistics**
+
+We will calculate and report the following summary statistics for the numerical variables (utilization factor for the years 2013 to 2022):
+
+-   Mean
+
+-   Median
+
+-   Mode
+
+-   Standard Deviation
+
+-   Variance
+
+```{python}
+# Calculating descriptive statistics for the numerical variables
+descriptive_stats = nuclear_data.describe(include=[float]).T
+descriptive_stats['mode'] = nuclear_data.mode().iloc[0, 1:]
+descriptive_stats['variance'] = descriptive_stats['std']**2
+
+# Displaying the descriptive statistics
+print(descriptive_stats[['mean', '50%', 'mode', 'std', 'variance']])
+```
+
+Here are the descriptive statistics for the nuclear plants' utilization factors from 2013 to 2022:
+
+-   **Mean**: The average utilization factor for each year. It ranges from 90.836 in 2013 to 92.916 in 2019.
+
+-   **Median (50%)**: The middle value of the utilization factor for each year. It ranges from 92.55 in 2013 to 94.40 in 2022.
+
+-   **Mode**: The value that appears most frequently in each year. It varies across years, with some years having more common utilization factors than others.
+
+-   **Standard Deviation (std)**: Measures the amount of variation or dispersion from the average. A low standard deviation indicates that the values tend to be close to the mean, while a high standard deviation indicates that the values are spread out over a wider range.
+
+-   **Variance**: The square of the standard deviation. It provides a measure of how spread out the values are.
+
+## **Data Visualization**
+
+In this section, we'll create visualizations to further explore the data's distribution, relationships between variables, and potential patterns or trends.
+
+1.  **Histograms**: To visualize the distribution of utilization factors for each year.
+
+2.  **Box Plots**: To observe the spread of the data and identify any potential outliers.
+
+### Histograms
+
+```{python}
+# Setting the aesthetic style of the plots
+sns.set_style("whitegrid")
+
+# Creating histograms for the utilization factors of each year
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(15, 10))
+
+# Flattening the 2D array of axes for easy iteration
+axes = axes.flatten()
+
+# Plotting the histograms
+for i, year in enumerate(range(2013, 2023)):
+    sns.histplot(nuclear_data[str(year)], bins=20, kde=True, ax=axes[i])
+    axes[i].set_title(f'Distribution in {year}')
+    axes[i].set_xlabel('Utilization Factor')
+    axes[i].set_ylabel('Frequency')
+
+# Adjusting layout for better readability
+plt.tight_layout()
+plt.show()
+```
+
+The histograms above depict the distribution of utilization factors for each nuclear plant across different years. Here are some observations:
+
+-   The distribution of utilization factors is fairly symmetric in most years, with a slight skewness in some years.
+
+-   The majority of the nuclear plants seem to operate with a high utilization factor, mostly around 90 to 100.
+
+-   There are a few years (e.g., 2016, 2020) where the distribution appears to be more spread out, indicating higher variability in the utilization factors.
+
+### Box Plots
+
+```{python}
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(15, 10))
+
+# Flattening the 2D array of axes for easy iteration
+axes = axes.flatten()
+
+# Plotting the box plots
+for i, year in enumerate(range(2013, 2023)):
+    sns.boxplot(x=nuclear_data[str(year)], ax=axes[i])
+    axes[i].set_title(f'Box Plot in {year}')
+    axes[i].set_xlabel('Utilization Factor')
+
+# Adjusting layout for better readability
+plt.tight_layout()
+plt.show()
+```
+
+The box plots above provide a visual representation of the distribution of utilization factors for each year, highlighting the spread of the data and any potential outliers.
+
+-   The median (represented by the line inside the box) is consistently high across all years, mostly above 90.
+
+-   The interquartile range (IQR, represented by the height of the box) is relatively narrow, indicating that the middle 50% of the data points are close to each other.
+
+-   There are some potential outliers in various years, particularly in 2016 and 2020, where the utilization factors are significantly lower than the rest of the data.
+
+## **Correlation Analysis**
+
+```{python}
+# Calculating the correlation matrix
+correlation_matrix = nuclear_data.iloc[:, 1:].corr()
+
+# Creating a heatmap to visualize the correlation matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap="coolwarm", vmin=-1, vmax=1)
+plt.title('Correlation Matrix of Utilization Factors (2013-2022)')
+plt.show()
+```
+
+-   Most of the correlations between different years are positive, suggesting that a higher utilization factor in one year is generally associated with a higher utilization factor in another year.
+
+-   The correlation coefficients are mostly in the range of 0.2 to 0.8, indicating a moderate positive relationship between the years.
+
+-   There are some years with higher correlations to each other (e.g., 2017 and 2019 with a correlation of 0.84), suggesting a stronger relationship in performance between these years.
+
+## **Hypothesis Generation**
+
+Based on the observed patterns and relationships in the data, we might formulate hypotheses such as:
+
+1.  **H1**: The utilization factor of a nuclear plant in one year is positively related to its utilization factor in the subsequent year.
+
+2.  **H2**: There are certain nuclear plants that consistently perform better or worse than others across all years.
+
+3.  **H3**: The variability in utilization factors has decreased or increased over the years.
+
+## **Identifying Outliers**
+
+```{python}
+# Calculating the average utilization factor for each nuclear plant over the years
+nuclear_data['Average'] = nuclear_data.iloc[:, 1:].mean(axis=1)
+
+# Displaying the nuclear plants sorted by their average utilization factor
+sorted_plants = nuclear_data[['Plant', 'Average']].sort_values(by='Average', ascending=False)
+print(sorted_plants)
+```
+
+### **High Performers:**
+
+The nuclear plants with the highest average utilization factors over the years are:
+
+1.  **Peach Bottom**: 99.24
+
+2.  **Calvert Cliffs Nuclear Power Plant**: 98.61
+
+3.  **Dresden Generating Station**: 97.56
+
+4.  **Limerick**: 97.48
+
+5.  **Byron Generating Station**: 97.41
+
+### **Low Performers:**
+
+The nuclear plants with the lowest average utilization factors are:
+
+1.  **Grand Gulf**: 73.88
+
+2.  **Fermi**: 79.67
+
+3.  **Callaway**: 82.47
+
+4.  **Wolf Creek Generating Station**: 84.91
+
+5.  **Arkansas Nuclear One**: 85.13
+
+```{python}
+# Defining performance tiers based on the average utilization factor
+bins = [0, 80, 90, 95, 100]
+labels = ['Low Performer (<80)', 'Below Average (80-90)', 'Above Average (90-95)', 'High Performer (>95)']
+nuclear_data['Performance Tier'] = pd.cut(nuclear_data['Average'], bins=bins, labels=labels, right=False)
+
+# Calculating the number of plants in each performance tier
+performance_tiers = nuclear_data['Performance Tier'].value_counts().sort_index()
+
+# Displaying the number of plants in each performance tier
+print(performance_tiers)
+```
+
+The nuclear plants have been categorized into different performance tiers based on their average utilization factor:
+
+1.  **Low Performer (\<80)**: 2 plants
+
+2.  **Below Average (80-90)**: 12 plants
+
+3.  **Above Average (90-95)**: 25 plants
+
+4.  **High Performer (\>95)**: 11 plants
+
+```{python}
+# Function to identify outliers using the IQR method
+def identify_outliers(data, column):
+    Q1 = data[column].quantile(0.25)
+    Q3 = data[column].quantile(0.75)
+    IQR = Q3 - Q1
+    outliers = data[(data[column] < (Q1 - 1.5 * IQR)) | (data[column] > (Q3 + 1.5 * IQR))]
+    return outliers[['Plant', column]]
+
+# Identifying outliers for each year
+outliers_dict = {}
+for year in range(2013, 2023):
+    outliers = identify_outliers(nuclear_data, str(year))
+    if not outliers.empty:
+        outliers_dict[year] = outliers
+
+# Displaying the outliers for each year
+print(outliers_dict)
+```
+
+### **Outliers Identification:**
+
+Outliers have been identified for each year based on the IQR method. Here are the plants that were identified as outliers in each year:
+
+-   **2013**:
+
+    -   Arkansas Nuclear One (73.5)
+
+    -   Fermi (69.4)
+
+    -   Wolf Creek Generating Station (69.6)
+
+-   **2014**:
+
+    -   Davis Besse (74.4)
+
+-   **2016**:
+
+    -   Grand Gulf (47.9)
+
+    -   PSEG Salem Generating Station (76.8)
+
+    -   Watts Bar Nuclear Plant (62.6)
+
+-   **2017**:
+
+    -   Columbia Generating Station (78.8)
+
+    -   Grand Gulf (60.0)
+
+    -   Watts Bar Nuclear Plant (69.0)
+
+-   **2018**:
+
+    -   Fermi (74.2)
+
+    -   Grand Gulf (56.4)
+
+-   **2019**:
+
+    -   River Bend (75.8)
+
+    -   Waterford 3 (74.1)
+
+-   **2020**:
+
+    -   Callaway (70.7)
+
+    -   Fermi (60.6)
+
+    -   Grand Gulf (52.6)
+
+-   **2021**:
+
+    -   Callaway (39.3)
+
+    -   V C Summer (76.5)
+
+-   **2022**:
+
+    -   Fermi (66.7)
+
+    -   Grand Gulf (70.1)
+
+    -   Waterford 3 (77.0)
+
+## **Summary**
+
+Through the exploratory data analysis of the nuclear energy utilization dataset, we gained valuable insights into the performance of various nuclear plants over a span of 10 years, from 2013 to 2022. Below is a summary of the key findings and insights:
+
+### General Trends and Distributions:
+
+-   The majority of the nuclear plants have high utilization factors, mostly ranging from 90 to 100.
+
+-   The distribution of utilization factors is fairly symmetric in most years, though there is some variability and a few years show a wider spread of values.
+
+### Correlation Analysis:
+
+-   The utilization factors across different years are generally positively correlated, suggesting that a plant’s performance in one year is related to its performance in other years.
+
+### High and Low Performers:
+
+-   We identified plants that consistently perform well, such as Peach Bottom, Calvert Cliffs Nuclear Power Plant, and Dresden Generating Station, with average utilization factors above 97.
+
+-   Conversely, plants like Grand Gulf, Fermi, and Callaway were identified as low performers, with average utilization factors below 85.
+
+### Performance Tiers:
+
+-   The plants were categorized into performance tiers, with 11 plants identified as high performers, 25 as above average, 12 as below average, and 2 as low performers.
+
+### Outliers:
+
+-   Outliers were identified in each year, pointing to plants with significantly lower utilization factors compared to the rest.
+
+-   Some plants, such as Grand Gulf and Fermi, appeared as outliers in multiple years, indicating consistent issues that may require further investigation.

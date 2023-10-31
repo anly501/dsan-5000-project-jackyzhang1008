@@ -1,0 +1,143 @@
+---
+title: "Gathering"
+---
+
+# Nuclear Energy Utilization Factor
+
+## Description of the data
+
+There are 9 .xlsx file that shows the nuclear energy utilization for power plants in from 2013 to 2022. Within each table there are 20 columns.
+
+State: US State
+
+Plant ID: unique ID for a Nuclear power plant
+
+Plant Name: Nuclear power plant name
+
+Unit: reactor unit number
+
+January - December: generating of electricity in Megawatthours
+
+Year_to_Date: generating of electricity in Megawatthours in the entire year
+
+Nameplate:
+
+Summer:
+
+Utilization Factor: Summer/Nameplate, this shows how much of the power generated are been used
+
+[Data website](https://www.eia.gov/nuclear/generation/index.html)
+
+## Use excel to get the data
+
+```{python}
+# From https://www.eia.gov/nuclear/generation/index.html
+import pandas as pd
+import numpy as np
+#pd read xlsx
+usreact13 = pd.read_excel('../Data/Nuclear_Generation/usreact13.xlsx')
+usreact14 = pd.read_excel('../Data/Nuclear_Generation/usreact14.xlsx')
+usreact15 = pd.read_excel('../Data/Nuclear_Generation/usreact15.xlsx')
+usreact16 = pd.read_excel('../Data/Nuclear_Generation/usreact16.xlsx')
+usreact17 = pd.read_excel('../Data/Nuclear_Generation/usreact17.xlsx')
+usreact18 = pd.read_excel('../Data/Nuclear_Generation/usreact18.xlsx')
+usreact19 = pd.read_excel('../Data/Nuclear_Generation/usreact19.xlsx')
+usreact20 = pd.read_excel('../Data/Nuclear_Generation/usreact20.xlsx')
+usreact21 = pd.read_excel('../Data/Nuclear_Generation/usreact21.xlsx')
+usreact22 = pd.read_excel('../Data/Nuclear_Generation/usreact22.xlsx')
+```
+
+# **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
+
+## Description of the data
+
+period: years 2013-2022
+
+location: US state, US
+
+stateDescription: description of the location
+
+sectorid: unique ID for planet
+
+sectorDescription: planet name
+
+fueltypeid: all nuclear
+
+fuelTypeDescription: all nuclear
+
+consumption-for-eg-btu: fuel usage
+
+consumption-for-eg-btu-units: units in million MMBtu
+
+total-consumption-btu: total fuel usage
+
+total-consumption-btu-units: units in million MMBtu
+
+[Data website](https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=NUC;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;)
+
+## Use python API to get the data
+
+```{python}
+# https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=NUC;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;
+# API_Key = "Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
+import requests
+import pandas as pd
+import numpy as np 
+import json
+import csv
+thor_url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&data[0]=consumption-for-eg-btu&data[1]=total-consumption-btu&facets[fueltypeid][]=NUC&start=2013&end=2022&sort[0][column]=period&sort[0][direction]=desc&offset=0&length=5000&api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu"
+resp = requests.get(thor_url)
+data = resp.text
+data = json.loads(data)
+details=data['response']['data']
+rows=[]
+for chunk in details:
+    row=[]
+    for key,value in chunk.items():
+        value=value if value else np.nan
+        row.append(value)
+        # print('row',row)
+    rows.append(row)
+
+# Columns
+columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescription', 'fueltypeid', 'fuelTypeDescription', 'consumption-for-eg-btu', 'consumption-for-eg-btu-units', 'total-consumption-btu', 'total-consumption-btu-units']
+```
+
+# **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**
+
+## Description of the data
+
+period: years 2013-2022
+
+location: US state, US
+
+stateDescription: description of the location
+
+sectorid: unique ID for planet
+
+sectorDescription: planet name
+
+fueltypeid: all coal
+
+fuelTypeDescription: all coal
+
+consumption-for-eg-btu: fuel usage
+
+consumption-for-eg-btu-units: units in million MMBtu
+
+total-consumption-btu: total fuel usage
+
+total-consumption-btu-units: units in million MMBtu
+
+[Data website](https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=COW;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;)
+
+## Use r API to get the data
+
+```{txt}
+# https://www.eia.gov/opendata/browser/electricity/electric-power-operational-data?frequency=annual&data=consumption-for-eg-btu;total-consumption-btu;&facets=fueltypeid;&fueltypeid=COW;&start=2013&end=2022&sortColumn=period;&sortDirection=desc;
+library(httr)
+library(jsonlite)
+library(tidyverse)
+res <- GET("https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&data[0]=consumption-for-eg-btu&data[1]=total-consumption-btu&facets[fueltypeid][]=COW&start=2013&end=2022&sort[0][column]=period&sort[0][direction]=desc&offset=0&length=5000&api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu")
+data <- fromJSON(rawToChar(res$content))
+```
