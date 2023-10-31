@@ -173,7 +173,7 @@ sorted_plants = nuclear_data[['Plant', 'Average']].sort_values(by='Average', asc
 print(sorted_plants)
 ```
 
-#### **High Performers:**
+### **High Performers:**
 
 The nuclear plants with the highest average utilization factors over the years are:
 
@@ -187,7 +187,7 @@ The nuclear plants with the highest average utilization factors over the years a
 
 5.  **Byron Generating Station**: 97.41
 
-#### **Low Performers:**
+### **Low Performers:**
 
 The nuclear plants with the lowest average utilization factors are:
 
@@ -244,7 +244,7 @@ for year in range(2013, 2023):
 print(outliers_dict)
 ```
 
-#### **Outliers Identification:**
+### **Outliers Identification:**
 
 Outliers have been identified for each year based on the IQR method. Here are the plants that were identified as outliers in each year:
 
@@ -311,3 +311,31 @@ Outliers have been identified for each year based on the IQR method. Here are th
     -   Waterford 3 (77.0)
 
 ## **Summary**
+
+Through the exploratory data analysis of the nuclear energy utilization dataset, we gained valuable insights into the performance of various nuclear plants over a span of 10 years, from 2013 to 2022. Below is a summary of the key findings and insights:
+
+### General Trends and Distributions:
+
+-   The majority of the nuclear plants have high utilization factors, mostly ranging from 90 to 100.
+
+-   The distribution of utilization factors is fairly symmetric in most years, though there is some variability and a few years show a wider spread of values.
+
+### Correlation Analysis:
+
+-   The utilization factors across different years are generally positively correlated, suggesting that a plant’s performance in one year is related to its performance in other years.
+
+### High and Low Performers:
+
+-   We identified plants that consistently perform well, such as Peach Bottom, Calvert Cliffs Nuclear Power Plant, and Dresden Generating Station, with average utilization factors above 97.
+
+-   Conversely, plants like Grand Gulf, Fermi, and Callaway were identified as low performers, with average utilization factors below 85.
+
+### Performance Tiers:
+
+-   The plants were categorized into performance tiers, with 11 plants identified as high performers, 25 as above average, 12 as below average, and 2 as low performers.
+
+### Outliers:
+
+-   Outliers were identified in each year, pointing to plants with significantly lower utilization factors compared to the rest.
+
+-   Some plants, such as Grand Gulf and Fermi, appeared as outliers in multiple years, indicating consistent issues that may require further investigation.

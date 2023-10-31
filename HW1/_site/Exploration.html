@@ -236,8 +236,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis"><strong>Correlation Analysis</strong></a></li>
   <li><a href="#hypothesis-generation" id="toc-hypothesis-generation" class="nav-link" data-scroll-target="#hypothesis-generation"><strong>Hypothesis Generation</strong></a></li>
-  <li><a href="#identifying-outliers" id="toc-identifying-outliers" class="nav-link" data-scroll-target="#identifying-outliers"><strong>Identifying Outliers</strong></a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  <li><a href="#identifying-outliers" id="toc-identifying-outliers" class="nav-link" data-scroll-target="#identifying-outliers"><strong>Identifying Outliers</strong></a>
+  <ul class="collapse">
+  <li><a href="#high-performers" id="toc-high-performers" class="nav-link" data-scroll-target="#high-performers"><strong>High Performers:</strong></a></li>
+  <li><a href="#low-performers" id="toc-low-performers" class="nav-link" data-scroll-target="#low-performers"><strong>Low Performers:</strong></a></li>
+  <li><a href="#outliers-identification" id="toc-outliers-identification" class="nav-link" data-scroll-target="#outliers-identification"><strong>Outliers Identification:</strong></a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a>
+  <ul class="collapse">
+  <li><a href="#general-trends-and-distributions" id="toc-general-trends-and-distributions" class="nav-link" data-scroll-target="#general-trends-and-distributions">General Trends and Distributions:</a></li>
+  <li><a href="#correlation-analysis-1" id="toc-correlation-analysis-1" class="nav-link" data-scroll-target="#correlation-analysis-1">Correlation Analysis:</a></li>
+  <li><a href="#high-and-low-performers" id="toc-high-and-low-performers" class="nav-link" data-scroll-target="#high-and-low-performers">High and Low Performers:</a></li>
+  <li><a href="#performance-tiers" id="toc-performance-tiers" class="nav-link" data-scroll-target="#performance-tiers">Performance Tiers:</a></li>
+  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers">Outliers:</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -505,8 +517,8 @@ dtype: int64</code></pre>
 17                          Grand Gulf    73.88</code></pre>
 </div>
 </div>
-<section id="high-performers" class="level4">
-<h4 class="anchored" data-anchor-id="high-performers"><strong>High Performers:</strong></h4>
+<section id="high-performers" class="level3">
+<h3 class="anchored" data-anchor-id="high-performers"><strong>High Performers:</strong></h3>
 <p>The nuclear plants with the highest average utilization factors over the years are:</p>
 <ol type="1">
 <li><p><strong>Peach Bottom</strong>: 99.24</p></li>
@@ -516,8 +528,8 @@ dtype: int64</code></pre>
 <li><p><strong>Byron Generating Station</strong>: 97.41</p></li>
 </ol>
 </section>
-<section id="low-performers" class="level4">
-<h4 class="anchored" data-anchor-id="low-performers"><strong>Low Performers:</strong></h4>
+<section id="low-performers" class="level3">
+<h3 class="anchored" data-anchor-id="low-performers"><strong>Low Performers:</strong></h3>
 <p>The nuclear plants with the lowest average utilization factors are:</p>
 <ol type="1">
 <li><p><strong>Grand Gulf</strong>: 73.88</p></li>
@@ -598,8 +610,8 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="outliers-identification" class="level4">
-<h4 class="anchored" data-anchor-id="outliers-identification"><strong>Outliers Identification:</strong></h4>
+<section id="outliers-identification" class="level3">
+<h3 class="anchored" data-anchor-id="outliers-identification"><strong>Outliers Identification:</strong></h3>
 <p>Outliers have been identified for each year based on the IQR method. Here are the plants that were identified as outliers in each year:</p>
 <ul>
 <li><p><strong>2013</strong>:</p>
@@ -656,8 +668,42 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
+<p>Through the exploratory data analysis of the nuclear energy utilization dataset, we gained valuable insights into the performance of various nuclear plants over a span of 10 years, from 2013 to 2022. Below is a summary of the key findings and insights:</p>
+<section id="general-trends-and-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="general-trends-and-distributions">General Trends and Distributions:</h3>
+<ul>
+<li><p>The majority of the nuclear plants have high utilization factors, mostly ranging from 90 to 100.</p></li>
+<li><p>The distribution of utilization factors is fairly symmetric in most years, though there is some variability and a few years show a wider spread of values.</p></li>
+</ul>
+</section>
+<section id="correlation-analysis-1" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-analysis-1">Correlation Analysis:</h3>
+<ul>
+<li>The utilization factors across different years are generally positively correlated, suggesting that a plant’s performance in one year is related to its performance in other years.</li>
+</ul>
+</section>
+<section id="high-and-low-performers" class="level3">
+<h3 class="anchored" data-anchor-id="high-and-low-performers">High and Low Performers:</h3>
+<ul>
+<li><p>We identified plants that consistently perform well, such as Peach Bottom, Calvert Cliffs Nuclear Power Plant, and Dresden Generating Station, with average utilization factors above 97.</p></li>
+<li><p>Conversely, plants like Grand Gulf, Fermi, and Callaway were identified as low performers, with average utilization factors below 85.</p></li>
+</ul>
+</section>
+<section id="performance-tiers" class="level3">
+<h3 class="anchored" data-anchor-id="performance-tiers">Performance Tiers:</h3>
+<ul>
+<li>The plants were categorized into performance tiers, with 11 plants identified as high performers, 25 as above average, 12 as below average, and 2 as low performers.</li>
+</ul>
+</section>
+<section id="outliers" class="level3">
+<h3 class="anchored" data-anchor-id="outliers">Outliers:</h3>
+<ul>
+<li><p>Outliers were identified in each year, pointing to plants with significantly lower utilization factors compared to the rest.</p></li>
+<li><p>Some plants, such as Grand Gulf and Fermi, appeared as outliers in multiple years, indicating consistent issues that may require further investigation.</p></li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
