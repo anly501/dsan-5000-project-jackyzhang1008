@@ -1,0 +1,1505 @@
+Contents lists available at ScienceDirect
+Energy Policy
+journal homepage: www.elsevier.com/locate/enpol
+“I can live with nuclear energy if…”: Exploring public perceptions of nuclear
+energy in Singapore
+Shirley S. Hoa,⁎, Jiemin Looia, Agnes S.F. Chuaha, Alisius D. Leonga, Natalie Pangb
+a Wee Kim Wee School of Communication and Information, Nanyang Technological University, 31 Nanyang Link, Singapore 637718, Singapore
+b IPS Social Lab, Institute of Policy Studies, Lee Kuan Yew School of Public Policy, National University of Singapore, 20 Evans Road, Singapore 259365, Singapore
+A R T I C L E I N F O
+Keywords:
+Nuclear energy
+Southeast Asia
+Singapore
+Psychometric paradigm
+Source credibility theory
+A B S T R A C T
+Considering the growing salience of nuclear energy in Southeast Asia, this study examines public perceptions of
+nuclear energy in Singapore, a technologically-advanced and aﬄuent nation well-equipped to develop nuclear
+energy capabilities. Drawing from the source credibility theory, this study examines the public's credibility
+perceptions of nuclear-related information sources, and their trust in potential stakeholders. Guided by the
+psychometric paradigm, this study also explores public perceptions of risks, beneﬁts, and support. Four focus
+group discussions were conducted with Singaporeans aged 18–69. Participants across diﬀerent age groups (e.g.,
+Millennials, Generation X, Baby Boomers) concurred in their trust of potential stakeholders, risk perception, cost
+perception, and support. Intergenerational diﬀerences were observed for participants’ media use, credibility
+perceptions of nuclear-related information sources, and beneﬁt perception. This study contributed theoretically
+by applying the source credibility theory and psychometric paradigm in an under-studied context. Practical
+implications were provided for policymakers and communication practitioners to eﬀectively evaluate public
+awareness and acceptance for nuclear energy. Directions for future research were discussed. In conclusion,
+intergenerational similarities were observed for Singaporeans’ perceptions of risks, costs, and support.
+Meanwhile intergenerational diﬀerences were noted for their credibility perceptions of nuclear-related in-
+formation sources, trust in potential stakeholders, and beneﬁt perception.
+1. Introduction
+Since its inception, nuclear energy development is an issue that has
+divided public perceptions (Ho, 2016). Supporters have advocated
+nuclear energy as a solution to several environmental issues due to its
+low carbon emissions (International Atomic Energy Agency, 2014).
+Additionally, it can address global rising energy demands and provide
+energy security by generating a reliable and high output of electricity
+(Ertör-Akyazı et al., 2012; IAEA, 2014). However, critics have opposed
+it due to the risks of nuclear accidents, improper radioactive waste
+management, weaponization of nuclear energy, and the substantial
+operating costs of nuclear power plants (IAEA, 2014). Such polarized
+attitudes toward nuclear energy are also reﬂected in national energy
+policies globally (Ho, 2016). For instance, Belgium, France, Germany,
+and Switzerland have decided to gradually discontinue their use of
+nuclear energy (Reuters, 2017, 2018; World Nuclear Association,
+2016). Conversely, the United States and the United Kingdom plan to
+construct new nuclear power plants (CNN, 2017). These divided atti-
+tudes toward nuclear energy are similarly observed in Asia. While
+Indonesia and Thailand have plans to adopt nuclear energy (WNA,
+2016), Vietnam recently abandoned its nuclear energy adoption plans,
+citing safety concerns and high costs as a deterrent (Nguyen and Ho,
+2016).
+Most public opinion research on nuclear energy are premised in
+countries that currently possess industry-scale nuclear facilities (Besley
+and McComas, 2015; Ho et al., 2018; Keller et al., 2012; Mah et al.,
+2014; Park and Ohm, 2014; Stoutenborough et al., 2013; Venables
+et al., 2012). However, few studies are conducted in countries which
+are in the preliminary phases of nuclear energy development (Ho et al.,
+2018). A recent meta-analysis on public perceptions of nuclear energy
+found that most studies were conducted in North America and Europe,
+while limited studies were conducted in SEA (Ho et al., 2018). As such,
+this study seeks to address the research gap by exploring public per-
+ceptions in SEA countries, particularly, Singapore. Additionally, this
+study contributes to literature by exploring an under-studied cultural
+context, which diﬀers substantially from North America, Europe, and
+East Asia in terms of its culture, language, and religion (Vinayak et al.,
+2014).
+https://doi.org/10.1016/j.enpol.2018.05.060
+Received 3 July 2017; Received in revised form 27 April 2018; Accepted 26 May 2018
+⁎ Corresponding author.
+E-mail addresses: tsyho@ntu.edu.sg (S.S. Ho), jiemin001@e.ntu.edu.sg (J. Looi), sfchuah@ntu.edu.sg (A.S.F. Chuah), alisiusd001@e.ntu.edu.sg (A.D. Leong),
+natalie.pang@nus.edu.sg (N. Pang).
+Energy Policy 120 (2018) 436–447
+Available online 01 June 2018
+0301-4215/ ©
+ 2018 Elsevier Ltd. All rights reserved.
+T
+Coupled with the burgeoning salience of nuclear energy in SEA, a
+clear understanding of public perceptions toward nuclear energy is
+needed, as such attitudes may facilitate or hinder nuclear energy
+adoption and development (Thai Visa News, 2015; Visschers and
+Siegrist, 2012). For instance, Thailand's plans for nuclear energy de-
+velopment were met with public opposition (Pattaya Mail, 2011).
+However, these nuclear development plans were recently revived due
+to an anticipated growth in electricity demand (WNA, 2018). Similarly,
+Malaysia's nuclear energy development plans were stalled (Jamal,
+2015). After a series of pre-feasibility studies, Malaysian authorities
+passed a bill to prepare Malaysia for its own nuclear power generator as
+early as 2030 (WNA, 2018). Although Singapore does not have concrete
+plans for nuclear energy development, it is currently in the nascent
+stage of nurturing nuclear experts and is open to nuclear energy de-
+velopment in the future (National Climate Change Secretariat, 2016;
+Siong, 2014).
+The successful adoption and development of nuclear energy requires
+substantial start-up costs, advanced technological capabilities, and ef-
+fective governance. Hence, it will be meaningful to examine public
+perceptions in a developed SEA country with the potential to satisfy
+these requirements. Considering Singapore's regional leadership in
+technological development, economic aﬄuence, and its eﬃcient gov-
+ernment with low levels of corruption (Driscoll, 2016), it is worthwhile
+to explore the underlying dynamics of public perceptions toward nu-
+clear energy in this context.
+Guided by the source credibility theory, this study aims to compare
+how Singaporeans across diﬀerent age groups concur and/ or diﬀer in
+their credibility perceptions of potential stakeholders in managing nu-
+clear power plants and handling nuclear accidents. Drawing upon the
+psychometric
+paradigm,
+this
+study
+also
+seeks
+to
+compare
+how
+Singaporeans across diﬀerent age groups concur and/ or diﬀer in their
+perceived risks, beneﬁts, and support for nuclear energy. Theoretically,
+this study can contribute to public opinion research on nuclear energy
+by applying both the psychometric paradigm and the source credibility
+theory in an under-studied cultural context. Practically, the insights
+gleaned from this study can assist policymakers and communication
+practitioners in formulating and implementing eﬀective communica-
+tion strategies to raise public awareness about nuclear energy.
+1.1. Study context: Singapore
+Singapore occupies a land area of 719.1 km2 (Singapore Land
+Authority, 2016) with an estimated population of 5.54 million
+(Singapore Department of Statistics, 2016). As a city-state with limited
+natural resources, the Republic currently relies on regional imports of
+petroleum, coal, and natural gas for energy production (Energy Market
+Authority, 2016). Over the decades, Singapore has prioritized and in-
+corporated sustainability in its national policies by adopting cleaner
+energy sources such as natural gas, which powers up to 95% of Sin-
+gapore's electricity demands (Tan, 2015). In light of Singapore's rising
+energy demands, the government is open to nuclear energy as an al-
+ternative energy source in the future (Thomas, 2010).
+However, the Singaporean authorities conducted a pre-feasibility
+study and found that the risks posed by nuclear energy in the Singapore
+context outweighed its beneﬁts on nuclear safety, security and risk
+assessment, human resource development, as well as nuclear energy
+systems and demand (Ministry of Trade and Industry, 2012). Given the
+Republic's small land area and high population density (Kotwani,
+2015), siting the nuclear reactor and setting up socio-politically ac-
+ceptable emergency preparedness procedures will be challenging
+(National Climate Change Secretariat, 2016; Phua, 2015). Moreover,
+most Singaporeans perceive nuclear energy as a hazardous technology,
+due to the potential destruction posed by nuclear accidents (Ng, 2011;
+Tan, 2015). Although there are currently no ﬁrm plans to incorporate
+nuclear into Singapore's energy mix, the government intends to develop
+nuclear-related expertise to manage nuclear safety amidst regional
+nuclear energy development plans (Kotwani, 2015; Leong, 2016). The
+Singapore government has also underscored the importance of public
+education by disseminating nuclear-related information through a
+combination of media platforms (Siong, 2014; Kotwani, 2015).
+2. Theoretical background
+Due to the complexities of nuclear energy, laypeople may lack the
+motivation and cognitive ability to evaluate the eﬀectiveness of nu-
+clear-related messages. This study utilizes the source credibility theory
+to understand how laypeoples’ perceived expertise and trustworthiness
+of nuclear-related information sources and potential stakeholders
+function as judgement heuristics. This study also compares these
+credibility perceptions among Singaporeans from diﬀerent age groups.
+This study draws upon the psychometric paradigm, which is a landmark
+research approach that examines public perceptions of risks (Marris
+et al., 1997; Siegrist, 2010). As the psychometric paradigm has been
+extensively applied in public opinion research on nuclear energy
+(Siegrist, 2010), it is well-suited to explore how diﬀerent generations of
+Singaporeans perceive nuclear energy.
+2.1. Source credibility theory
+During the process of communication and information processing,
+individuals’ attitudes and behaviors are primarily inﬂuenced by the
+characteristics of an information source (Kelman, 1961). The Heuristic
+Systematic Model (HSM) of information processing stipulates that in-
+dividuals process information systematically or heuristically, which
+subsequently aﬀects their attitudes toward a particular topic (Chaiken,
+1980; Chaiken and Eagly, 1989). As cognitive misers, people typically
+lack the motivation and cognitive abilities (e.g., limited domain-speciﬁc
+knowledge) to systematically process information (Chen and Chaiken,
+1999; Todorov et al., 2002). Therefore, individuals typically rely on
+judgement heuristics or information shortcuts to evaluate information
+sources (Goren et al., 2009).
+Source credibility is a noteworthy characteristic that determines the
+persuasiveness of an information source (Druckman, 2001; Miller et al.,
+1976). In other words, people evaluate the information source to de-
+termine if the message content, message source, and subject matter are
+“valid, relevant, salient and believable” (Callaghan and Schnell, 2009,
+p. 13). Source credibility also serves as a judgement heuristic for in-
+dividuals to evaluate complex or conﬂicting scientiﬁc information
+(Callaghan and Schnell, 2009). Individuals often rely on the informa-
+tion disseminated by highly credible ﬁgures, such as scientists or pol-
+icymakers to assess the beneﬁts, risks, and uncertainty of scientiﬁc in-
+formation
+(Siegrist
+and
+Cvetkovich,
+2000).
+Studies
+have
+also
+demonstrated the association between the public's credibility percep-
+tions and attitudes toward nuclear energy (Siegrist, 2005a; Viklund,
+2003). Therefore, this study aims to understand how the Singaporean
+public perceives the credibility of nuclear-related information sources.
+Source credibility is a multi-dimensional concept and judgement
+heuristic for evaluating message eﬀectiveness (Hovland et al., 1953;
+Ohanian, 1991). Source credibility includes two key dimensions: source
+expertise and trustworthiness (Callaghan and Schnell, 2009; Hovland
+et al., 1953; Lombardi et al., 2014). Source expertise refers to audiences’
+perceptions of the source's authority, knowledge, and capabilities to-
+ward a particular subject matter (Sertoglu, 2014). This is commonly
+regarded as the authoritativeness (McCroskey, 1966), proﬁciency
+(Whitehead, 1968), and credentials of an information source (Berlo
+et al., 1969). Meanwhile, source trustworthiness is deﬁned as audiences’
+degree of conﬁdence and acceptance of an information source's hon-
+esty, integrity, and message content's accuracy (Berdahl et al., 2016;
+van der Waldt et al., 2009).
+Individuals’ perceptions of source expertise and trustworthiness could
+contribute to message eﬀectiveness (Berdahl et al., 2016; Chao et al.,
+2005). For instance, scientists are widely regarded as credible and
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+437
+competent sources of information (Bickerstaﬀ et al., 2008; Fiske and
+Dupree, 2014). The high societal regard for scientists thus serves as an
+information shortcut for laypeople when forming opinions about novel
+or controversial technologies (Lachapelle et al., 2014; Liu and Priest,
+2009). Therefore, this study aims to understand the public's credibility
+perceptions of individuals and organizations, such as potential stake-
+holders of nuclear energy and various media outlets:
+RQ1: How do diﬀerent age groups of Singaporeans concur and/ or diﬀer
+in their credibility perceptions of the media and potential stakeholders of
+nuclear energy?
+2.2. Psychometric paradigm
+The psychometric paradigm examines various factors that inﬂuence
+laypeople's risk perceptions toward diﬀerent hazards (Siegrist, 2010;
+Siegrist et al., 2005b). Laypeople quantitatively evaluated certain ha-
+zards in terms of the novelty of the hazard, severity of consequences,
+and knowledge about the risks associated with the hazard that is known
+to science (Fischhoﬀ et al., 1978; Siegrist et al., 2005b). These quan-
+titative assessments of perceived risks in turn inform laypeople's atti-
+tudes and acceptance of diﬀerent technologies and activities (Fischhoﬀ
+et al., 1978; Siegrist et al., 2005b).
+Apart from evaluating diﬀerent hazards quantitatively, laypeople
+also assess these risks qualitatively (Fischhoﬀ et al., 1978; Siegrist,
+2010). A growing body of literature suggests that laypeople consider
+dread risk and unknown risk when forming opinions and making risk
+assessments of diﬀerent hazards (Siegrist et al., 2005a, 2005b). Dread
+risk is deﬁned as the potential of dread, fatal consequences, and per-
+ceived lack of control of novel technologies (Siegrist et al., 2005a,
+2005b). In this study, examples of dread risks include the potential
+fatalities and injuries from nuclear energy adoption and development.
+Unknown risk refers to the perceived novelty, scientiﬁc knowledge, and
+delay of eﬀects associated with the particular activity or technology
+(Siegrist et al., 2005a, 2005b). In this study, the unknown risks could
+pertain to laypeople's perceptions of the riskiness, environmental harm,
+and unacceptability of nuclear energy. Marris and colleagues (1997)
+found that participants rated the riskiness, environmental harm, and
+unacceptability of nuclear energy more highly than its potential risks of
+fatalities and injuries. In other words, laypeople's risk perceptions of
+nuclear energy were primarily based on their evaluations of concepts
+associated with dread risk, rather than unknown risk.
+The psychometric paradigm has informed policymakers and com-
+munication practitioners about the factors inﬂuencing laypeople's risk
+perceptions toward nuclear energy (Siegrist, 2010). The knowledge and
+understanding of these risk factors can help policymakers and com-
+munication practitioners predict public responses to new hazards, guide
+educational eﬀorts, and implement eﬀective public communication
+campaigns to assuage public concerns. Therefore, this study utilizes the
+psychometric paradigm to understand the public's risk and beneﬁt
+perceptions of nuclear energy in Singapore, while teasing out the in-
+tergenerational similarities and diﬀerences.
+RQ2: How do diﬀerent age groups of Singaporeans concur and/ or diﬀer
+in their perceived risks, beneﬁts, and support of nuclear energy?
+3. Method
+3.1. Data collection
+This study utilized focus group discussions (FGDs) to elicit insights
+from Singaporeans across diﬀerent age groups. Although FGDs do not
+provide nationally-representative data (Berdahl et al., 2016; Lock et al.,
+2014), it is well-suited for the complex topic areas in this study that
+require elaboration to facilitate easier comprehension among laypeople
+(Carey and Asbury, 2012). The participant-led discussions and inter-
+personal interactions in FGDs can facilitate information exchange
+(Onwuegbuzie et al., 2009), deliberation, and encourage collective
+brainstorming (Smithson, 2000). Although participants may be inﬂu-
+enced by more vocal respondents (Stewart et al., 2007), this method
+yields high ecological validity by mimicking the ﬂow of daily con-
+versations (Lock et al., 2014). Moreover, FGDs are instrumental in
+measuring social attitudes by identifying the similarities and diﬀerences
+in opinions among participants (Stewart et al., 2007). FGDs are also an
+established qualitative research method in science communication,
+such as nuclear energy (Berdahl et al., 2016; Lock et al., 2014), stem
+cell research (Pfeﬀer, 2008), and biotechnology (Beckwith et al., 2003).
+3.2. Sampling and recruitment
+A total of 39 participants were recruited using non-probability
+sampling. To capture an extensive range of perceptions, four FGDs were
+conducted, with group sizes ranging from 9 to 10 respondents. Each
+FGD represented a range of ages, as detailed in Table 1. Participants
+were recruited via emails and recruitment leaﬂets handed out at public
+places. Only Singapore citizens and permanent residents were recruited
+to accurately gauge public perceptions of nuclear energy in Singapore.
+An equivalent proportion of male and female participants were re-
+cruited to minimize gender bias. To ensure that the attitudes of all
+prominent social groups were captured, a racial quota was maintained
+for each FGD. The sample constituted 76.9% Chinese, 12.8% Malay,
+5.1% Indian, 2.6% Eurasian, and 2.6% from other ethnicities, which
+resembles Singapore's population demographics.
+One FGD was held with undergraduates from a large public uni-
+versity in Singapore, while the other 3 FGDs were conducted with
+members of the public. Apart from the FGD conducted with university
+students (FGD 1) aged from 18 to 24, the 3 FGDs held with the public
+were segmented according to age: FGD 2 participants (Millennial gen-
+eration) were aged from 18 to 34, FGD 3 participants (Generation X)
+were aged from 35 to 50, and FGD 4 participants (Baby Boomer gen-
+eration) were aged from 51 to 69 (see Table 1). This age classiﬁcation
+was derived based on the general age of majority for contractual ca-
+pacity in Singapore1 (Yeo, 2015), and the deﬁnition of generations by
+the Pew Research Center2 (Pew Research Centre, 2015). As the
+Table 1
+Focus group participant details.
+Group no.
+Participants
+Participants (no. and gender)
+Age
+Generations
+FGD1
+Undergraduates
+10 (4 males, 6 females)
+18–24 M = 21.1; SD = 2.28
+The Millennial generation
+FGD2
+General public
+9 (5 males, 4 females)
+18–34 M = 26.2; SD = 5.09
+The Millennial generation
+FGD3
+General public
+10 (6 males, 4 females)
+35–50 M = 41.8; SD = 5.85
+Generation X
+FGD4
+General public
+10 (5 males, 5 females)
+51–69 M = 55.6; SD = 5.17
+Baby Boomer generation
+1 The general age of majority of contractual capacity in Singapore stands at 18, with
+the exception of contractual agreements relating to land, which remains at 21 (Yeo,
+2015). This was taken into account as this signiﬁed the individual's attainment of
+adulthood, in which they could exercise sensible judgements about national issues and
+impact policy decisions that could extend to such national issues as the development of
+nuclear energy.
+2 Age was chosen as the predominant classiﬁcation method as the demographic and
+attitudinal diﬀerences between generations may elicit vastly diﬀerent opinions regarding
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+438
+Millennial generation surpassed the Baby Boomers as the largest gen-
+eration globally (Cosseboom, 2015), an additional FGD session was
+conducted with college undergraduates.
+Prior to each FGD, informed consent was sought from all the par-
+ticipants. Participants also provided their demographic information and
+rated their knowledge of nuclear energy by answering a pre-FGD
+questionnaire. Each FGD lasted for 2 h and light refreshments were
+provided. Upon completion, the participants comprising of college
+undergraduates received course credits, while members of the public
+received S$90 each.
+3.3. Moderation and guide
+The FGDs were conducted in English and moderated by a member of
+the research team, who was assisted by an assistant moderator in note-
+taking. This ensured a smooth transition between subject matters while
+addressing all topic areas, and that every participant was given ample
+opportunity to speak. The moderator for FGD 1 and FGD 2 was a
+doctoral student well-trained in social science research with FGD
+moderation experience. Both the moderators for FGD 3 and FGD 4 were
+college faculty members in the social sciences.
+The moderators followed a semi-structured moderator's guide to
+steer the FGDs. It was formulated based on existing public opinion re-
+search on nuclear energy. The moderator's guide included a pre-de-
+termined list of questions and prompts, which was used in all the FGDs
+to facilitate free-ﬂowing discussion among participants. Drawing upon
+the source credibility theory, the moderator's guide began with a dis-
+cussion on the communication channels used by participants to acquire
+and receive nuclear-related information, and their perceived credibility
+of these information sources. The subsequent questions explored par-
+ticipants’ trust in relevant stakeholders in managing nuclear power
+plants and handling nuclear accidents. Thereafter, the guide included
+key questions related to the participants’ perceived beneﬁts and risks of
+nuclear energy, which was informed by the psychometric paradigm.
+Apart from the general beneﬁts and risks related to nuclear energy,
+participants were also asked to relate these questions to the Singapore
+context, and provide their overall judgement of nuclear energy (See
+Appendix A).
+3.4. Analysis
+The FGDs were digitally-recorded, transcribed verbatim, and ana-
+lyzed by research team members. To ensure conﬁdentiality, all personal
+information was removed from the transcripts and quotes, and replaced
+with an alphanumeric code. The transcripts were then imported into the
+NVivo software for data management. A deductive approach of coding
+was ﬁrst adopted, whereby codes were created based on existing lit-
+erature. An inductive coding approach was also utilized concurrently to
+capture emerging data during the coding process.
+This study followed Berdahl et al.’s (2016) and Lock et al.’s proce-
+dure of analyzing the data collected. The data analysis procedure in-
+cludes examining transcripts meticulously, generating codes, and
+identifying themes apart from the predetermined categories in the semi-
+structured moderator's guide. To ensure inter-coder reliability, a coding
+scheme was ﬁrst established by two researchers to code and analyze the
+FGD transcripts in NVivo. The coders then coded the transcripts in-
+dependently and compared their coding using NVivo. An average inter-
+coder score of Cohen's kappa= 0.73 was obtained for all the codes in all
+the transcripts, which indicated a good inter-coder reliability score
+based on Cohen's (1960) standards.
+This study also adhered to Braun and Clarke's (2006) guidelines for
+thematic analysis to determine the themes and sub-themes that
+emerged from the FGD. Themes were primarily derived from the re-
+peated presentation of a subject matter within and across the partici-
+pant's narratives. These repeated patterns were based on the its re-
+levance in addressing the research questions and the frequency of
+mentions. The themes (i.e., primary and emergent themes) were iden-
+tiﬁed by including various perspectives in data interpretation, or “in-
+vestigator triangulation” (Patton, 2002, p. 247), which added strength
+to the hybridized analytical approach in this study. First, primary
+themes were identiﬁed using deductive coding based on the main ar-
+guments presented in existing literature and the moderator's guide.
+Following, the major themes and sub-themes were coded based on the
+moderator's guide and FGD transcripts. The major nodes for coding
+included “sources of information,” “perceptions,” “trust in relevant
+stakeholders,” and “scenario-based questions.” Meanwhile, emergent
+themes were identiﬁed by research team members through a formal
+coding process using inductive coding. In other words, the emergent
+themes that did not ﬁt into the pre-existing primary themes were coded
+individually.
+4. Results
+Six key themes emerged from the participants’ responses; two of
+which pertained to credibility perceptions of nuclear-related informa-
+tion sources and trust in potential stakeholders, while four major
+themes included public perceptions of beneﬁts, risks, costs, and support
+for nuclear energy. Of the major themes, the features of credibility for
+information sources emerged inductively from the data. Meanwhile, the
+other ﬁve major themes were primary themes that were predetermined
+before data collection (see Tables 2 and 3).
+4.1. Credibility of nuclear-related information sources
+4.1.1. Types of communication mediums
+The participants mainly accessed nuclear-related information using
+four types of communication mediums: print media, broadcast media,
+online and social media, and word-of-mouth. Print media consisted of
+newspapers, magazines, and academic journal publications. Nuclear-
+related information propagated through radio and television were ca-
+tegorized as broadcast media. Apart from social media, online media
+included messaging applications, websites, and search engines. Finally,
+conferences, discussions, education, and military training were classi-
+ﬁed as word-of-mouth. Inter-generational diﬀerences were observed in
+the participants’ media consumption and information-seeking beha-
+viors. Participants from FGD 1 and FGD 2 utilized online and social
+media most frequently and accessed information via broadcast media
+least frequently. Conversely, broadcast and print media were most
+commonly used among the respondents from FGD 3 and FGD 4, while
+online and social media were least commonly used.
+The respondents across the four FGDs identiﬁed the type of com-
+munication medium as a crucial feature in determining source cred-
+ibility of nuclear-related information. The respondents concurred that a
+general hierarchy of source credibility exists. Print media was perceived
+as the most credible communication channel, followed by broadcast
+media, word-of-mouth, and online and social media. Print media such
+as academic papers were perceived as credible information sources as
+they were based on empirical evidence, while newspapers were per-
+ceived as credible information sources as they provide balanced view-
+points. The younger and older participants held diﬀering credibility
+perceptions toward social media and search engines in providing nu-
+clear-related information. Participants from FGD 1 and FGD 2 perceived
+social media as credible, as users can determine the information sour-
+ce's credibility by analyzing the webpage's hyperlink and cross-ver-
+ifying with other information sources. Although the participants from
+FGD 3 and FGD 4 acknowledged that search engines like Google are
+(footnote continued)
+nuclear energy (Harber, 2011). This included diﬀerences in education levels, media
+consumption patterns, and preferred communication styles. While the age classiﬁcation
+ensured that the participants could voice their opinions freely, it also strived to achieve a
+wide range of ages within each group to obtain a diversity of perspectives.
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+439
+Table 2
+Overview of participants’ responses to RQ1.
+RQ1: How do diﬀerent age groups of Singaporeans concur and/or diﬀer in their credibility perceptions of the media and potential stakeholders of nuclear energy?
+Millennials (Aged 18–34)
+Generation X (Aged 35–50)
+Baby Boomers (Aged 51–69)
+Summary
+Types of communication mediums used to
+access nuclear-related information
+1. Online and social media
+2. Print media
+3. Word-of-mouth
+4. Broadcast media
+1. Print media
+2. Broadcast media
+3. Word-of-mouth
+4. Online and social media
+1. Print media
+2. Broadcast media
+3. Word-of-mouth
+4. Online and social media
+Similarities:
+▪ Generation X and Baby Boomers used print media most frequently to
+access nuclear-related information.
+▪ Generation X and Baby Boomers used online and social media least
+frequently to access nuclear-related information.
+Diﬀerences:
+▪ Millennials used online and social media most frequently to access
+nuclear-related information, which diﬀers from Generation X and
+Baby Boomers.
+Hierarchy of source credibility for
+communication mediums
+1. Print media
+2. Broadcast media
+3. Online and social media
+4. Word-of-mouth
+1. Print media
+2. Broadcast media
+3. Word-of-mouth
+4. Online and social media
+1. Print media
+2. Broadcast media
+3. Word-of-mouth
+4. Online and social media
+Similarities:
+▪ Participants across all age groups perceived print and broadcast
+media as the most credible communication mediums.
+▪ Both Generation X and Baby Boomers perceived online and social
+media as non-credible nuclear-related information sources.
+Diﬀerences:
+▪ Unlike the other two age groups, Millennials perceived online and
+social media as credible nuclear-related information source.
+Evaluating source credibility of nuclear-
+related information
+▪ Nuclear scientists
+▪ SG government
+▪ IGOs
+▪ Media outlets
+▪ Nuclear scientists
+▪ SG government
+▪ IGOs
+▪ Media outlets
+▪ Nuclear scientists
+▪ SG government
+▪ IGOs
+▪ Media outlets
+Similarities:
+▪ Participants across all age groups identiﬁed similar credible sources
+of nuclear-related information.
+▪ Participants across all age groups evaluated credibility of media outlets
+based on their reputation.
+Evaluating content credibility of nuclear-
+related information
+▪ Information that corroborates
+with existing literature
+▪ Factual nuclear-related
+information
+▪ Opinions from inﬂuential
+speakers
+▪ Information that corroborates
+with existing literature
+▪ Factual nuclear-related
+information
+▪ Opinions from inﬂuential
+speakers
+▪ Information that corroborates
+with existing literature
+▪ Factual nuclear-related
+information
+▪ Opinions from inﬂuential
+speakers
+Similarities:
+▪ Participants across all age groups evaluated the content credibility of
+the nuclear-related information sources similarly.
+Trust in potential stakeholders in managing
+NPP
+▪ Nuclear experts
+▪ Commercial operators
+▪ SG government
+▪ Foreign government
+▪ IGOs
+▪ NGOs & Watchdogs
+▪ Nuclear experts
+▪ Commercial operators
+▪ SG government
+▪ Foreign government
+▪ IGOs
+▪ NGOs & Watchdogs
+▪ Nuclear experts
+▪ Commercial operators
+▪ SG government
+▪ Foreign government
+▪ IGOs
+▪ NGOs & Watchdogs
+Similarities:
+▪ Participants across all age groups felt that a joint venture involving
+multiple potential stakeholders would be the best option.
+Trust in potential stakeholders in handling
+nuclear accidents
+▪ Nuclear experts
+▪ Commercial operators
+▪ Plant operating authorities
+▪ IGOs
+▪ Foreign governments
+▪ SG government
+▪ Nuclear experts
+▪ Commercial operators
+▪ Plant operating authorities
+▪ IGOs
+▪ Foreign governments
+▪ SG government
+▪ Nuclear experts
+▪ Commercial operators
+▪ Plant operating authorities
+▪ IGOs
+▪ Foreign governments
+▪ SG government
+Similarities:
+▪ Participants across all age groups identiﬁed the same potential
+stakeholders for handling nuclear accidents.
+Diﬀerences:
+▪ Millennials expressed mixed levels of trust toward the SG
+government.
+▪ Baby Boomers expressed a high level of trust toward the SG
+government.
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+440
+Table 3
+Overview of participants’ responses to RQ2.
+RQ2: How do diﬀerent age groups of Singaporeans concur and/ or diﬀer in their perceived risks, beneﬁts, and support of nuclear energy?
+Millennials (Aged 18–34)
+Generation X (Aged 35–50)
+Baby Boomers (Aged 51–69)
+Summary
+Beneﬁt perception
+▪ High reliability and output
+▪ High reliability and output
+▪ Self-suﬃciency for electricity
+generation
+Similarities:
+▪ Environmental beneﬁts
+▪ Environmental beneﬁts
+▪ Economic beneﬁts
+▪ Millennials and Generation X highlighted the high reliability and output of
+nuclear energy and its environmental beneﬁts.
+▪ Economic beneﬁts
+▪ Economic beneﬁts
+▪ High reliability and output
+Diﬀerences:
+▪ Self-suﬃciency for electricity
+generation
+▪ Self-suﬃciency for electricity
+generation
+▪ Environmental beneﬁts
+▪ Baby Boomers emphasized the economic beneﬁts of nuclear energy and its
+ability to provide SG with self-suﬃciency in electricity generation.
+Risk perception
+▪ Nuclear accidents
+▪ Nuclear accidents
+▪ Nuclear accidents
+Similarities:
+▪ Weaponization of nuclear energy
+▪ Weaponization of nuclear energy
+▪ Weaponization of nuclear energy
+▪ Participants across all focus groups highlighted nuclear accidents.
+▪ Radioactive waste
+▪ Radioactive waste
+▪ Radioactive waste
+▪ Health hazards
+▪ Health hazards
+▪ Health hazards
+▪ Terrorist attacks
+▪ Terrorist attacks
+▪ Terrorist attacks
+▪ Strain diplomatic ties
+▪ Strain diplomatic ties
+▪ Strain diplomatic ties
+Cost perception:
+▪ Low production cost
+▪ Low production cost
+▪ Low production cost
+Similarities:
+Monetary costs
+▪ High start-up costs
+▪ High start-up costs
+▪ High start-up costs
+▪ Participants across all focus groups expressed mixed feelings about the
+monetary costs regarding nuclear energy.
+Cost perception:
+▪ Too costly if nuclear energy fails
+▪ Too costly if nuclear energy fails
+▪ Too costly if nuclear energy fails
+Similarities:
+Opportunity costs
+▪ Investments could be spent on
+renewable energy sources instead.
+▪ Investments could be spent on
+renewable energy sources instead.
+▪ Investments could be spent on
+renewable energy sources instead.
+▪ Participants across all focus groups identiﬁed the same opportunity costs
+incurred in nuclear energy development
+▪ Lose major investments from fossil fuel
+companies
+▪ Lose major investments from fossil fuel
+companies
+▪ Lose major investments from fossil fuel
+companies
+Support
+▪ Opposed nuclear energy development
+in SG
+▪ Opposed nuclear energy development
+in SG
+▪ Opposed nuclear energy development
+in SG
+Similarities:
+(SG)
+▪ Reluctantly accepted nuclear energy
+under certain conditions.
+▪ Reluctantly accepted nuclear energy
+under certain conditions.
+▪ Reluctantly accepted nuclear energy
+under certain conditions.
+▪ Participants across all focus groups generally opposed nuclear energy
+development in SG
+▪ Participants across the focus groups conditionally accepted nuclear energy
+development for commercial reasons, survival and self-suﬃciency, and their
+perceived inability to oppose government decisions.
+Support
+▪ Opposed nuclear energy development
+in SEA
+▪ Opposed nuclear energy development
+in SEA
+▪ Opposed nuclear energy development
+in SEA
+Similarities:
+(SEA Countries)
+▪ Participants across all focus groups generally opposed nuclear energy
+development in SEA due to close geographical proximity and strained
+diplomatic tensions surrounding annual haze problem
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+441
+“very powerful” due to the extensive range of information sources, they
+felt that its credibility was compromised as content posted is not
+regulated.
+4.1.2. Sources of information
+Across the four FGDs, participants mainly perceived established
+media outlets, scientists, government, and international governing or-
+ganizations (IGOs) as credible sources for nuclear-related information.
+The participants trusted established mainstream media such as news-
+papers and documentaries, due to its editorial control. The participants
+concurred that nuclear scientists, government, and IGOs were credible
+information sources due to their nuclear expertise and access to ex-
+clusive nuclear-related information. Furthermore, participants trusted
+the Singapore government for its high transparency and competency,
+while IGOs were perceived as objective information sources with a
+global outlook.
+However, a participant in FGD 2 expressed his reservations about
+the mainstream media's credibility and objectivity, as some media
+outlets were known to favor certain people in power. Other participants
+in FGD 2 were also skeptical of local and international media outlets as
+they felt that the bribing of reporters to review certain issues were quite
+prevalent in SEA. As such, credibility perceptions also depend on the
+news organization's reputation.
+4.1.3. Content of information
+The content of information also emerged as an important compo-
+nent for determining source credibility. The participants across all FGDs
+evaluated the credibility of nuclear-related information by cross-ver-
+ifying it with other information sources. Nuclear-related information
+was perceived as credible if the content corroborated with existing
+literature. Factual nuclear-related information was also perceived as
+being more credible than opinionated nuclear-related information. One
+participant from FGD 1 mentioned that personal opinions on online
+forums such as Reddit include emotionally charged content which ex-
+plicitly intend to persuade other online users to think in a certain way,
+thereby decreasing its credibility.
+Despite this, the participants also trusted value-laden information
+from inﬂuential, successful, and expert speakers. For instance, a parti-
+cipant from FGD 2 asserted, “people who are on TED3 are supposed to
+be very credible, but all these are opinions. Although, if Jack Ma4 said
+that is a very good opinion, I will just take it.” Hence, the participants
+trusted and accepted opinions by speakers perceived to be skilled,
+knowledgeable, attractive, worthy, and respectable. The information
+source was therefore perceived as a more important indicator of source
+credibility than the content of information.
+4.2. Trust in potential stakeholders
+4.2.1. Managing nuclear power plants
+Across the FGDs, the participants identiﬁed several potential sta-
+keholders to manage the nuclear power plants: nuclear experts, com-
+mercial operators, IGOs (e.g., the United Nations), the Singapore gov-
+ernment, foreign governments (e.g, Japanese, Russian governments),
+non-governmental organizations, and watchdogs. However, the parti-
+cipants across the four FGDs were unable to trust a single potential
+stakeholder whole-heartedly. One participant from FGD 3 mentioned
+that scientists are deﬁnitely important, but they are typically “in ca-
+hoots” with the government. Most respondents also distrusted com-
+mercial operators due to their proﬁt motivations. Additionally, parti-
+cipants recognized the limited capacity of IGOs such as the United
+Nations to enforce changes, despite their nuclear-related expertise. This
+general distrust also extended to foreign and local national govern-
+ments. Although some respondents trusted the Japanese and Russian
+governments’ experience in managing nuclear power plants, most
+participants preferred the Singaporean government to have a major
+involvement. This view was expressed by most participants, regardless
+of their political allegiances. One participant in FGD 4 expressed that
+“As much as I hate their guts… I trust their honesty.” Despite this, the
+participants also mentioned the need for NGOs and watchdogs to keep
+checks and balances on the government or the scientists.
+The participants across all FGDs eventually decided that a joint
+venture involving multiple potential stakeholders would be the best
+option. A participant from FGD 2 mentioned that:
+“I would let this scenario be a joint venture…Singapore government
+owns 50% and the technical know-how from the foreign entity
+comes in and tries to transfer this knowledge to us, and eventually
+work towards full independence by our government. So fully oper-
+ated
+by
+Singapore
+scientist[s]
+and
+government
+authorities.”
+(P8G3SG)
+4.2.2. Handling nuclear accidents
+The participants identiﬁed nuclear experts, commercial operators,
+IGOs, the Singapore government, foreign governments (e.g., Japanese,
+Russian governments), plant operating authorities, and volunteers as
+potential stakeholders if a nuclear accident occurred in Singapore.
+Majority of the participants trusted any individual or organization with
+relevant expertise to handle a potential nuclear accident. Some parti-
+cipants also mentioned the need to assemble a nuclear crisis reaction
+team. The participants also identiﬁed local life-saving forces such as the
+Singapore Civil Defense Force (SCDF) as a potential stakeholder due to
+their knowledge of Singapore's environmental conditions. Although
+they were aware that the SCDF did not currently possess nuclear-related
+expertise, the participants felt that the SCDF could be trained to react in
+these circumstances.
+Intergenerational diﬀerences were observed as participants in FGD
+4 held a high level of trust in the government to handle nuclear acci-
+dents, while participants in FGD 1 and FGD 2 expressed mixed reac-
+tions. Some participants trusted the government due to their personal
+political beliefs, while others felt that the government would underplay
+the destruction of the nuclear accident by censoring mainstream media
+outlets. Despite this, participants from FGD 1 and FGD 2 still expected
+the local government to take responsibility in handling nuclear acci-
+dents.
+The participants from FGD 1 and FGD 2 also trusted and welcomed
+any individual or organization such as foreign governments or IGOs to
+provide assistance in handling the nuclear accident. Other participants
+also corroborated that the “Russian or Japanese should be best in
+handling crises” due to their experience in problem-solving and
+cleaning up after a nuclear accident. A participant from FGD 1 men-
+tioned that IGOs could take on an advisory role and collaborate with the
+local government for crisis communication to the public.
+4.3. Attitudes toward nuclear energy
+4.3.1. Beneﬁt perception
+The participants across all FGDs noted the high reliability and ef-
+ﬁciency of nuclear as an energy source, its environmental beneﬁts,
+economic beneﬁts, and the self-suﬃciency it provides for energy pro-
+duction and electrical generation. Of them, the latter three beneﬁts
+were speciﬁcally relevant to Singapore. Notably, intergenerational
+diﬀerences were observed as the participants from diﬀerent FGDs
+3 TED is a non-partisan, non-proﬁt organization devoted to spreading ideas through
+short, impactful talks. TED has involved expert speakers from diﬀerent disciplines and
+cultures to share their ideas about a variety of topics ranging from science to business to
+global issues (TED, 2017).
+4 Jack Ma is the founder and executive chairman of the Alibaba Group, a conglomerate
+of internet-based busineses. Ma is among the world's most inﬂuential businessmen,
+coming in second in Fortune's 2017 “World's 50 Greatest Leaders” list (Joslin, 2017). He is
+also recognized as China's biggest philanthropist, and has given numerous lecturers
+throughout his career.
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+442
+mentioned certain beneﬁts more frequently. The participants from FGD
+1 and FGD 2 mentioned the high reliability and output of nuclear en-
+ergy, and its environmental beneﬁts most frequently. Meanwhile, the
+respondents from FGD 3 highlighted the high reliability and eﬃciency
+of nuclear energy and its economic beneﬁts. The participants from FGD
+4 brought up the self-suﬃciency for energy production and electrical
+generation, as well as the economic beneﬁts of nuclear energy most
+frequently.
+4.3.2. Reliable and eﬃcient energy source
+Many participants acknowledged the eﬃciency and reliability of
+nuclear energy. The participants perceived nuclear energy as an un-
+yielding energy source, even during the monsoon or dry seasons in
+Singapore. The participants also recognized its high eﬃciency for
+electrical generation, in comparison to renewable energy sources.
+Several participants also described nuclear as a sustainable energy
+source that “don’t sic need a lot of uranium to generate a lot of power.”
+4.3.3. Environmental beneﬁts
+Most participants agreed that nuclear is an environmentally-friendly
+energy source that releases less carbon emissions as compared to con-
+ventional forms of energy, such as fossil fuels. One participant from
+FGD
+3
+also
+recognized
+that
+nuclear
+energy
+could
+complement
+Singapore's environmental policies to reduce its carbon footprint.
+4.3.4. Economic beneﬁts
+Across all FGDs, most participants recognized that nuclear energy
+development would generate many job opportunities and boost eco-
+nomic development, especially in light of the current lackluster em-
+ployment prospects and stagnant economic growth. Participants across
+the four FGDs also mentioned that Singapore could export the surplus
+energy generated from the nuclear power plants for additional revenue.
+One participant from FGD 3 alluded to Singapore's success in water
+technology,5 and mentioned that many countries could beneﬁt if Sin-
+gapore adopted nuclear energy. Another participant from FGD 3 also
+mentioned that nuclear energy adoption could reinforce Singapore's
+economic leadership in SEA.
+4.3.5. Self-suﬃciency
+Across the four FGDs, the participants perceived nuclear energy as
+an avenue for Singapore to address its rising energy demands and
+achieve its goals as a technologically advanced nation. Instead of re-
+lying on foreign imports for natural gas, participants also felt that
+Singapore could be self-suﬃcient in satisfying its energy needs and
+stabilize electricity prices. The participants also referred to Singapore's
+advanced water technology and self-sustainability in water.
+4.4. Risk perception
+The participants identiﬁed nuclear accidents, weaponization of
+nuclear energy, production of radioactive waste, health hazards from
+radioactive exposure, and terrorist attacks as perceived risks associated
+with nuclear energy. The potential threats of terrorist attacks and a
+plausible strain of diplomatic ties with neighboring countries were
+particularly relevant to the Singapore context. No intergenerational
+diﬀerences were found as the participants unanimously mentioned the
+risks of nuclear accidents most frequently.
+4.4.1. Nuclear accidents
+Most participants immediately associated the risk of nuclear energy
+with the Fukushima and Chernobyl nuclear accidents. They also ex-
+pressed concern that a nuclear accident occurred in spite of the safety
+precautions established for the Fukushima nuclear power plant.
+Therefore, many participants described nuclear energy as a dangerous
+and highly destructive technology with long-term damage, which
+commonly incites fear. One participant from FGD 1 asserted that
+Chernobyl is still suﬀering from the widespread eﬀects from the nuclear
+accident even after many decades. Another participant from FGD 1
+mentioned that he only heard about nuclear energy during an accident,
+which led to his negative impression of nuclear energy. Many partici-
+pants also noted that there is no room for error due to Singapore's
+limited physical space. One participant from FGD 3 stated that “if there
+were actually to be a nuclear accident in Singapore, I don’t think there's
+anything you can do you know. We are just a dot. If there's an accident,
+the whole country is gone.”
+4.4.2. Weaponization of nuclear energy
+Although the FGD moderators mentioned at the start of the session
+that the discussion would be based on nuclear energy, several partici-
+pants still mentioned the weaponization of nuclear energy as a risk.
+Many participants felt that nuclear energy could be used to develop
+weapons of mass destruction, while citing North Korea's development of
+nuclear weapons. A few participants also attributed their negative im-
+pressions of nuclear energy to the bombing incidents at Hiroshima
+during World War II.
+4.4.3. Production of radioactive waste
+Although many participants perceived nuclear energy as an en-
+vironmentally sustainable energy source, they recognized that the
+danger posed by the production of radioactive waste may outweigh the
+detriments of greenhouse eﬀects. Other participants expressed concern
+over the disposal of nuclear waste, which could be transformed into
+nuclear weapons by terrorists. The participants also felt that there
+would be insuﬃcient land to bury or dispose the radioactive waste in
+Singapore, leading to long-term environmental pollution. Some parti-
+cipants also stated that the improper handling of radioactive waste
+could contaminate local water supplies, which will negatively aﬀect
+Singaporeans and strain Singapore's diplomatic ties with neighboring
+countries.
+4.4.4. Health hazards from radioactive exposure
+Many participants across the four FGDs also displayed consternation
+over radioactive exposure in causing enduring health hazards. One
+participant from FGD 4 mentioned that “even a small dose of radiation
+in the long term will aﬀect your health.” Meanwhile, another partici-
+pant from FGD 3 was worried that the radioactivity in nuclear power
+plants might detrimentally aﬀect the living conditions and physical
+development of his children and the future generations.
+4.4.5. Terrorist threats and attacks
+Across all FGDS, some participants emphasized the need to establish
+safety and security mechanisms. They were worried about the threat of
+“nuclear terrorism” which may generate more radioactive waste, ne-
+gatively aﬀect human health, and pollute the environment. Several
+participants across the FGDs also mentioned that Singapore does not
+have room for error to recover from terrorists attacks armed with nu-
+clear weapons.
+4.5. Cost perception
+Although our research question did not include cost perception, the
+concept emerged inductively from the FGDs. Participants from the four
+FGDs pointed out monetary costs and opportunity costs associated with
+nuclear energy. Mixed responses about the monetary costs were
+5 Through the constant innovation of water management and treatment technologies,
+Singapore has managed to address its scarcity in clean water by establishing a sustainable
+water supply from varying sources, also known as the Four National Taps (Economic
+Development Board Singapore, 2017). This includes water in local catchment areas,
+imported from neighboring countries, reclaimed water (NEWater), as well as desalinated
+water (Public Utilities Board Singapore, n. d.). In light of the success of local ﬁrms in the
+global water industry, Singapore has also assumed global leadership for its technological
+innovations in this industry (Teng, 2016).
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+443
+obtained from the four FGDs. While some participants perceived nu-
+clear as a cost-eﬃcient energy source due to its low costs of energy
+production, others asserted that the start-up costs and expertise training
+involves substantial ﬁnancial investments. The participants in FGD 2
+and 3 also noted that Singapore would lose oil reﬁneries like Exxon
+Mobil and Shell, which have invested signiﬁcantly in Singapore's
+economy. Meanwhile, other participants felt that ﬁnancial investments
+in nuclear energy would be too costly if it fails. The participants also
+stated that the ﬁnancial investments on nuclear energy could be spent
+on pursuing renewable energy sources.
+4.6. Support for nuclear energy
+The participants across all the FGDs were generally unsupportive of
+nuclear energy. Most participants felt that the risks outweighed the
+beneﬁts in the local context, as “the radioactivity will decimate
+Singapore instantly” if a nuclear accident were to occur. Many parti-
+cipants also felt that there were safer ways for Singapore to develop its
+economy, and the investments for nuclear energy could be used to es-
+tablish Singapore as a ﬁnancial hub instead. They were also un-
+supportive of nuclear energy development plans in SEA. Most partici-
+pants felt that Singapore and its neighboring countries were not ready
+for nuclear energy development due to the close geographical proximity
+of Singapore, Malaysia and Indonesia, as well as the strained regional
+diplomatic tensions surrounding the annual haze problem.6
+Despite this, some participants were optimistic that the beneﬁts of
+nuclear energy could match up with the risks in the long-term, as nu-
+clear energy could be harnessed in a safer manner by learning from past
+nuclear accidents. As such, respondents’ negative sentiments toward
+nuclear energy were attributed to the lack of nuclear-related expertise
+and technological capabilities to ensure nuclear safety currently. In
+other words, their support for nuclear energy were largely contingent
+on Singapore's nuclear-related capabilities. Participant from FGD 1 and
+FGD 2 also mentioned that the large-scale environmental hazards and
+waste production from other conventional energy sources such as oil
+spills, did not receive as much dramatic media coverage as nuclear
+energy.
+4.6.1. Conditional acceptance
+Despite the participants’ generally unsupportive attitudes for nu-
+clear energy across all the FGDs, some participants reluctantly accepted
+nuclear energy under certain circumstances. One participant from FGD
+3 mentioned that “[they] have no choice. [They] don’t have any power
+to oppose it.” Another participant also cited the incident when the
+government went ahead with the construction of two casinos, despite
+public criticisms (Berger, 2005). The participants also reluctantly ac-
+cepted nuclear energy development if Singapore is required to jump on
+the bandwagon and avoid lagging behind other SEA countries that have
+pursued nuclear energy. Some participants also suggested that nuclear
+energy may be necessary in the long-term, when traditional energy
+sources run out.
+5. Discussion
+In summary, the participants evaluated the credibility of commu-
+nication channels in terms of the source and content of nuclear-related
+messages. In relation to RQ1, intergenerational diﬀerences were ob-
+served in terms of the most frequently used communication channel to
+obtain nuclear-related information, and participants’ perceived cred-
+ibility of online and social media. Meanwhile, participants across dif-
+ferent age groups concurred that a joint venture among potential sta-
+keholders would be the best option in managing the nuclear power
+plants. They also trusted any individual or organization with nuclear
+expertise to handle nuclear accidents.
+The participants identiﬁed general perceptions of beneﬁts and risks
+associated with nuclear energy, while relating them to the Singapore
+context. With regard to RQ2, intergenerational diﬀerences were ob-
+served as certain beneﬁts were mentioned more frequently in particular
+FGDs. Contrastingly, the participants across all FGDs unanimously
+mentioned nuclear accidents most frequently when asked about their
+perceived risks of nuclear energy. Moreover, participants’ across all
+FGDs perceived costs in terms of the monetary costs and opportunity
+costs. Participants were also generally unsupportive of nuclear energy,
+but reluctantly accepted the adoption and development of nuclear en-
+ergy due to commercial reasons, survival and self-suﬃciency, and their
+perceived inability to oppose the government's decisions.
+5.1. Implications
+5.1.1. Theoretical implications
+In line with the source credibility theory, the ﬁndings suggest that
+participants evaluated nuclear-related information based on the sour-
+ce's characteristics. In spite of the intergenerational diﬀerences, the
+participants based their credibility perceptions on the same criteria.
+Participants’ perceptions of source characteristics (e.g., type of com-
+munication medium) prevailed over their assessments of the nuclear-
+related content. Congruent with Hovland et al.’s (1953) research, the
+ﬁndings also implied that participants’ trust in potential nuclear sta-
+keholders were based on perceived source expertise and trustworthi-
+ness.
+The participants evaluated nuclear energy in terms of its risks,
+beneﬁts, monetary costs, and opportunity costs. Therefore, this presents
+a worthwhile premise for future quantitative research to advance the
+psychometric paradigm by incorporating the abovementioned con-
+siderations. Moreover, future studies can determine whether the psy-
+chometric paradigm can account for individual data, inter-generational
+comparisons, and aggregate data.
+5.1.2. Policy implications
+The insights gleaned from this study can help inform policymakers
+and communication practitioners in formulating and implementing ef-
+fective public education initiatives about nuclear energy. First, policy-
+makers and communication practitioners can segment the public ac-
+cording to their age groups and media consumption behaviors to
+formulate eﬀective public communication tactics and disseminate nu-
+clear-related messages. For instance, nuclear-related media messages
+can be disseminated in public-service announcements via print and
+broadcast media to the Baby Boomers and Generation X. Meanwhile,
+nuclear-related information could be conveyed to Millennials via info-
+graphics, listicles, and videos on online and social media. Policymakers
+may also provide avenues for public consultation (e.g., online delib-
+eration platforms for the Millennials, and face-to-face discussions for
+Generation X and the Baby Boomers) to understand public concerns and
+make better-informed national decisions regarding nuclear energy.
+Targeted outreach initiatives may also improve the eﬀectiveness of
+public communication about national policies, which is vital in en-
+suring the success of its implementation.
+Second, policymakers and communication practitioners can clarify
+the misconceptions and reservations toward nuclear energy identiﬁed
+in this study. For example, the participants mistakenly perceived that
+the daily operation of nuclear power plants can emit radiation that
+harms the environment and public health. The participants also mis-
+apprehended that the technology utilized in nuclear power plants can
+be weaponized. These misconceptions can be addressed by establishing
+6 Since 1972, the agricultural and forest ﬁres caused by corporations and farmers in
+Indonesia every year have resulted in a smoky haze which aﬀects the South East Asian
+region for months, causing a signiﬁcant deterioration in air quality that can lead to severe
+long-term health eﬀects (BBC News, 2015; Lee, 2015). Despite the Indonesia's struggles in
+resolving this issue (BBC News), the authorities have criticized the neighboring countries
+for complaining about the haze, straining the regional diplomatic ties (The Straits Times,
+2015).
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+444
+an oﬃcial nuclear institution in Singapore to take charge of nuclear-
+related matters, release accurate information, and address popular
+myths of nuclear energy. Similarly, scientiﬁc spokespersons (e.g., nu-
+clear experts, oﬃcial spokespersons from government organizations)
+can be leveraged on to convey factual information about nuclear en-
+ergy, including its beneﬁts and risks, to the public.
+Third, policymakers and communication practitioners can empha-
+size the key beneﬁts of nuclear energy in public communication cam-
+paigns to increase public exposure to the beneﬁts of nuclear energy. In
+particular, message strategies can emphasize the reliability and eﬃ-
+ciency of nuclear energy, its environmental and economic beneﬁts, and
+its ability to help Singapore attain energy self-suﬃciency. With regard
+to economic development, message strategies could highlight the pos-
+sibility of exporting the surplus of energy to other countries and job
+creation in nuclear-related industries. In terms of energy self-suﬃ-
+ciency, policymakers and communication practitioners could allude to
+Singapore's success in overcoming its water scarcity and achieving self-
+suﬃciency through technological innovation of water management and
+treatment. By drawing parallels between water and energy self-suﬃ-
+ciency, the Singaporean public may be more accepting of nuclear en-
+ergy if traditional energy resources were to run out. To alleviate the
+public's fears, policymakers should also develop a clear and concrete
+plan that addresses how Singapore would minimize the possibility of a
+nuclear accident, terrorist threats and attacks, and how it would contain
+radioactive waste. Such plans should also be accompanied with clear
+messaging strategies that convey how these public concerns can be
+handled by the relevant authorities.
+Apart from these public education initiatives, policymakers can
+consider incorporating nuclear-speciﬁc content in various phases of the
+formal education curriculum. For instance, policymakers can consider
+integrating basic nuclear knowledge into science education (e.g., sec-
+ondary schools, junior colleges). Additionally, nuclear science and en-
+gineering programs could be oﬀered in local tertiary education.
+Considering the absence of nuclear power projects in Singapore, pol-
+icymakers can also consider collaborating with research institutes in
+countries with existing nuclear facilities to nurture local nuclear ex-
+perts. These education initiatives can increase public nuclear knowl-
+edge in Singapore and develop nuclear expertise to accurately assess the
+risks that may arise from potential nuclear energy development in SEA
+in the long-term.
+5.2. Limitations and future research
+Due to the exploratory nature of this study, data was collected from
+39 respondents across 4 FGDs. As such, the ﬁndings in this study cannot
+be generalized to the population of Singapore and to other SEA coun-
+tries. Nonetheless, this limitation was mitigated by recruiting partici-
+pants from a wide range of ages and utilizing a racial quota in each FGD
+to reﬂect Singapore's ethnic composition. Instead of obtaining a large
+sample of participants, qualitative researchers have also established the
+importance of achieving a saturation of ideas in the FGDs (Mason,
+2010; Morse, 2000). Based on the scope of the study, the quality of data
+obtained, and the nature of the topic, a saturation of ideas was achieved
+when similar ideas and themes were repeated by the participants during
+the fourth FGD. That being said, future studies could collect nationally-
+representative survey data from Singapore and other SEA countries for
+regional comparison, especially since SEA countries have unique cul-
+tural contexts and diﬀer in their technological and economic cap-
+abilities, as well as their phase of nuclear energy development. Based on
+the potential stakeholders identiﬁed by the FGD participants in this
+study, future research can also consider acquiring and comparing per-
+spectives from these potential stakeholders regarding nuclear energy.
+6. Conclusions and policy implications
+In conclusion, this study highlights the intergenerational diﬀerences
+in Singaporeans’ credibility perceptions of nuclear-related information
+sources, trust in potential stakeholders, and their attitudes toward nu-
+clear energy. It also reveals policy recommendations for key commu-
+nication strategies to raise Singaporeans’ awareness of the beneﬁts and
+to dispel misconceptions related to nuclear energy. This will enable
+them to make better-informed decision about a technology that has
+been negatively portrayed by the mass media.
+Acknowledgements
+None.
+Funding
+This work was supported by the Singapore National Research
+Foundation
+under
+the
+Nuclear
+Safety
+Research
+and
+Education
+Programme (NSREP) Award No. NRF2014NPR-NPRP001–004. Any
+opinions, ﬁndings, and conclusions or recommendations expressed in
+this material are those of the author(s) and do not necessarily reﬂect the
+views of any third party.
+Appendix A. — Focus group moderator's guide
+A. Whenever you receive information related to nuclear energy, which
+communication channels do you normally get it from?
+B. What aspects of a communication channel makes you think it is
+credible/not credible?
+C. When it comes to managing nuclear power plants, who do you trust?
+D. When it comes to handling a nuclear accident, who do you trust?
+E. What potential beneﬁts do you think are associated with nuclear
+energy? What potential beneﬁts do you think are associated with
+nuclear energy in the context of Singapore?
+F. What potential risks do you think are associated with nuclear en-
+ergy? What potential risks do you think are associated with nuclear
+energy in the context of Singapore?
+G. On the whole, is there a higher level of beneﬁts, higher level of risks,
+or are they equal/ around the same? [Note: The sequence of “higher
+level of beneﬁts,” “higher level of risks,” and “equal/around the same” in
+question G was randomized for each focus group.]
+References
+BBC News, 2015. What causes South East Asia’s haze? News website, BBC News, Asia.
+〈http://www.bbc.com/news/world-asia-34265922〉 (accessed 07 June 2017).
+Beckwith, J.A., Hadlock, T., Suﬀron, H., 2003. Public perceptions of plant biotechno-
+logy—a focus group study. N. Genet. Soc. 22 (2), 93–109. http://dx.doi.org/10.
+1080/1463677032000102620.
+Berdahl, L., Bourassa, M., Bell, S., Fried, J., 2016. Exploring perceptions of credible sci-
+ence among policy stakeholder groups: results of focus group discussions about nu-
+clear energy. Sci. Commun. 38 (3), 382–406. http://dx.doi.org/10.1177/
+1075547016647175.
+Berlo, D.K., Lemert, J.B., Mertz, R.J., 1969. Dimensions for evaluating the acceptability of
+message sources. Publ. Opin. Q. 33, 563–576. 〈http://www.jstor.org/stable/
+2747566〉.
+Berger, S., 2005. Singapore pushes through plan to open ﬁrst casinos. News website, The
+Telegraph, Singapore. 〈http://www.telegraph.co.uk/news/worldnews/asia/
+singapore/1488196/Singapore-pushes-through-plan-to-open-ﬁrst-casinos.html〉 (ac-
+cessed 07 June 2017).
+Besley, J.C., McComas, K.A., 2015. Something old and something new: comparing views
+about nanotechnology and nuclear energy. J. Risk Res. 18 (2), 215–231. http://dx.
+doi.org/10.1080/13669877.2014.896397.
+Bickerstaﬀ, K., Lorenzoni, I., Pidgeon, N.F., Poortinga, W., Simmons, P., 2008. Reframing
+nuclear power in the UK energy debate: nuclear power, climate change mitigation
+and radioactive waste. Publ. Underst. Sci. 17, 145–169. http://dx.doi.org/10.1177/
+0963662506066719.
+Braun, V., Clarke, V., 2006. Using thematic analysis in psychology. Qual. Res. Psychol. 3,
+77–101. http://dx.doi.org/10.1191/1478088706qp063oa.
+Callaghan, K., Schnell, F., 2009. Who says what to whom: why messengers and citizen
+beliefs matter in social policy framing. Soc. Sci. J. 46 (1), 12–28. http://dx.doi.org/
+10.1016/j.soscij.2008.12.001.
+Carey, M., Asbury, J., 2012. Focus Group Research. Left Coast Press, Walnut Creek.
+Chaiken, S., 1980. Heuristic versus systematic information processing and the use of
+source versus message cues in persuasion. J. Personal. Soc. Psychol. 39 (5), 752–766.
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+445
+http://dx.doi.org/10.1037/0022-3514.39.5.752.
+Chaiken, S., Eagly, A.H., 1989. Heuristic and systematic information processing within
+and beyond the persuasion context. In: Uleman, J.S., Bargh, J.A. (Eds.), Unintended
+Thought. The Guilford Press, New York, pp. 212–246.
+Chen, S., Chaiken, S., 1999. The heuristic-systematic model in its broader context. In:
+Chaiken, S., Trope, Y. (Eds.), Dual Process Theories in Social Psychology. The
+Guilford Press, New York, pp. 73–96.
+Chao, P., Wuhrer, G., Werani, T., 2005. Celebrity and foreign brand name as moderators
+of country-of-origin eﬀects. Int. J. Advert. 24 (2), 173–192. http://dx.doi.org/10.
+1080/02650487.2005.11072913.
+CNN, 2017. US nuclear power plants fast facts. News website, CNN, USA. 〈https://
+edition.cnn.com/2013/09/30/us/u-s-nuclear-power-plants/index.html〉 (accessed
+17 April 2018).
+Cohen, J., 1960. A coeﬃcient of agreement for nominal scales. Educ. Psychol. Meas. 20,
+37–46. http://dx.doi.org/10.1177/001316446002000104.
+Cosseboom, L., 2015. 9 ways millennials are driving Southeast Asia’s tech boom. News
+website, Tech in Asia. < 〈https://www.techinasia.com/southeast-asia-millennials-
+technology-adoption〉 > (accessed 07 June 2017).
+Singapore Department of Statistics, 2016. Population Trends, 2016. < http://www.
+singstat.gov.sg/docs/default-source/default-document-library/publications/publica-
+tions_and_papers/population_and_population_structure/population2016. pdf > (
+accessed 27 November 2017).
+Driscoll, S., 2016. Singapore improves its score in Transparency International’s corruption
+index. News website, The Straits Times, Singapore. < 〈http://www.straitstimes.
+com/singapore/singapore-improves-its-score-in-transparency-internationals-
+corruption-index〉 > (accessed 7 June 2017).
+Druckman, J.N., 2001. The implications of framing eﬀects for citizen competence.
+Political Behav. 23 (3), 225–256. http://dx.doi.org/10.1023/A:1015006907312.
+Economic Development Board Singapore, 2017. Environment and water. < 〈https://
+www.edb.gov.sg/content/edb/en/industries/industries/environment-and-water.
+html〉 > (accessed 07 June 2017).
+Energy Market Authority, 2016. Singapore Energy Statistics. < 〈https://www.ema.gov.
+sg/cmsmedia/Publications_and_Statistics/Publications/SES%202016/SES
+%202016%20Book_Optimized.pdf〉 > (accessed 07 June 2017).
+Ertör-Akyazı, P., Adaman, F., Özkaynak, B., Zenginobuz, Ü., 2012. Citizens' preferences
+on nuclear and renewable energy sources: evidence from Turkey. Energy Policy 47,
+309–320. http://dx.doi.org/10.1016/j.enpol.2012.04.072.
+Fischhoﬀ, B., Slovic, P., Lichtenstein, S., Read, S., Combs, B., 1978. How safe is safe
+enough? A Psychometric study of attitudes towards technological risks and beneﬁts.
+Policy Sci. 9, 127–152. http://dx.doi.org/10.1007/BF00143739.
+Fiske, S.T., Dupree, C., 2014. Gaining trust as well as respect in communicating to mo-
+tivated audiences about science topics. PNAS: Proc. Natl. Acad. Sci. USA 111 (Suppl.
+4), 13593–13597.
+Goren, P., Federico, C.M., Kittilson, M.C., 2009. Source cues, partisan identities, and
+political value expression. Am. J. Political Sci. 53 (4), 805–820. http://dx.doi.org/10.
+1111/j.1540-5907.2009.00402.x.
+Harber, J.G., 2011. Generations in the workplace: Similarities and diﬀerences. Electronic
+Thesis and Dissertations. Paper 1255. 〈http://dc.etsu.edu/etd/1255〉 (accessed 07
+June 2017).
+Ho, S.S., 2016. Communicating about nuclear energy and climate change. In: Nisbet, M.
+(Ed.), The Oxford Encyclopedia of Climate Change Communication. Sage Publication.
+http://dx.doi.org/10.1093/acrefore/9780190228620.013.440.
+Ho, S.S., Leong, A.D., Looi, J., Chen, L., Pang, N., Tandoc Jr., E., 2018. Science literacy or
+value predisposition? A meta-analysis of factors predicting public perceptions of
+beneﬁts, risks, and acceptance of nuclear energy. Environ. Commun. http://dx.doi.
+org/10.1080/17524032.2017.1394891.
+Hovland, C.I., Janis, I.L., Kelley, H.H., 1953. Communication and Persuasion:
+Psychological Studies of Opinion Change. Yale University Press, New Haven.
+Vinayak, H.V., Thompson, F., Tonby, O., 2014. Understanding ASEAN: Seven things you
+need to know. 〈http://www.mckinsey.com/industries/public-sector/our-insights/
+understanding-asean-seven-things-you-need-to-know〉 (accessed 7 June 2017).
+International Atomic Energy Agency, 2014. Climate change and nuclear power 2014.
+Vienna, Austria. 〈https://www.iaea.org/publications/reports〉 (accessed 7 June
+2017).
+Jamal, N., 2015. Nuclear Energy in Malaysia: Towards Sustainable Nuclear Energy
+Systems. 〈https://www.iaea.org/INPRO/11th_Dialogue_Forum/DAY2/Session4/
+INPRO_Presentation-Malaysia.pdf〉 (accessed 07 June 2017).
+Joslin, C., 2017. Introducing Fortune’s 2017 World’s Greatest Leaders list. Fortune.
+〈http://fortune.com/video/2017/03/23/worlds-greatest-leaders-2017/〉 (accessed
+20 November 2017).
+Keller, C., Visschers, V., Siegrist, M., 2012. Aﬀective imagery and acceptance of replacing
+nuclear power plants. Risk Anal. 32 (3), 464–477. http://dx.doi.org/10.1111/j.1539-
+6924.2011.01691.x.
+Kelman, H.C., 1961. Processes of opinion change. Publ. Opin. Q. 25, 57–78. 〈http://www.
+jstor.org/stable/2746461〉.
+Kotwani, M., 2015. Singapore must be prepared to handle nuclear developments: Experts.
+News website, Channel NewsAsia, Singapore. 〈http://www.channelnewsasia.com/
+news/singapore/singapore-must-be/2154300.html〉 (accessed 07 June 2017).
+Lachapelle, E., Montpetit, E., Gauvin, J., 2014. Public perceptions of expert credibility on
+policy issues: the role of expert framing and political worldviews. Policy Stud. J. 42
+(4), 674–697. http://dx.doi.org/10.1111/psj.12073.
+Lee M.K., 2015. Haze in Singapore: A problem dating back 40 years. News website, The
+Straits Times, Singapore. 〈http://www.straitstimes.com/singapore/environment/
+haze-in-singapore-a-problem-dating-back-40-years〉 (accessed 07 June 2017).
+Leong, W.K., 2016. Singapore plans to develop local pool of nuclear experts: National
+Research Foundation. News website, Channel NewsAsia, Singapore. 〈http://www.
+channelnewsasia.com/news/singapore/singapore-plans-to/2636864.html〉 (accessed
+07 June 2017).
+Liu, H., Priest, S., 2009. Understanding public support for stem cell research: media
+communication, interpersonal communication, and trust in key actors. Publ. Underst.
+Sci. 18, 704–718. http://dx.doi.org/10.1177/0963662508097625.
+Lock, S.J., Smallman, M., Lee, M., Rydin, Y., 2014. “Nuclear energy sounded wonderful
+40 years ago”: UK citizen views on CCS. Energy Policy 66, 428–435. http://dx.doi.
+org/10.1016/j.enpol.2013.11.024.
+Lombardi, D., Seyranian, V., Sinatra, G.M., 2014. Source eﬀects and plausibility judg-
+ments when reading about climate change. Discourse Process. 51, 75–92. http://dx.
+doi.org/10.1080/0163853X.2013.855049.
+Mah, D.N., Hills, P., Tao, J., 2014. Risk perception, trust and public engagement in nu-
+clear decision-making in Hong Kong. Energy Policy 73, 368–390. http://dx.doi.org/
+10.1016/j.enpol.2014.05.019.
+Marris, C., Langford, I., Saunderson, T., O’Riodan, T., 1997. Exploring the “Psychometric
+Paradigm: ” Comparisons Between Aggregate and Individual Analyses. Risk Anal. 17
+(3), 303–312. http://dx.doi.org/10.1111/j.1539-6924.1997.tb00868.x.
+Mason, M., 2010. Sample size and saturation in PhD studies using qualitative interviews.
+Forum: Qualitative. Soc. Res. 11 (3). http://dx.doi.org/10.17169/fqs-11.3.1428.
+McCroskey, J.C., 1966. Scales for the measurement of ethos. Speech Monogr. 33, 65–72.
+http://dx.doi.org/10.1080/03637756609375482.
+Miller, N., Maruyama, G., Beaber, R.J., Valone, K., 1976. Speed of speech and persuasion.
+J. Personal. Soc. Psychol. 34, 615–624. http://dx.doi.org/10.1037/0022-3514.34.4.
+615.
+Ministry of Trade and Industry, 2012. Factsheet: Nuclear energy pre-feasibility study.
+Singapore.
+Morse, J.M., 2000. Determining sample size. Qual. Health Res. 10 (1), 3–5. http://dx.doi.
+org/10.1177/104973200129118183.
+National Climate Change Secretariat, 2016. Singapore’s Approach to Alternative Energy.
+〈https://www.nccs.gov.sg/climate-change-and-singapore/national-circumstances/
+singapores-approach-alternative-energy〉 (accessed 07 June 2017).
+Ng, E., 2011. Nuclear energy will always be too dangerous for Singapore. < 〈http://
+www.sgpolitics.net/?P=6291〉 > (accessed 07 June 2017).
+Ohanian, R., 1991. The impact of celebrity spokespersons' perceived image on consumres'
+intention to purchase. J. Advert. Res. 31 (1), 46–54.
+Onwuegbuzie, A.J., Dickinson, W.B., Leech, N.L., Zoran, A.G., 2009. A qualitative fra-
+mework for collecting and analyzing data in focus group research. Int. J. Qual.
+Methods 8 (3), 1–21. http://dx.doi.org/10.1177/160940690900800301.
+Park, E., Ohm, J.Y., 2014. Factors inﬂuencing the public intention to use renewable en-
+ergy technologies in South Korea: eﬀects of the Fukushima nuclear accident. Energy
+Policy 65, 198–211. http://dx.doi.org/10.1016/j.enpol.2013.10.037.
+Pattaya Mail, 2011. Special report: Thai public opinion on nuclear power plant. News
+website, Pattaya Mail, Bangkok, Thailand. 〈http://www.pattayamail.com/
+thailandnews/special-report-thai-public-opinion-on-nuclear-power-plant-2362〉 (ac-
+cessed 07 June 2017).
+Patton, M.Q., 2002. Qualitative Research & Evaluation Methods. Sage, Thousand
+Oaks, CA.
+Pew Research Centre, 2015. Generations Deﬁned. 〈http://www.pewresearch.org/fact-
+tank/2015/05/11/millennials-surpass-gen-xers-as-the-largest-generation-in-u-s-
+labor-force/ft_15-05-11_millennialsdeﬁned/〉 (accessed 7 June 2017).
+Pfeﬀer, N., 2008. What British women say matters to them about donating an aborted
+fetus to stem cell research: a focus group study. Soc. Sci. Med. 66, 2544–2554. http://
+dx.doi.org/10.1016/j.socscimed.2008.01.050.
+Phua, D., 2015. Reconsidering nuclear energy for Singapore. IPS Commons. 〈http://
+www.ipscommons.sg/reconsidering-nuclear-energy-for-singapore/〉 (accessed 07
+June 2017).
+Public Utilities Board Singapore, n. d. Four National Taps. 〈https://www.pub.gov.sg/
+watersupply/fournationaltaps〉 (accessed 07. June 2017).
+Nguyen, M., Ho, B.M., 2016. Vietnam abandons plan for ﬁrst nuclear power plants. News
+website, Reuters. Hanoi, Vietnam. 〈https://www.reuters.com/article/us-vietnam-
+politics-nuclearpower/vietnam-abandons-plan-for-ﬁrst-nuclear-power-plants-
+idUSKBN13H0VO〉 (accessed 17 April 2018).
+Reuters, 2017. France to decide by end2018 how many nuclear plants to shut: minister.
+News website, Reuters. Paris, France. 〈https://www.reuters.com/article/us-france-
+nuclearpower/france-to-decide-by-end-2018-how-many-nuclear-plants-to-shut-
+minister-idUSKBN1CX0KP〉 (accessed 17 April 2018).
+Reuters, 2018. France rules out increasing CO2 as it closes nuclear reactors. News web-
+site, Reuters. Paris, France. 〈https://www.reuters.com/article/us-france-
+nuclearpower/france-rules-out-increasing-co2-as-it-closes-nuclear-reactors-
+idUSKBN1FF28A〉 (accessed 17 April 2018).
+Sertoglu, A.E., 2014. Examining the eﬀect of endorser credibility on the consumers’
+buying intentions: an empirical study in Turkey. Int. Rev. Manag. Mark. 4 (1), 66–77.
+Siegrist, M., 2010. Encyclopedia of Science and Technology Communication. SAGE
+Publications, Thousand Oaks.
+Siegrist, M., Cvetkovich, G., 2000. Perception of hazards: the role of social trust and
+knowledge. Risk Anal. 20, 713–720. http://dx.doi.org/10.1111/0272-4332.205064.
+Siegrist, M., Earle, T.C., Gutscher, H., 2005a. Perception of risk: the inﬂuence of general
+trust, and general conﬁdence. J. Risk Res. 8, 1145–1156. http://dx.doi.org/10.1080/
+1366987032000105315.
+Siegrist, M., Keller, C., Kiers, H.A.L., 2005b. A new look at the psychometric paradigm of
+perception of hazards. Risk Anal. 25 (1), 211–222. http://dx.doi.org/10.1111/j.
+0272-4332.2005.00580.x.
+Siong, G., 2014. Singapore starts nuclear safety and science research programme. News
+website, Channel NewsAsia, Singapore. 〈http://www.straitstimes.com/singapore/
+singapore-starts-nuclear-safety-and-science-research-programme〉 (accessed 07 June
+2017).
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+446
+Singapore Land Authority, 2016. Total Land Area of Singapore. 〈https://data.gov.sg/
+dataset/total-land-area-of-singapore〉 (accessed 07 June 2017).
+Smithson, J., 2000. Using and analyzing focus groups: limitations and possibilities
+(https://doi.org/). Int. J. Soc. Sci. Res. Methodol. 3, 103–119. http://dx.doi.org/10.
+1080/136455700405172.
+Stewart, D.W., Shamdasani, P.N., Rook, D.W., 2007. Group depth interviews: focus group
+research. In: Bickman, L., Rog, D.J. (Eds.), Applied Social Research Methods, 2nd ed.
+Sage Publications, Thousand Oaks, pp. 589–616.
+Stoutenborough, J., Sturgess, S., Vedlitz, A., 2013. Knowledge, risk, and policy support:
+public perceptions of nuclear power. Energy Policy 62, 176–184. http://dx.doi.org/
+10.1016/j.enpol.2013.06.098.
+Tan, A., 2015. Natural gas now makes up 95.5% of fuel mix; renewable energy on the rise.
+News website, The Straits Times, Singapore. 〈http://www.straitstimes.com/
+singapore/from-the-straits-times-archives-singapore-opts-for-cleaner-energy-
+sources〉 (accessed 7 June 2017).
+TED, 2017. Our organization. 〈https://www.ted.com/about/our-
+organization〉 > (accessed 20 November 2017).
+Teng, A., 2016. Singapore ﬁrms make waves worldwide in water treatment. News web-
+site, Channel NewsAsia, Singapore. 〈http://www.channelnewsasia.com/news/
+business/singapore/singapore-ﬁrms-make/2515802.html〉 (accessed 7 June 2017).
+Thai Visa News, 2015. Public acceptance in nuclear power is key to building such plants
+in Thailand. News website, Thai Visa News, Bangkok, Thailand. 〈http://news.
+thaivisa.com/thailand/public-acceptance-in-nuclear-power-is-key-to-building-such-
+plants-in-thailand/109840/〉 (accessed 7 June 2017).
+The Straits Times, 2015. Indonesia’s Vice-President Jusuf Kalla criticizes neighbors for
+grumbling about haze. News website, The Straits Times, Jakarta, Indonesia. 〈http://
+www.straitstimes.com/asia/se-asia/indonesias-vice-president-jusuf-kalla-criticises-
+neighbours-for-grumbling-about-haze〉 (accessed 07 June 2017).
+Thomas, S., 2010. Singapore may get nuclear power plant. News website, AsiaOne,
+Singapore. 〈http://www.asiaone.com/News/AsiaOne+News/Singapore/Story/
+A1Story20101102-245235.html〉 (accessed 17 April 2018).
+Todorov, A., Chaiken, S., Henderson, M.D., 2002. The heuristic-systematic model of in-
+formation processing. In: Dillard, J.D., Pfau, M. (Eds.), The Persuasion Handbook:
+Developments in Theory and Practice. SAGE Publications, Thousand Oaks, pp.
+195–212.
+van der Waldt, D., Van Loggerenberg, M., Wehmeyer, L., 2009. Celebrity endorsements
+versus created spokespersons in advertising: a survey among students. SAJEMS 12
+(1), 110–114. http://dx.doi.org/10.4102/sajems.v12i1.263.
+Venables, D., Pidgeon, N.F., Parkhill, K.A., Henwood, K.L., Simmons, P., 2012. Living
+with nuclear power: sense of place, proximity, and risk perceptions in local host
+communities. J. Environ. Psychol. 32 (4), 371–383. http://dx.doi.org/10.1016/j.
+jenvp.2012.06.003.
+Viklund, M.J., 2003. Trust and risk perception in western Europe: a cross-national study.
+Risk Anal. 23 (4), 727–738. http://dx.doi.org/10.1111/1539-6924.00351.
+Visschers, V.H., Siegrist, M., 2012. Fair play in energy policy decisions: procedural fair-
+ness, outcome fairness and acceptance of the decision to rebuild nuclear power
+plants. Energy Policy 46, 292–300. http://dx.doi.org/10.1016/j.enpol.2012.03.062.
+Whitehead, J.L., 1968. Factors of source credibility. Q. J. Speech 54, 59–63.
+World Nuclear Association, 2016. Asia’s Nuclear Energy Growth. World Nuclear
+Association. 〈http://www.world-nuclear.org/information-library/country-proﬁles/
+others/asias-nuclear-energy-growth.aspx〉 (accessed 7 June 2017).
+World Nuclear Association, 2018. Emerging nuclear energy countries. 〈http://www.
+world-nuclear.org/information-library/country-proﬁles/others/emerging-nuclear-
+energy-countries.aspx〉 (accessed 17 April 2018).
+Yeo, T.M., 2015. Laws of Singapore: Commercial Law. Singapore Academy of Law.
+〈http://www.singaporelaw.sg/sglaw/laws-of-singapore/commercial-law/chapter-
+19〉 (accessed 7 June 2017).
+S.S. Ho et al.
+Energy Policy 120 (2018) 436–447
+447

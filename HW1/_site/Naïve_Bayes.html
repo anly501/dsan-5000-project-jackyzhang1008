@@ -236,19 +236,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#aim-to-achieve" id="toc-aim-to-achieve" class="nav-link" data-scroll-target="#aim-to-achieve">Aim to Achieve</a></li>
   <li><a href="#variants-of-naive-bayes" id="toc-variants-of-naive-bayes" class="nav-link" data-scroll-target="#variants-of-naive-bayes">Variants of Naive Bayes</a></li>
   </ul></li>
-  <li><a href="#prepare-for-naïve-bayes" id="toc-prepare-for-naïve-bayes" class="nav-link" data-scroll-target="#prepare-for-naïve-bayes"><strong>Prepare for Naïve Bayes</strong></a>
+  <li><a href="#record-data" id="toc-record-data" class="nav-link" data-scroll-target="#record-data">Record Data</a>
   <ul class="collapse">
-  <li><a href="#record-data" id="toc-record-data" class="nav-link" data-scroll-target="#record-data">Record Data</a></li>
-  <li><a href="#text-data" id="toc-text-data" class="nav-link" data-scroll-target="#text-data">Text Data</a></li>
-  </ul></li>
-  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection"><strong>Feature Selection</strong></a>
-  <ul class="collapse">
-  <li><a href="#record-data-1" id="toc-record-data-1" class="nav-link" data-scroll-target="#record-data-1">Record Data</a></li>
-  <li><a href="#text-data-1" id="toc-text-data-1" class="nav-link" data-scroll-target="#text-data-1">Text Data</a></li>
-  </ul></li>
+  <li><a href="#prepare-for-naïve-bayes" id="toc-prepare-for-naïve-bayes" class="nav-link" data-scroll-target="#prepare-for-naïve-bayes"><strong>Prepare for Naïve Bayes</strong></a></li>
+  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection"><strong>Feature Selection</strong></a></li>
   <li><a href="#naïve-bayes" id="toc-naïve-bayes" class="nav-link" data-scroll-target="#naïve-bayes"><strong>Naïve Bayes</strong></a>
-  <ul class="collapse">
-  <li><a href="#record-data-2" id="toc-record-data-2" class="nav-link" data-scroll-target="#record-data-2">Record Data</a>
   <ul class="collapse">
   <li><a href="#accuracy-and-general-performance" id="toc-accuracy-and-general-performance" class="nav-link" data-scroll-target="#accuracy-and-general-performance"><strong>Accuracy and General Performance</strong></a></li>
   <li><a href="#precision-and-recall" id="toc-precision-and-recall" class="nav-link" data-scroll-target="#precision-and-recall"><strong>Precision and Recall</strong></a></li>
@@ -256,9 +248,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix"><strong>Confusion Matrix</strong></a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
   </ul></li>
-  <li><a href="#text-data-2" id="toc-text-data-2" class="nav-link" data-scroll-target="#text-data-2">Text Data</a></li>
   </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#text-data" id="toc-text-data" class="nav-link" data-scroll-target="#text-data">Text Data</a>
+  <ul class="collapse">
+  <li><a href="#prepare-for-naïve-bayes-1" id="toc-prepare-for-naïve-bayes-1" class="nav-link" data-scroll-target="#prepare-for-naïve-bayes-1"><strong>Prepare for Naïve Bayes</strong></a></li>
+  <li><a href="#feature-selection-1" id="toc-feature-selection-1" class="nav-link" data-scroll-target="#feature-selection-1"><strong>Feature Selection</strong></a></li>
+  <li><a href="#naïve-bayes-1" id="toc-naïve-bayes-1" class="nav-link" data-scroll-target="#naïve-bayes-1"><strong>Naïve Bayes</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -324,10 +320,10 @@ P(C \mid X)=\frac{P(X \mid C) \cdot P(C)}{P(X)}
 </ol>
 </section>
 </section>
-<section id="prepare-for-naïve-bayes" class="level1">
-<h1><strong>Prepare for Naïve Bayes</strong></h1>
-<section id="record-data" class="level2">
-<h2 class="anchored" data-anchor-id="record-data">Record Data</h2>
+<section id="record-data" class="level1">
+<h1>Record Data</h1>
+<section id="prepare-for-naïve-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-for-naïve-bayes"><strong>Prepare for Naïve Bayes</strong></h2>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># handling the outliers</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set any utilization factor in colum 2013-2022 above 100 to 100 in df</span></span>
@@ -343,7 +339,7 @@ P(C \mid X)=\frac{P(X \mid C) \cdot P(C)}{P(X)}
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'../Data/EDA/Nuclear_Energy_Utilization_Factor.csv'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'../data/Cleaned/EDA/Nuclear_Energy_Utilization_Factor.csv'</span>)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>df[df.columns[<span class="dv">1</span>:]] <span class="op">=</span> df[df.columns[<span class="dv">1</span>:]].<span class="bu">apply</span>(<span class="kw">lambda</span> x: np.where(x <span class="op">&gt;</span> <span class="dv">100</span>, <span class="dv">100</span>, x))</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -390,15 +386,8 @@ max    100.000000  100.000000  100.000000  100.000000  </code></pre>
 </div>
 <p>This part is just like data cleaning, I am aiming to make sure that the utilization fill into the range from 0 to 100%. But in the real world there are cases where utilization goes over 100%, meaning that there could be more places that need more electrocites that the power plane can generate. For this case I am just going to make anything that is over 100% to 100%.</p>
 </section>
-<section id="text-data" class="level2">
-<h2 class="anchored" data-anchor-id="text-data">Text Data</h2>
-<p>This part show that …</p>
-</section>
-</section>
-<section id="feature-selection" class="level1">
-<h1><strong>Feature Selection</strong></h1>
-<section id="record-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="record-data-1">Record Data</h2>
+<section id="feature-selection" class="level2">
+<h2 class="anchored" data-anchor-id="feature-selection"><strong>Feature Selection</strong></h2>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean utilization factor from 2013 to 2021</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Mean_Utilization_2013_2021'</span>] <span class="op">=</span> df.loc[:, <span class="st">'2013'</span>:<span class="st">'2021'</span>].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -415,15 +404,8 @@ max    100.000000  100.000000  100.000000  100.000000  </code></pre>
 </div>
 <p>This part prepares data for the Naive Bayes Classifier, as all the columns are concerning each other as they are just utilization reports of each year. Our goal for the Native Bayes Classifier is to find out the utilization rate of future years from that date of the year before.</p>
 </section>
-<section id="text-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="text-data-1">Text Data</h2>
-<p>for this part</p>
-</section>
-</section>
-<section id="naïve-bayes" class="level1">
-<h1><strong>Naïve Bayes</strong></h1>
-<section id="record-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="record-data-2">Record Data</h2>
+<section id="naïve-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="naïve-bayes"><strong>Naïve Bayes</strong></h2>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Gaussian Naive Bayes classifier</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
@@ -492,14 +474,139 @@ weighted avg       0.80      0.80      0.80        10
 </ul>
 </section>
 </section>
-<section id="text-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="text-data-2">Text Data</h2>
 </section>
+<section id="text-data" class="level1">
+<h1>Text Data</h1>
+<section id="prepare-for-naïve-bayes-1" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-for-naïve-bayes-1"><strong>Prepare for Naïve Bayes</strong></h2>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> MultinomialNB</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, confusion_matrix</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'../data/Cleaned/Energy_Policy.txt'</span>, <span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    text_data <span class="op">=</span> <span class="bu">file</span>.read()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This part show that …</p>
 </section>
-<section id="section" class="level1">
-<h1></h1>
+<section id="feature-selection-1" class="level2">
+<h2 class="anchored" data-anchor-id="feature-selection-1"><strong>Feature Selection</strong></h2>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define keywords related to nuclear energy</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nuclear_keywords <span class="op">=</span> [<span class="st">"nuclear"</span>, <span class="st">"radiation"</span>, <span class="st">"reactor"</span>, <span class="st">"uranium"</span>, <span class="st">"plutonium"</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Segment the text into sentences</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> re.split(<span class="vs">r'(?&lt;!\w\.\w.)(?&lt;![A-Z][a-z]\.)(?&lt;=\.|\?)\s'</span>, text_data)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to label sentences based on the presence of nuclear-related keywords</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> label_sentences(sentences, keywords):</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> []</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sentence <span class="kw">in</span> sentences:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">any</span>(keyword.lower() <span class="kw">in</span> sentence.lower() <span class="cf">for</span> keyword <span class="kw">in</span> keywords):</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>            labels.append(<span class="dv">1</span>)  <span class="co"># Positive class (related to nuclear energy)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>            labels.append(<span class="dv">0</span>)  <span class="co"># Negative class (not related to nuclear energy)</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> labels</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Label the sentences</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> label_sentences(sentences, nuclear_keywords)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Download necessary NLTK data</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'stopwords'</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'wordnet'</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize stop words and lemmatizer</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">'english'</span>))</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>lemmatizer <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to preprocess text</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_text(text):</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove special characters and numbers</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r'[^a-zA-Z\s]'</span>, <span class="st">''</span>, text)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tokenize</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> text.split()</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lowercase and remove stop words</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [lemmatizer.lemmatize(token.lower()) <span class="cf">for</span> token <span class="kw">in</span> tokens <span class="cf">if</span> token.lower() <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(tokens)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess each sentence</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>preprocessed_sentences <span class="op">=</span> [preprocess_text(sentence) <span class="cf">for</span> sentence <span class="kw">in</span> sentences]</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting the data into training, validation, and testing sets (80-10-10 split)</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>X_train, X_temp, y_train, y_temp <span class="op">=</span> train_test_split(preprocessed_sentences, labels, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>X_val, X_test, y_val, y_test <span class="op">=</span> train_test_split(X_temp, y_temp, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a TF-IDF Vectorizer</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>vectorizer <span class="op">=</span> TfidfVectorizer()</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform the text data into TF-IDF vectors</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>X_train_tfidf <span class="op">=</span> vectorizer.fit_transform(X_train)</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>X_val_tfidf <span class="op">=</span> vectorizer.transform(X_val)</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>X_test_tfidf <span class="op">=</span> vectorizer.transform(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package stopwords to
+[nltk_data]     /Users/jackyzhang/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /Users/jackyzhang/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!</code></pre>
+</div>
+</div>
+<p>for this part</p>
+</section>
+<section id="naïve-bayes-1" class="level2">
+<h2 class="anchored" data-anchor-id="naïve-bayes-1"><strong>Naïve Bayes</strong></h2>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a Multinomial Naive Bayes classifier</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>nb_classifier <span class="op">=</span> MultinomialNB()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the Naive Bayes classifier</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>nb_classifier.fit(X_train_tfidf, y_train)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the validation set</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>y_val_pred <span class="op">=</span> nb_classifier.predict(X_val_tfidf)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model on the validation set</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>classification_rep <span class="op">=</span> classification_report(y_val, y_val_pred)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y_val, y_val_pred)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the classification report and confusion matrix</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Classification Report:</span><span class="ch">\n</span><span class="st">'</span>, classification_rep)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>sns.heatmap(cm, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">'d'</span>, cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Predicted'</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Actual'</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Confusion Matrix'</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.87      1.00      0.93        60
+           1       1.00      0.67      0.80        27
+
+    accuracy                           0.90        87
+   macro avg       0.93      0.83      0.87        87
+weighted avg       0.91      0.90      0.89        87
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Naïve_Bayes_files/figure-html/cell-7-output-2.png" width="547" height="449"></p>
+</div>
+</div>
+<p>njnn</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
