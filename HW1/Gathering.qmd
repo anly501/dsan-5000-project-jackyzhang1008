@@ -2,7 +2,7 @@
 title: "Gathering"
 ---
 
-# Nuclear Energy Utilization Factor
+# **Nuclear Energy Utilization Factor**
 
 ## Description of the data
 
@@ -35,16 +35,16 @@ Utilization Factor: Summer/Nameplate, this shows how much of the power generated
 import pandas as pd
 import numpy as np
 #pd read xlsx
-usreact13 = pd.read_excel('../Data/Nuclear_Generation/usreact13.xlsx')
-usreact14 = pd.read_excel('../Data/Nuclear_Generation/usreact14.xlsx')
-usreact15 = pd.read_excel('../Data/Nuclear_Generation/usreact15.xlsx')
-usreact16 = pd.read_excel('../Data/Nuclear_Generation/usreact16.xlsx')
-usreact17 = pd.read_excel('../Data/Nuclear_Generation/usreact17.xlsx')
-usreact18 = pd.read_excel('../Data/Nuclear_Generation/usreact18.xlsx')
-usreact19 = pd.read_excel('../Data/Nuclear_Generation/usreact19.xlsx')
-usreact20 = pd.read_excel('../Data/Nuclear_Generation/usreact20.xlsx')
-usreact21 = pd.read_excel('../Data/Nuclear_Generation/usreact21.xlsx')
-usreact22 = pd.read_excel('../Data/Nuclear_Generation/usreact22.xlsx')
+usreact13 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact13.xlsx')
+usreact14 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact14.xlsx')
+usreact15 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact15.xlsx')
+usreact16 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact16.xlsx')
+usreact17 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact17.xlsx')
+usreact18 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact18.xlsx')
+usreact19 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact19.xlsx')
+usreact20 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact20.xlsx')
+usreact21 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact21.xlsx')
+usreact22 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact22.xlsx')
 ```
 
 # **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**

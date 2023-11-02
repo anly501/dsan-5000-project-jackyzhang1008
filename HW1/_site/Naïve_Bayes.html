@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#aim-to-achieve" id="toc-aim-to-achieve" class="nav-link" data-scroll-target="#aim-to-achieve">Aim to Achieve</a></li>
   <li><a href="#variants-of-naive-bayes" id="toc-variants-of-naive-bayes" class="nav-link" data-scroll-target="#variants-of-naive-bayes">Variants of Naive Bayes</a></li>
   </ul></li>
-  <li><a href="#record-data" id="toc-record-data" class="nav-link" data-scroll-target="#record-data">Record Data</a>
+  <li><a href="#record-data" id="toc-record-data" class="nav-link" data-scroll-target="#record-data"><strong>Record Data</strong></a>
   <ul class="collapse">
   <li><a href="#prepare-for-naïve-bayes" id="toc-prepare-for-naïve-bayes" class="nav-link" data-scroll-target="#prepare-for-naïve-bayes"><strong>Prepare for Naïve Bayes</strong></a></li>
   <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection"><strong>Feature Selection</strong></a></li>
@@ -249,11 +249,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#text-data" id="toc-text-data" class="nav-link" data-scroll-target="#text-data">Text Data</a>
+  <li><a href="#text-data" id="toc-text-data" class="nav-link" data-scroll-target="#text-data"><strong>Text Data</strong></a>
   <ul class="collapse">
   <li><a href="#prepare-for-naïve-bayes-1" id="toc-prepare-for-naïve-bayes-1" class="nav-link" data-scroll-target="#prepare-for-naïve-bayes-1"><strong>Prepare for Naïve Bayes</strong></a></li>
-  <li><a href="#feature-selection-1" id="toc-feature-selection-1" class="nav-link" data-scroll-target="#feature-selection-1"><strong>Feature Selection</strong></a></li>
-  <li><a href="#naïve-bayes-1" id="toc-naïve-bayes-1" class="nav-link" data-scroll-target="#naïve-bayes-1"><strong>Naïve Bayes</strong></a></li>
+  <li><a href="#feature-selection-1" id="toc-feature-selection-1" class="nav-link" data-scroll-target="#feature-selection-1"><strong>Feature Selection</strong></a>
+  <ul class="collapse">
+  <li><a href="#step-1-labeling-the-data" id="toc-step-1-labeling-the-data" class="nav-link" data-scroll-target="#step-1-labeling-the-data"><strong>Step 1: Labeling the Data</strong></a></li>
+  <li><a href="#step-2-preprocessing-the-data" id="toc-step-2-preprocessing-the-data" class="nav-link" data-scroll-target="#step-2-preprocessing-the-data"><strong>Step 2: Preprocessing the Data</strong></a></li>
+  </ul></li>
+  <li><a href="#naïve-bayes-1" id="toc-naïve-bayes-1" class="nav-link" data-scroll-target="#naïve-bayes-1"><strong>Naïve Bayes</strong></a>
+  <ul class="collapse">
+  <li><a href="#accuracy-and-general-performance-1" id="toc-accuracy-and-general-performance-1" class="nav-link" data-scroll-target="#accuracy-and-general-performance-1"><strong>Accuracy and General Performance</strong></a></li>
+  <li><a href="#classification-report-on-validation-data" id="toc-classification-report-on-validation-data" class="nav-link" data-scroll-target="#classification-report-on-validation-data"><strong>Classification Report on Validation Data</strong></a></li>
+  <li><a href="#confusion-matrix-1" id="toc-confusion-matrix-1" class="nav-link" data-scroll-target="#confusion-matrix-1"><strong>Confusion Matrix</strong></a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><strong>Conclusion</strong></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -309,6 +319,7 @@ P(C \mid X)=\frac{P(X \mid C) \cdot P(C)}{P(X)}
 <h2 class="anchored" data-anchor-id="aim-to-achieve">Aim to Achieve</h2>
 <ol type="1">
 <li>Predict the 2022 utilization for each reactor based on the mean from 2013-2021, anything that is over 90 will satisfy as High utilization and below 90 will be Low utilization.</li>
+<li>Analysis text data to determine if they are related to the key word: “nuclear”, “radiation”, “reactor”, “uranium”, and “plutonium”</li>
 </ol>
 </section>
 <section id="variants-of-naive-bayes" class="level2">
@@ -321,7 +332,7 @@ P(C \mid X)=\frac{P(X \mid C) \cdot P(C)}{P(X)}
 </section>
 </section>
 <section id="record-data" class="level1">
-<h1>Record Data</h1>
+<h1><strong>Record Data</strong></h1>
 <section id="prepare-for-naïve-bayes" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-for-naïve-bayes"><strong>Prepare for Naïve Bayes</strong></h2>
 <div class="cell" data-execution_count="1">
@@ -476,7 +487,7 @@ weighted avg       0.80      0.80      0.80        10
 </section>
 </section>
 <section id="text-data" class="level1">
-<h1>Text Data</h1>
+<h1><strong>Text Data</strong></h1>
 <section id="prepare-for-naïve-bayes-1" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-for-naïve-bayes-1"><strong>Prepare for Naïve Bayes</strong></h2>
 <div class="cell" data-execution_count="4">
@@ -496,7 +507,7 @@ weighted avg       0.80      0.80      0.80        10
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'../data/Cleaned/Energy_Policy.txt'</span>, <span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    text_data <span class="op">=</span> <span class="bu">file</span>.read()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This part show that …</p>
+<p>This part is just input the text data that are been extracted from pdf in the cleaning tab.</p>
 </section>
 <section id="feature-selection-1" class="level2">
 <h2 class="anchored" data-anchor-id="feature-selection-1"><strong>Feature Selection</strong></h2>
@@ -562,7 +573,25 @@ weighted avg       0.80      0.80      0.80        10
 [nltk_data]   Package wordnet is already up-to-date!</code></pre>
 </div>
 </div>
-<p>for this part</p>
+<section id="step-1-labeling-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-labeling-the-data"><strong>Step 1: Labeling the Data</strong></h3>
+<ol type="1">
+<li><p><strong>Define Keywords</strong>: We’ll use the keywords “nuclear”, “radiation”, “reactor”, “uranium”, and “plutonium” to identify text related to nuclear energy.</p></li>
+<li><p><strong>Segment the Text</strong>: Divide the text into sentences.</p></li>
+<li><p><strong>Label the Segments</strong>: Label each sentence based on whether it contains any of the defined keywords. Sentences with keywords will be labeled as 1 (positive class), and sentences without keywords will be labeled as 0 (negative class).</p></li>
+</ol>
+</section>
+<section id="step-2-preprocessing-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-preprocessing-the-data"><strong>Step 2: Preprocessing the Data</strong></h3>
+<p>Next, we will pre process the data. This involves the following steps:</p>
+<ol type="1">
+<li><p><strong>Cleaning the Text</strong>: Removing any special characters, numbers, or unnecessary white space.</p></li>
+<li><p><strong>Tokenization</strong>: Splitting the text into individual words.</p></li>
+<li><p><strong>Lowercasing</strong>: Converting all text to lowercase to ensure uniformity.</p></li>
+<li><p><strong>Removing Stop Words</strong>: Removing common words that do not contribute much meaning to the text.</p></li>
+<li><p><strong>Stemming or Lemmatization</strong>: Reducing words to their base or root form.</p></li>
+</ol>
+</section>
 </section>
 <section id="naïve-bayes-1" class="level2">
 <h2 class="anchored" data-anchor-id="naïve-bayes-1"><strong>Naïve Bayes</strong></h2>
@@ -603,9 +632,36 @@ weighted avg       0.91      0.90      0.89        87
 <p><img src="Naïve_Bayes_files/figure-html/cell-7-output-2.png" width="547" height="449"></p>
 </div>
 </div>
-<p>njnn</p>
+<section id="accuracy-and-general-performance-1" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy-and-general-performance-1"><strong>Accuracy and General Performance</strong></h3>
+<ul>
+<li>The model achieved an accuracy of 90%, which indicates a relatively high level of accuracy in predictions. However, this is based on a small test, which might not be sufficient to generalize the model’s performance to unseen data.</li>
+</ul>
+</section>
+<section id="classification-report-on-validation-data" class="level3">
+<h3 class="anchored" data-anchor-id="classification-report-on-validation-data"><strong>Classification Report on Validation Data</strong></h3>
+<ul>
+<li><p><strong>Precision</strong>: For the negative class (0), it’s 0.87, and for the positive class (1), it’s 1.00.</p></li>
+<li><p><strong>Recall</strong>: For the negative class, it’s 1.00, and for the positive class, it’s 0.67.</p></li>
+<li><p><strong>F1-Score</strong>: For the negative class, it’s 0.93, and for the positive class, it’s 0.80.</p></li>
+<li><p><strong>Accuracy</strong>: The overall accuracy of the model on the validation set is 90%.</p></li>
+</ul>
+</section>
+<section id="confusion-matrix-1" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-matrix-1"><strong>Confusion Matrix</strong></h3>
+<ul>
+<li>The confusion matrix reveals that the model made very few mistakes, with only zero false positive and seven false negative. However, due to the small size of the test set, each mistake has a significant impact on the performance metrics.</li>
+</ul>
+</section>
+<section id="conclusion-1" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion-1"><strong>Conclusion</strong></h3>
+<ul>
+<li>The slight drop in accuracy from training to validation indicates that the model might be overfitting to the training data. However, the drop is not very large, suggesting that the overfitting is mild.</li>
+<li>The model is performing well on both the training and validation sets, showing its ability to generalize to unseen data, although there’s room for improvement, especially in capturing more of the positive class (related to nuclear energy).</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 

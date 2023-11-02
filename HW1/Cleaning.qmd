@@ -2,11 +2,9 @@
 title: "Cleaning"
 ---
 
-# Nuclear Energy Utilization Factor
+# **Nuclear Energy Utilization Factor**
 
 ## Cleaning:
-
-### Code:
 
 ```{python}
 # From https://www.eia.gov/nuclear/generation/index.html
@@ -201,11 +199,13 @@ write.csv(df, "/Users/jackyzhang/Documents/Python/DSAN-5000/HW/HW2/Part2/Code/EI
 
 ![](images/paste-4.png)
 
-# Energy Policy
+# **Energy Policy**
 
 ## Cleaning:
 
 ```{python}
+# https://www-sciencedirect-com.proxy.library.georgetown.edu/science/article/pii/S030142151830377X
+
 import fitz
 import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)

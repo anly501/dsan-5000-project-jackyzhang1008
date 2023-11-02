@@ -32,6 +32,7 @@ The main objective of using Naive Bayes classification is to classify based on u
 ## Aim to Achieve
 
 1.  Predict the 2022 utilization for each reactor based on the mean from 2013-2021, anything that is over 90 will satisfy as High utilization and below 90 will be Low utilization.
+2.  Analysis text data to determine if they are related to the key word: "nuclear", "radiation", "reactor", "uranium", and "plutonium"
 
 ## Variants of Naive Bayes
 
@@ -41,7 +42,7 @@ The main objective of using Naive Bayes classification is to classify based on u
 
 3.  **Bernoulli Naive Bayes**: This is similar to the Multinomial Naive Bayes but the predictors are boolean variables. So, the parameters that are learned are the probabilities of the different categories and the probabilities of the predictors in each category. This variant is used when the feature vectors are binary (i.e., zeros and ones).
 
-# Record Data
+# **Record Data**
 
 ## **Prepare for Naïve Bayes**
 
@@ -133,7 +134,7 @@ plt.show()
 
 -   The Gaussian Naive Bayes classifier provides a good starting point for predicting nuclear energy utilization categories based on historical data. The model demonstrates decent accuracy, but there is potential for enhancement, particularly in improving precision and recall for the "Low" category. The exploratory data analysis and visualizations offer valuable insights into the distribution and trends of utilization factors across different power plants. Future work could explore more sophisticated models, feature engineering, or additional data sources to further refine the predictions and gain deeper insights.​
 
-# Text Data
+# **Text Data**
 
 ## **Prepare for Naïve Bayes**
 
@@ -155,7 +156,7 @@ with open('../data/Cleaned/Energy_Policy.txt', 'r', encoding='utf-8') as file:
     text_data = file.read()
 ```
 
-This part show that ...
+This part is just input the text data that are been extracted from pdf in the cleaning tab.
 
 ## **Feature Selection**
 
@@ -214,7 +215,27 @@ X_val_tfidf = vectorizer.transform(X_val)
 X_test_tfidf = vectorizer.transform(X_test)
 ```
 
-for this part
+### **Step 1: Labeling the Data**
+
+1.  **Define Keywords**: We'll use the keywords "nuclear", "radiation", "reactor", "uranium", and "plutonium" to identify text related to nuclear energy.
+
+2.  **Segment the Text**: Divide the text into sentences.
+
+3.  **Label the Segments**: Label each sentence based on whether it contains any of the defined keywords. Sentences with keywords will be labeled as 1 (positive class), and sentences without keywords will be labeled as 0 (negative class).
+
+### **Step 2: Preprocessing the Data**
+
+Next, we will pre process the data. This involves the following steps:
+
+1.  **Cleaning the Text**: Removing any special characters, numbers, or unnecessary white space.
+
+2.  **Tokenization**: Splitting the text into individual words.
+
+3.  **Lowercasing**: Converting all text to lowercase to ensure uniformity.
+
+4.  **Removing Stop Words**: Removing common words that do not contribute much meaning to the text.
+
+5.  **Stemming or Lemmatization**: Reducing words to their base or root form.
 
 ## **Naïve Bayes**
 
@@ -241,4 +262,25 @@ plt.title('Confusion Matrix')
 plt.show()
 ```
 
-njnn
+### **Accuracy and General Performance**
+
+-   The model achieved an accuracy of 90%, which indicates a relatively high level of accuracy in predictions. However, this is based on a small test, which might not be sufficient to generalize the model’s performance to unseen data.
+
+### **Classification Report on Validation Data**
+
+-   **Precision**: For the negative class (0), it's 0.87, and for the positive class (1), it's 1.00.
+
+-   **Recall**: For the negative class, it's 1.00, and for the positive class, it's 0.67.
+
+-   **F1-Score**: For the negative class, it's 0.93, and for the positive class, it's 0.80.
+
+-   **Accuracy**: The overall accuracy of the model on the validation set is 90%.
+
+### **Confusion Matrix**
+
+-   The confusion matrix reveals that the model made very few mistakes, with only zero false positive and seven false negative. However, due to the small size of the test set, each mistake has a significant impact on the performance metrics.
+
+### **Conclusion**
+
+-   The slight drop in accuracy from training to validation indicates that the model might be overfitting to the training data. However, the drop is not very large, suggesting that the overfitting is mild.
+-   The model is performing well on both the training and validation sets, showing its ability to generalize to unseen data, although there's room for improvement, especially in capturing more of the positive class (related to nuclear energy).

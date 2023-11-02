@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor">Nuclear Energy Utilization Factor</a>
+  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor"><strong>Nuclear Energy Utilization Factor</strong></a>
   <ul class="collapse">
   <li><a href="#description-of-the-data" id="toc-description-of-the-data" class="nav-link" data-scroll-target="#description-of-the-data">Description of the data</a></li>
   <li><a href="#use-excel-to-get-the-data" id="toc-use-excel-to-get-the-data" class="nav-link" data-scroll-target="#use-excel-to-get-the-data">Use excel to get the data</a></li>
@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <section id="nuclear-energy-utilization-factor" class="level1">
-<h1>Nuclear Energy Utilization Factor</h1>
+<h1><strong>Nuclear Energy Utilization Factor</strong></h1>
 <section id="description-of-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="description-of-the-data">Description of the data</h2>
 <p>There are 9 .xlsx file that shows the nuclear energy utilization for power plants in from 2013 to 2022. Within each table there are 20 columns.</p>
@@ -286,16 +286,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#pd read xlsx</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact13.xlsx'</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact14.xlsx'</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact15.xlsx'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact16.xlsx'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact17.xlsx'</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact18.xlsx'</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact19.xlsx'</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact20.xlsx'</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact21.xlsx'</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Nuclear_Generation/usreact22.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>usreact13 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact13.xlsx'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>usreact14 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact14.xlsx'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>usreact15 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact15.xlsx'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>usreact16 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact16.xlsx'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>usreact17 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact17.xlsx'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>usreact18 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact18.xlsx'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>usreact19 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact19.xlsx'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>usreact20 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact20.xlsx'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact21.xlsx'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact22.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>

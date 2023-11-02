@@ -225,12 +225,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor">Nuclear Energy Utilization Factor</a>
+  <li><a href="#nuclear-energy-utilization-factor" id="toc-nuclear-energy-utilization-factor" class="nav-link active" data-scroll-target="#nuclear-energy-utilization-factor"><strong>Nuclear Energy Utilization Factor</strong></a>
   <ul class="collapse">
-  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning:</a>
-  <ul class="collapse">
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code:</a></li>
-  </ul></li>
+  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning:</a></li>
   <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result:</a></li>
   </ul></li>
   <li><a href="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" id="toc-consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="nav-link" data-scroll-target="#consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear"><strong>Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)</strong></a>
@@ -243,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cleaning-2" id="toc-cleaning-2" class="nav-link" data-scroll-target="#cleaning-2">Cleaning:</a></li>
   <li><a href="#result-2" id="toc-result-2" class="nav-link" data-scroll-target="#result-2">Result:</a></li>
   </ul></li>
-  <li><a href="#energy-policy" id="toc-energy-policy" class="nav-link" data-scroll-target="#energy-policy">Energy Policy</a>
+  <li><a href="#energy-policy" id="toc-energy-policy" class="nav-link" data-scroll-target="#energy-policy"><strong>Energy Policy</strong></a>
   <ul class="collapse">
   <li><a href="#cleaning-3" id="toc-cleaning-3" class="nav-link" data-scroll-target="#cleaning-3">Cleaning:</a></li>
   <li><a href="#result-3" id="toc-result-3" class="nav-link" data-scroll-target="#result-3">Result:</a></li>
@@ -272,11 +269,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <section id="nuclear-energy-utilization-factor" class="level1">
-<h1>Nuclear Energy Utilization Factor</h1>
+<h1><strong>Nuclear Energy Utilization Factor</strong></h1>
 <section id="cleaning" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning">Cleaning:</h2>
-<section id="code" class="level3">
-<h3 class="anchored" data-anchor-id="code">Code:</h3>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From https://www.eia.gov/nuclear/generation/index.html</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -400,7 +395,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="co">#usreact.to_csv('Nuclear_Energy_Utilization_Factor.csv', index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-</section>
 <section id="result" class="level2">
 <h2 class="anchored" data-anchor-id="result">Result:</h2>
 <p><img src="images/paste-1.png" class="img-fluid"></p>
@@ -473,32 +467,34 @@ write.csv(df, "/Users/jackyzhang/Documents/Python/DSAN-5000/HW/HW2/Part2/Code/EI
 </section>
 </section>
 <section id="energy-policy" class="level1">
-<h1>Energy Policy</h1>
+<h1><strong>Energy Policy</strong></h1>
 <section id="cleaning-3" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-3">Cleaning:</h2>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fitz</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the path to the txt file</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>pdf_reader <span class="op">=</span> fitz.<span class="bu">open</span>(<span class="st">'../Data/Pre-Clean/Energy_Policy.pdf'</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the txt file to write the extracted text</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'../Data/Cleaned/Energy_Policy.txt'</span>, <span class="st">"w"</span>) <span class="im">as</span> txt_file:</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate through each page in the PDF file</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> page_num <span class="kw">in</span> <span class="bu">range</span>(pdf_reader.page_count):</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get the current page</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        page <span class="op">=</span> pdf_reader.load_page(page_num)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract text from the current page</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> page.get_text()</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Write the text to the txt file</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        txt_file.write(text)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the PDF reader</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>pdf_reader.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www-sciencedirect-com.proxy.library.georgetown.edu/science/article/pii/S030142151830377X</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fitz</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the path to the txt file</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pdf_reader <span class="op">=</span> fitz.<span class="bu">open</span>(<span class="st">'../Data/Pre-Clean/Energy_Policy.pdf'</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the txt file to write the extracted text</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'../Data/Cleaned/Energy_Policy.txt'</span>, <span class="st">"w"</span>) <span class="im">as</span> txt_file:</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate through each page in the PDF file</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> page_num <span class="kw">in</span> <span class="bu">range</span>(pdf_reader.page_count):</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get the current page</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        page <span class="op">=</span> pdf_reader.load_page(page_num)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract text from the current page</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> page.get_text()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Write the text to the txt file</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        txt_file.write(text)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the PDF reader</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>pdf_reader.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="result-3" class="level2">
