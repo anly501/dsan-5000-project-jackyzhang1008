@@ -23,7 +23,7 @@ import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
 
 # Read in data
-nuclear_data = pd.read_csv('../Data/EDA/Nuclear_Energy_Utilization_Factor.csv')
+nuclear_data = pd.read_csv('../data/Cleaned/EDA/Nuclear_Energy_Utilization_Factor.csv')
 
 # Checking for missing values
 missing_values = nuclear_data.isnull().sum()
