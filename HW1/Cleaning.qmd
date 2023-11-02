@@ -1,5 +1,6 @@
 ---
 title: "Cleaning"
+bibliography: references.bib
 ---
 
 # **Nuclear Energy Utilization Factor**
@@ -200,6 +201,8 @@ write.csv(df, "/Users/jackyzhang/Documents/Python/DSAN-5000/HW/HW2/Part2/Code/EI
 ![](images/paste-4.png)
 
 # **Energy Policy**
+
+[@ho2018]
 
 ## Cleaning:
 

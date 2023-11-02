@@ -1,6 +1,6 @@
 ---
 title: "Nuclear Energy"
-bibliography: reference.bib
+bibliography: references.bib
 ---
 
 # Questions
