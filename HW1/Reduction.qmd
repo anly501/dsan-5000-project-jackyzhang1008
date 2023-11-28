@@ -5,6 +5,8 @@ bibliography: references.bib
 
 # Dimensionality Reduction with PCA
 
+This data set is about radiation reading in different state around the US, so
+
 ```{python}
 import torch 
 import pandas as pd
@@ -87,6 +89,8 @@ perplexities = [1, 5, 10]
 # Run and visualize t-SNE for each perplexity
 run_tsne_and_visualize(data_tensor.cpu().numpy(), perplexities)
 ```
+
+# Comparison
 
 # Reference
 
