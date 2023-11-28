@@ -71,8 +71,7 @@ data_tensor = torch.tensor(combined_data.values, dtype=torch.float32).to(device)
 def run_tsne_and_visualize(data, perplexities, n_iter=1000):
     for perplexity in perplexities:
         # Apply t-SNE
-        tsne = TSNE(n_components=2, perplexity=perplexity, n_iter=n_iter, random_state=42)
-        tsne_results = tsne.fit_transform(data)
+        tsne = TSNE(n_components=2, perplexity=perplexity, n_iter=n_iter, random_state=42).fit_transform(data)
 
         # Plot the results
         plt.figure(figsize=(8, 6))
