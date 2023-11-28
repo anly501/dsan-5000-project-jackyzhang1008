@@ -1,5 +1,94 @@
 ---
 title: "Reduction"
+bibliography: references.bib
 ---
 
-# 
+# Dimensionality Reduction with PCA
+
+```{python}
+import torch 
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+```{python}
+data = pd.read_csv('../data/Cleaned/merged_data.csv')
+
+# One-hot encoding the 'LOCATION_NAME' column
+encoder = OneHotEncoder(sparse=False)
+location_encoded = encoder.fit_transform(data[['LOCATION_NAME']])
+
+# Create a DataFrame from the encoded columns
+location_encoded_df = pd.DataFrame(location_encoded, columns=encoder.get_feature_names_out(['LOCATION_NAME']))
+
+# Standard scaling
+scaler = StandardScaler()
+dose_scaled = scaler.fit_transform(data[['DOSE EQUIVALENT RATE (nSv/h)']])
+
+# Create a DataFrame from the scaled column
+dose_scaled_df = pd.DataFrame(dose_scaled, columns=['DOSE EQUIVALENT RATE (nSv/h)'])
+preprocessed_data = pd.concat([location_encoded_df, dose_scaled_df], axis=1)
+preprocessed_data.head()
+
+# Applying PCA
+pca = PCA()
+pca.fit(preprocessed_data)
+
+# Plotting the Cumulative Summation of the Explained Variance
+plt.figure(figsize=(8, 6))
+plt.plot(pca.explained_variance_ratio_.cumsum(), marker='o', linestyle='--')
+plt.title('Cumulative Explained Variance by PCA Components')
+plt.xlabel('Number of Components')
+plt.ylabel('Cumulative Explained Variance')
+plt.grid(True)
+plt.show()
+```
+
+# Dimensionality Reduction with t-SNE
+
+```{python}
+# One-hot encode the "LOCATION_NAME" column
+encoder = OneHotEncoder(sparse=False)
+location_encoded = encoder.fit_transform(data[['LOCATION_NAME']])
+
+# Combine the one-hot encoded location data with the dose equivalent rate data
+combined_data = pd.concat([pd.DataFrame(location_encoded), data['DOSE EQUIVALENT RATE (nSv/h)']], axis=1)
+
+# Device configuration - for Apple GPU
+device = torch.device('mps')
+
+# Convert the combined data to a PyTorch tensor
+data_tensor = torch.tensor(combined_data.values, dtype=torch.float32).to(device)
+
+
+# Define a function to run t-SNE with different perplexity values and visualize the results
+def run_tsne_and_visualize(data, perplexities, n_iter=1000):
+    for perplexity in perplexities:
+        # Apply t-SNE
+        tsne = TSNE(n_components=2, perplexity=perplexity, n_iter=n_iter, random_state=42)
+        tsne_results = tsne.fit_transform(data)
+
+        # Plot the results
+        plt.figure(figsize=(8, 6))
+        sns.scatterplot(x=tsne_results[:, 0], y=tsne_results[:, 1], alpha=0.5)
+        plt.title(f't-SNE with Perplexity = {perplexity}')
+        plt.xlabel('t-SNE Dimension 1')
+        plt.ylabel('t-SNE Dimension 2')
+        plt.show()
+
+# List of perplexity values to explore
+perplexities = [1, 5, 10]
+
+# Run and visualize t-SNE for each perplexity
+run_tsne_and_visualize(data_tensor.cpu().numpy(), perplexities)
+```
+
+# Reference
+
+[@usepa2021]
