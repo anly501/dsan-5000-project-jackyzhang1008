@@ -307,7 +307,7 @@ div.csl-indent {
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>pca.fit(preprocessed_data)</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the Cumulative Summation of the Explained Variance</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.plot(pca.explained_variance_ratio_.cumsum(), marker<span class="op">=</span><span class="st">'o'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Cumulative Explained Variance by PCA Components'</span>)</span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Components'</span>)</span>
@@ -315,7 +315,7 @@ div.csl-indent {
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Reduction_files/figure-html/cell-3-output-1.png" width="515" height="523"></p>
+<p><img src="Reduction_files/figure-html/cell-3-output-1.png" width="663" height="523"></p>
 </div>
 </div>
 </section>
@@ -352,12 +352,18 @@ div.csl-indent {
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># List of perplexity values to explore</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>perplexities <span class="op">=</span> [<span class="dv">5</span>]</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>perplexities <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>]</span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Run and visualize t-SNE for each perplexity</span></span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>run_tsne_and_visualize(data_tensor.cpu().numpy(), perplexities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Reduction_files/figure-html/cell-4-output-1.png" width="679" height="523"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Reduction_files/figure-html/cell-4-output-2.png" width="679" height="523"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Reduction_files/figure-html/cell-4-output-3.png" width="679" height="523"></p>
 </div>
 </div>
 </section>
