@@ -23,7 +23,7 @@ warnings.filterwarnings('ignore')
 
 ```{python}
 data = pd.read_csv('../data/Cleaned/merged_data.csv')
-
+#data = data = data.sample(n=1000)
 # One-hot encoding the 'LOCATION_NAME' column
 encoder = OneHotEncoder(sparse=False)
 location_encoded = encoder.fit_transform(data[['LOCATION_NAME']])

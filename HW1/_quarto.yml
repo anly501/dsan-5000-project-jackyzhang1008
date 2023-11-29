@@ -14,8 +14,8 @@ website:
       - Cleaning.qmd
       - Exploration.qmd
       - Naïve_Bayes.qmd
-      - Clustering.qmd
       - Reduction.qmd
+      - Clustering.qmd
       - Classification.qmd
       - Regression.qmd
       - ARM.qmd
