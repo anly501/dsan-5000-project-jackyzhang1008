@@ -502,5 +502,68 @@
     "title": "Clustering",
     "section": "K-Means",
     "text": "K-Means\n\nElbow\n\nwcss = []  # Within-cluster sum of squares\nfor i in range(1, 11):\n    kmeans = KMeans(n_clusters=i, init='k-means++', random_state=42)\n    kmeans.fit(data_cluster)\n    wcss.append(kmeans.inertia_)\n\n# Plotting the results of the Elbow method\nplt.figure(figsize=(10, 5))\nplt.plot(range(1, 11), wcss, marker='o')\nplt.title('Elbow Method For Optimal k')\nplt.xlabel('Number of clusters')\nplt.ylabel('WCSS')\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\nSilhousette Score\n\nX = data[[\"DOSE EQUIVALENT RATE (nSv/h)\"]]\n\n# Finding the optimal number of clusters using silhouette scores\nsilhouette_scores = []\nk_range = range(2, 11)  # Testing for number of clusters from 2 to 10\n\nfor k in k_range:\n    kmeans = KMeans(n_clusters=k, random_state=0)\n    cluster_labels = kmeans.fit_predict(X)\n    silhouette_avg = silhouette_score(X, cluster_labels)\n    silhouette_scores.append(silhouette_avg)\n\n# Plotting the silhouette scores\nplt.figure(figsize=(10, 6))\nplt.plot(k_range, silhouette_scores, marker='o')\nplt.title(\"Silhouette Scores for Different Numbers of Clusters\")\nplt.xlabel(\"Number of Clusters\")\nplt.ylabel(\"Silhouette Score\")\nplt.xticks(k_range)\nplt.grid(True)\nplt.show()\n\n\n\n\n\nscaler = StandardScaler()\ndata_scaled = scaler.fit_transform(data[['DOSE EQUIVALENT RATE (nSv/h)']])\n\n# Performing k-means clustering with 3 clusters\nkmeans = KMeans(n_clusters=3, random_state=0)\nclusters = kmeans.fit_predict(data_scaled)\n\n# Adding the cluster information to the original dataframe\ndata['Cluster'] = clusters\n\n# Display the first few rows with cluster labels\nclustered_data_head = data.head()\n\n# Summary of clusters\ncluster_summary = data['Cluster'].value_counts()\n\nclustered_data_head, cluster_summary\n\n(           LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster\n 471595       TX: HOUSTON                          36.0        0\n 132294  FL: JACKSONVILLE                          52.0        1\n 188384     IL: CHAMPAIGN                          70.0        1\n 486675    TX: SAN ANGELO                          47.0        0\n 358506       NY: YAPHANK                          40.0        0,\n Cluster\n 1    4306\n 0    3857\n 2    1837\n Name: count, dtype: int64)"
+  },
+  {
+    "objectID": "Decision_tree.html",
+    "href": "Decision_tree.html",
+    "title": "Decision Tree",
+    "section": "",
+    "text": "Random Forest is like a council of wise advisors, each bringing their unique perspective to a problem. By leveraging the wisdom of the crowd, it arrives at decisions that are often more accurate and reliable than those made by a single decision tree. This blend of simplicity, robustness, and versatility makes Random Forest a valuable tool in our data-driven world.\n\n\n\nThey break down complex decisions into simpler, more manageable steps, making them a valuable tool in various applications, from business strategy to data analysis."
+  },
+  {
+    "objectID": "Decision_tree.html#random-forest",
+    "href": "Decision_tree.html#random-forest",
+    "title": "Decision Tree",
+    "section": "",
+    "text": "Random Forest is like a council of wise advisors, each bringing their unique perspective to a problem. By leveraging the wisdom of the crowd, it arrives at decisions that are often more accurate and reliable than those made by a single decision tree. This blend of simplicity, robustness, and versatility makes Random Forest a valuable tool in our data-driven world."
+  },
+  {
+    "objectID": "Decision_tree.html#decision-tree",
+    "href": "Decision_tree.html#decision-tree",
+    "title": "Decision Tree",
+    "section": "",
+    "text": "They break down complex decisions into simpler, more manageable steps, making them a valuable tool in various applications, from business strategy to data analysis."
+  },
+  {
+    "objectID": "Decision_tree.html#prepareing-data",
+    "href": "Decision_tree.html#prepareing-data",
+    "title": "Decision Tree",
+    "section": "Prepareing data",
+    "text": "Prepareing data\n\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom sklearn.preprocessing import LabelEncoder\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.dummy import DummyClassifier\nfrom sklearn.metrics import classification_report\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.tree import plot_tree\nfrom sklearn.metrics import confusion_matrix\nimport seaborn as sns\nimport warnings\nwarnings.filterwarnings('ignore')\n\ndata = pd.read_csv('../data/Cleaned/merged_data.csv')\n# Analyzing the distribution of the \"DOSE EQUIVALENT RATE (nSv/h)\"\nplt.figure(figsize=(10,6))\nplt.hist(data[\"DOSE EQUIVALENT RATE (nSv/h)\"], bins=30, color='blue', alpha=0.7)\nplt.title('Distribution of DOSE EQUIVALENT RATE (nSv/h)')\nplt.xlabel('DOSE EQUIVALENT RATE (nSv/h)')\nplt.ylabel('Frequency')\nplt.grid(True)\nplt.show()\n\n\n\n\n\nlow_threshold, high_threshold = data[\"DOSE EQUIVALENT RATE (nSv/h)\"].quantile([0.33, 0.67])\n\n# Applying the categorization\ndata['Category'] = pd.cut(data[\"DOSE EQUIVALENT RATE (nSv/h)\"], bins=[data[\"DOSE EQUIVALENT RATE (nSv/h)\"].min(), low_threshold, high_threshold, data[\"DOSE EQUIVALENT RATE (nSv/h)\"].max()], labels=[\"Low\", \"Medium\", \"High\"])\ndata.head()\n\n\n\n\n\n\n\n\nLOCATION_NAME\nDOSE EQUIVALENT RATE (nSv/h)\nCategory\n\n\n\n\n0\nAK: ANCHORAGE\n33.0\nLow\n\n\n1\nAK: ANCHORAGE\n32.0\nLow\n\n\n2\nAK: ANCHORAGE\n31.0\nLow\n\n\n3\nAK: ANCHORAGE\n32.0\nLow\n\n\n4\nAK: ANCHORAGE\n31.0\nLow\n\n\n\n\n\n\n\n\nclass_distribution = data['Category'].value_counts(normalize=True)\n\nprint(class_distribution)\n\n# Visualize the distribution\nclass_distribution.plot(kind='bar')\nplt.title('Class Distribution')\nplt.show()\n\nCategory\nLow       0.338109\nMedium    0.333086\nHigh      0.328806\nName: proportion, dtype: float64\n\n\n\n\n\n\nencoder = LabelEncoder()\ndata['LOCATION_NAME_ENCODED'] = encoder.fit_transform(data['LOCATION_NAME'])\ndata['Category_ENCODED'] = encoder.fit_transform(data['Category'])\n# Preparing the data\nX = data[['DOSE EQUIVALENT RATE (nSv/h)']]  # Feature\ny = data['Category_ENCODED']  # Target\n# Splitting the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)"
+  },
+  {
+    "objectID": "Decision_tree.html#decision-tree-1",
+    "href": "Decision_tree.html#decision-tree-1",
+    "title": "Decision Tree",
+    "section": "Decision Tree",
+    "text": "Decision Tree\n\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import classification_report\n# Creating the Decision Tree Classifier\nclf = DecisionTreeClassifier(random_state=42)\n\n# Training the classifier\nclf.fit(X_train, y_train)\n\n# Making predictions\ny_pred = clf.predict(X_test)\n\n# Evaluating the classifier\nclassification_rep = classification_report(y_test, y_pred)\n\nprint(classification_rep)\n\n              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00     38107\n           1       1.00      1.00      1.00     39276\n           2       1.00      1.00      1.00     38122\n           3       1.00      1.00      1.00        15\n\n    accuracy                           1.00    115520\n   macro avg       1.00      1.00      1.00    115520\nweighted avg       1.00      1.00      1.00    115520"
+  },
+  {
+    "objectID": "Decision_tree.html#random-forest-1",
+    "href": "Decision_tree.html#random-forest-1",
+    "title": "Decision Tree",
+    "section": "Random Forest",
+    "text": "Random Forest\n\nrf_classifier = RandomForestClassifier(random_state=42)\n\n# Training the model\nrf_classifier.fit(X_train, y_train)\n\n# Predicting the test set results\ny_pred = rf_classifier.predict(X_test)\n\n# Generating a classification report\nclassification_report_result = classification_report(y_test, y_pred)\nprint(classification_report_result)\n\n              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00     38107\n           1       1.00      1.00      1.00     39276\n           2       1.00      1.00      1.00     38122\n           3       1.00      1.00      1.00        15\n\n    accuracy                           1.00    115520\n   macro avg       1.00      1.00      1.00    115520\nweighted avg       1.00      1.00      1.00    115520"
+  },
+  {
+    "objectID": "Decision_tree.html#baseline-model",
+    "href": "Decision_tree.html#baseline-model",
+    "title": "Decision Tree",
+    "section": "Baseline Model",
+    "text": "Baseline Model\n\ndummy_clf = DummyClassifier(strategy=\"most_frequent\", random_state=42)\ndummy_clf.fit(X_train, y_train)\n\n# Predicting the categories\ny_pred = dummy_clf.predict(X_test)\n\n# Evaluating the classifier\nreport = classification_report(y_test, y_pred)\nprint(report)\n\n              precision    recall  f1-score   support\n\n           0       0.00      0.00      0.00     38107\n           1       0.34      1.00      0.51     39276\n           2       0.00      0.00      0.00     38122\n           3       0.00      0.00      0.00        15\n\n    accuracy                           0.34    115520\n   macro avg       0.08      0.25      0.13    115520\nweighted avg       0.12      0.34      0.17    115520\n\n\n\nWe can see that Baseline Mode is not very accurate at predicting the Category."
+  },
+  {
+    "objectID": "Decision_tree.html#model-turning",
+    "href": "Decision_tree.html#model-turning",
+    "title": "Decision Tree",
+    "section": "Model Turning",
+    "text": "Model Turning\n\nRandom Forest\n\nrf_classifier = RandomForestClassifier(random_state=42)\n\n# Training the model\nrf_classifier.fit(X_train, y_train)\n\n# Predicting the test set results\ny_pred = rf_classifier.predict(X_test)\n\n# Generating a classification report\nclassification_report_result = classification_report(y_test, y_pred)\nprint(classification_report_result)\n\n              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00     38107\n           1       1.00      1.00      1.00     39276\n           2       1.00      1.00      1.00     38122\n           3       1.00      1.00      1.00        15\n\n    accuracy                           1.00    115520\n   macro avg       1.00      1.00      1.00    115520\nweighted avg       1.00      1.00      1.00    115520\n\n\n\nFrom the result we can see that Random Forest almost has the prefect accuracy\n\n\nDecision Tree\n\n# Removing the entry with missing category\ndata_cleaned = data.dropna(subset=['Category'])\n\n# Encoding the 'Category' column\nlabel_encoder = LabelEncoder()\ndata_cleaned['Category_encoded'] = label_encoder.fit_transform(data_cleaned['Category'])\n\n# Splitting the data into features and target variable\nX = data_cleaned[['DOSE EQUIVALENT RATE (nSv/h)']]  # Features\ny = data_cleaned['Category_encoded']               # Target variable\n\n# Splitting the dataset into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)\n\n# Creating the Decision Tree Classifier\nclf = DecisionTreeClassifier(random_state=42)\n\n# Training the model\nclf.fit(X_train, y_train)\n\n# Predicting the test set results\ny_pred = clf.predict(X_test)\n\n# Evaluating the model\nevaluation_report = classification_report(y_test, y_pred, target_names=label_encoder.classes_)\n\nprint(evaluation_report)\n\n              precision    recall  f1-score   support\n\n        High       1.00      1.00      1.00     57042\n         Low       1.00      1.00      1.00     58511\n      Medium       1.00      1.00      1.00     57716\n\n    accuracy                           1.00    173269\n   macro avg       1.00      1.00      1.00    173269\nweighted avg       1.00      1.00      1.00    173269\n\n\n\nFrom the result we can see that Decision Tree has the prefect accuracy"
+  },
+  {
+    "objectID": "Decision_tree.html#result",
+    "href": "Decision_tree.html#result",
+    "title": "Decision Tree",
+    "section": "Result",
+    "text": "Result\n\nDecision Tree\n\nconf_matrix = confusion_matrix(y_test, y_pred)\n\n# Plotting the confusion matrix\nplt.figure(figsize=(8, 6))\nsns.heatmap(conf_matrix, annot=True, fmt='g', cmap='Blues',\n            xticklabels=label_encoder.classes_,\n            yticklabels=label_encoder.classes_)\nplt.title('Confusion Matrix')\nplt.xlabel('Predicted Label')\nplt.ylabel('True Label')\nplt.show()\n\n\n\n\n\n# Plotting the decision tree\nplt.figure(figsize=(20, 10))\nplot_tree(clf, \n          filled=True, \n          feature_names=['DOSE EQUIVALENT RATE'], \n          class_names=label_encoder.classes_,\n          rounded=True, \n          proportion=False)\nplt.title(\"Decision Tree Classifier\")\nplt.show()"
   }
 ]

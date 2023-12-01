@@ -17,6 +17,7 @@ website:
       - Reduction.qmd
       - Clustering.qmd
       - Classification.qmd
+      - Decision_tree.qmd
       - Regression.qmd
       - ARM.qmd
       - Conclusion.qmd

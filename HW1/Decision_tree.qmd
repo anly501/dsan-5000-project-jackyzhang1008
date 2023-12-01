@@ -1,0 +1,179 @@
+---
+title: "Decision Tree"
+---
+
+# Method
+
+## Random Forest
+
+Random Forest is like a council of wise advisors, each bringing their unique perspective to a problem. By leveraging the wisdom of the crowd, it arrives at decisions that are often more accurate and reliable than those made by a single decision tree. This blend of simplicity, robustness, and versatility makes Random Forest a valuable tool in our data-driven world.
+
+## Decision Tree
+
+They break down complex decisions into simpler, more manageable steps, making them a valuable tool in various applications, from business strategy to data analysis.
+
+# Model
+
+## Prepareing data
+
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.dummy import DummyClassifier
+from sklearn.metrics import classification_report
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import plot_tree
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+
+data = pd.read_csv('../data/Cleaned/merged_data.csv')
+# Analyzing the distribution of the "DOSE EQUIVALENT RATE (nSv/h)"
+plt.figure(figsize=(10,6))
+plt.hist(data["DOSE EQUIVALENT RATE (nSv/h)"], bins=30, color='blue', alpha=0.7)
+plt.title('Distribution of DOSE EQUIVALENT RATE (nSv/h)')
+plt.xlabel('DOSE EQUIVALENT RATE (nSv/h)')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.show()
+```
+
+```{python}
+low_threshold, high_threshold = data["DOSE EQUIVALENT RATE (nSv/h)"].quantile([0.33, 0.67])
+
+# Applying the categorization
+data['Category'] = pd.cut(data["DOSE EQUIVALENT RATE (nSv/h)"], bins=[data["DOSE EQUIVALENT RATE (nSv/h)"].min(), low_threshold, high_threshold, data["DOSE EQUIVALENT RATE (nSv/h)"].max()], labels=["Low", "Medium", "High"])
+data.head()
+```
+
+```{python}
+class_distribution = data['Category'].value_counts(normalize=True)
+
+print(class_distribution)
+
+# Visualize the distribution
+class_distribution.plot(kind='bar')
+plt.title('Class Distribution')
+plt.show()
+```
+
+```{python}
+encoder = LabelEncoder()
+data['LOCATION_NAME_ENCODED'] = encoder.fit_transform(data['LOCATION_NAME'])
+data['Category_ENCODED'] = encoder.fit_transform(data['Category'])
+# Preparing the data
+X = data[['DOSE EQUIVALENT RATE (nSv/h)']]  # Feature
+y = data['Category_ENCODED']  # Target
+# Splitting the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+```
+
+## Baseline Model
+
+```{python}
+dummy_clf = DummyClassifier(strategy="most_frequent", random_state=42)
+dummy_clf.fit(X_train, y_train)
+
+# Predicting the categories
+y_pred = dummy_clf.predict(X_test)
+
+# Evaluating the classifier
+report = classification_report(y_test, y_pred)
+print(report)
+```
+
+We can see that Baseline Mode is not very accurate at predicting the Category.
+
+## Model Turning
+
+### Random Forest
+
+```{python}
+rf_classifier = RandomForestClassifier(random_state=42)
+
+# Training the model
+rf_classifier.fit(X_train, y_train)
+
+# Predicting the test set results
+y_pred = rf_classifier.predict(X_test)
+
+# Generating a classification report
+classification_report_result = classification_report(y_test, y_pred)
+print(classification_report_result)
+```
+
+From the result we can see that Random Forest almost has the prefect accuracy
+
+### Decision Tree
+
+```{python}
+# Removing the entry with missing category
+data_cleaned = data.dropna(subset=['Category'])
+
+# Encoding the 'Category' column
+label_encoder = LabelEncoder()
+data_cleaned['Category_encoded'] = label_encoder.fit_transform(data_cleaned['Category'])
+
+# Splitting the data into features and target variable
+X = data_cleaned[['DOSE EQUIVALENT RATE (nSv/h)']]  # Features
+y = data_cleaned['Category_encoded']               # Target variable
+
+# Splitting the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Creating the Decision Tree Classifier
+clf = DecisionTreeClassifier(random_state=42)
+
+# Training the model
+clf.fit(X_train, y_train)
+
+# Predicting the test set results
+y_pred = clf.predict(X_test)
+
+# Evaluating the model
+evaluation_report = classification_report(y_test, y_pred, target_names=label_encoder.classes_)
+
+print(evaluation_report)
+```
+
+From the result we can see that Decision Tree has the prefect accuracy
+
+## Result
+
+### Decision Tree
+
+```{python}
+conf_matrix = confusion_matrix(y_test, y_pred)
+
+# Plotting the confusion matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt='g', cmap='Blues',
+            xticklabels=label_encoder.classes_,
+            yticklabels=label_encoder.classes_)
+plt.title('Confusion Matrix')
+plt.xlabel('Predicted Label')
+plt.ylabel('True Label')
+plt.show()
+```
+
+```{python}
+# Plotting the decision tree
+plt.figure(figsize=(20, 10))
+plot_tree(clf, 
+          filled=True, 
+          feature_names=['DOSE EQUIVALENT RATE'], 
+          class_names=label_encoder.classes_,
+          rounded=True, 
+          proportion=False)
+plt.title("Decision Tree Classifier")
+plt.show()
+```
+
+# **Conclusions**
+
+In summary, while the Decision Tree and Random Forest models show perfect performance, but this is a little werid, as most model doesn't have prefect accuracy. The Baseline Model serves its purpose by providing a lower-bound benchmark for model performance.
