@@ -326,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying the categorization</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Category'</span>] <span class="op">=</span> pd.cut(data[<span class="st">"DOSE EQUIVALENT RATE (nSv/h)"</span>], bins<span class="op">=</span>[data[<span class="st">"DOSE EQUIVALENT RATE (nSv/h)"</span>].<span class="bu">min</span>(), low_threshold, high_threshold, data[<span class="st">"DOSE EQUIVALENT RATE (nSv/h)"</span>].<span class="bu">max</span>()], labels<span class="op">=</span>[<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>])</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
