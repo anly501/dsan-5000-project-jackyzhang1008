@@ -207,11 +207,11 @@ This data set contains 12 columns:
 
 Location Names: Location of different observation point
 
-Sample Collection Time
+Sample Collection Time: The time that the sample is collected
 
-Dose Equivalent Rate (nSv/h)
+Dose Equivalent Rate (nSv/h): Radiation dose in nSv/h
 
-Gamma Count Rate R02 - R09 (CPM)
+Gamma Count Rate R02 - R09 (CPM): Gamma radiation rate in CPM
 
 Status:
 
