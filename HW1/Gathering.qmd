@@ -1,5 +1,6 @@
 ---
 title: "Gathering"
+bibliography: references.bib
 ---
 
 # **Nuclear Energy Utilization Factor**
@@ -141,3 +142,59 @@ library(tidyverse)
 res <- GET("https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&data[0]=consumption-for-eg-btu&data[1]=total-consumption-btu&facets[fueltypeid][]=COW&start=2013&end=2022&sort[0][column]=period&sort[0][direction]=desc&offset=0&length=5000&api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu")
 data <- fromJSON(rawToChar(res$content))
 ```
+
+# **RadNet**
+
+## **About the Data**
+
+The nationwide RadNet system monitors the nation's air, precipitation and drinking water to track radiation in the environment. Over time, RadNet sample testing and monitoring results show the fluctuations in normal background levels of environmental radiation. The RadNet system will also detect higher than normal radiation levels during a radiological incident.
+
+RadNet has tracked radiation from both atmospheric nuclear weapons tests and nuclear reactor accidents at Chernobyl (Ukraine) and Fukushima (Japan). During a radiological incident, public officials use RadNet data to help make science-based decisions about protecting the public. Scientists use RadNet air monitoring data to help estimate the potential radiation dose to humans. They use both air and precipitation data to determine if contaminated rain or snow will wash radionuclides into the soil or water. Learn how RadNet was used during and after [Chernobyl](https://www.epa.gov/radnet/chornobyl-epas-radiological-monitoring)and [Fukushima](https://www.epa.gov/radnet/fukushima-epas-radiological-monitoring).
+
+## **Near-Real-Time Air Monitoring**
+
+RadNet has 140 stationary air monitors located across all 50 states. RadNet stationary monitors run 24 hours a day, 7 days a week, and send near-real-time measurements of gamma radiation to [EPA’s National Analytical Radiation Environmental Laboratory (NAREL)](https://www.epa.gov/aboutepa/about-epas-national-analytical-radiation-environmental-laboratory-narel). Computers continuously review these data. If there is a meaningful increase in radiation levels, laboratory staff are alerted and then investigate the cause.
+
+In an effort to make RadNet radiation data more understandable to the public and easier to compare with international data, EPA is adding exposure rate measurements to our other system capabilities. Exposure rate measurements indicate the level of radiation present per hour in the vicinity of the monitor. 
+
+[View gamma radiation monitoring results in near-real-time on the RadNet Dashboard](https://www.epa.gov/radnet/radnet-near-real-time-air-data).\
+\
+[Download gamma radiation monitoring results in near-real-time as a CSV File](https://www.epa.gov/radnet/radnet-csv-file-downloads).
+
+## **Sampling**
+
+RadNet sample analyses on precipitation, drinking water and air filters are conducted following a routine schedule, unless analysis is accelerated after an emergency event or in response to very low level detection by other international air monitoring agencies. [Learn more about RadNet sampling and analyses schedules.](https://www.epa.gov/radnet/radnet-sampling-and-analyses-schedules)
+
+### **Air Filters**
+
+Filters on RadNet air monitors capture particles from the air (airborne particulates). Monitor operators collect the filters and send them to [EPA’s National Analytical Radiation Environmental Laboratory (NAREL)](https://www.epa.gov/aboutepa/about-epas-national-analytical-radiation-environmental-laboratory-narel) for testing. Staff use these test results to calculate the concentration of radionuclides on the filters and find trends in airborne radiation. Detailed laboratory analysis of air filters detects trace amounts of radioactive material that the sensitive near-real-time air monitors can't detect in real-time. Laboratory analysis identifies the radioactive material and the average concentration on the air filter in the conventional unit of curies (Ci) per cubic meter. [Learn more about curies and the international SI unit of becquerel (Bq).](https://www.epa.gov/radnet/what-units-does-epa-use-report-laboratory-analysis-results-drinking-water-air-filter-and)
+
+![](images/paste-5.png)
+
+RadNet stationary monitors collect air particulates continuously during routine conditions and during radiological incidents. In a radiological emergency, EPA may deploy teams to conduct air monitoring and environmental sampling. [Learn about EPA’s role in radiological emergency response.](https://www.epa.gov/radtown/radiological-emergency-response-and-preparedness)
+
+A RadNet air filter inquiry may be initiated when there is potential for a release of radioactive materials to the air that could result in the presence of airborne radionuclides at low concentrations, or if low concentrations of radionuclides have been detected in the US or by an international agency. **A RadNet air filter inquiry is not a response to a known radiological emergency**. [View the RadNet Air Filter Inquiry Log](https://www.epa.gov/radnet/radnet-air-filter-inquiries).
+
+RadNet air monitors pass air through a filter which traps particulates. Filters are sent to NAREL for a sensitive screening analysis and, if needed, additional laboratory analyses that identify the radionuclide(s) on the filter.
+
+Monitor operators collect air filters and send them to NAREL for analysis. Laboratory analyses include a gross beta analysis is performed on each air filter, followed by a gamma scan if the beta activity is greater than 1 pCi/m^3^. Each year, a composite sample of the air filters for each monitor is analyzed for gamma emitting radionuclides. Isotopic plutonium (Pu-238, Pu-239/Pu-240) and uranium (U-234, U-235, and U-238) analyses are performed on composite samples from one-fourth of the stations on a four-year rotating schedule. We cannot distinguish between Pu-239 and Pu-240, so we write it as Pu-239/240.
+
+[View RadNet air filter results by monitoring station](https://www.epa.gov/radnet/radnet-laboratory-data-state), or [search for results on the Envirofacts website.](https://enviro.epa.gov/enviro/erams_query_v2.simple_query)
+
+### **Precipitation**
+
+EPA scientists routinely test precipitation samples from 26 sites in the U.S. to find trends in radionuclide concentration. The stations submit precipitation samples to NAREL following rainfall, snow or sleet events. Under normal conditions, scientists composite the samples and analyze them monthly. The composite sample is analyzed for gamma-emitting nuclides. Results are reported in picocuries per liter (pCi/L).
+
+[View RadNet precipitation data on the Envirofacts website.](https://enviro.epa.gov/enviro/erams_query_v2.simple_query)
+
+### **Drinking Water**
+
+EPA's RadNet program obtains quarterly drinking water samples from 47 sites across the country for laboratory analysis. Every sample is analyzed for tritium (H-3) quarterly. One sample from each station is analyzed for iodine-131 (I-131) once a year.
+
+An annual composite sample from each monitoring station is analyzed for gross alpha and beta radiation. Any sample with elevated gross alpha radiation (2 pCi/L) will be analyzed for radium-226 (Ra-226), plutonium (Pu-238, Pu-239 Pu-240), and uranium (U-234, U-235, and U-238). If the radium-226 result is between 3 and 5 pCi/L, then the sample is analyzed for radium-228 (Ra-228). All of the annual composite samples are also analyzed for gamma-emitting radionuclides. Twenty-five percent (25%) of the annual composite samples from each monitoring station are analyzed for strontium-90 (Sr-90).
+
+[View RadNet drinking water data on the Envirofacts website.](https://enviro.epa.gov/enviro/erams_query_v2.simple_query)
+
+## Description of the data
+
+[@usepa2014]

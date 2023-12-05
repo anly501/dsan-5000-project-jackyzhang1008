@@ -242,7 +242,7 @@ Contents lists available at ScienceDirect Energy Policy journal homepage: www.el
 ## Code
 
 ```{python}
-# https://www.epa.gov/radnet/radnet-csv-file-downloads#DC
+# https://www.epa.gov/radnet/radnet-csv-file-downloads
 import pandas as pd
 import glob
 
