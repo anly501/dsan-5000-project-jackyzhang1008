@@ -48,6 +48,8 @@ usreact21 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact21.xlsx')
 usreact22 = pd.read_excel('../Data/Pre-Clean/Nuclear_Generation/usreact22.xlsx')
 ```
 
+[@u.s.nuc]
+
 # **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
 
 ## Description of the data
@@ -104,6 +106,8 @@ for chunk in details:
 columns = ['period', 'location', 'stateDescription', 'sectorid', 'sectorDescription', 'fueltypeid', 'fuelTypeDescription', 'consumption-for-eg-btu', 'consumption-for-eg-btu-units', 'total-consumption-btu', 'total-consumption-btu-units']
 ```
 
+[@opendata]
+
 # **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**
 
 ## Description of the data
@@ -142,6 +146,8 @@ library(tidyverse)
 res <- GET("https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&data[0]=consumption-for-eg-btu&data[1]=total-consumption-btu&facets[fueltypeid][]=COW&start=2013&end=2022&sort[0][column]=period&sort[0][direction]=desc&offset=0&length=5000&api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu")
 data <- fromJSON(rawToChar(res$content))
 ```
+
+[@opendata]
 
 # **RadNet**
 
@@ -196,5 +202,24 @@ An annual composite sample from each monitoring station is analyzed for gross al
 [View RadNet drinking water data on the Envirofacts website.](https://enviro.epa.gov/enviro/erams_query_v2.simple_query)
 
 ## Description of the data
+
+This data set contains columns
+
+## Get the Data from CSV
+
+```{python}
+import pandas as pd
+import glob
+
+# Read in the data
+files_path = sorted(glob.glob('../Data/Pre-Clean/rad_net/*.csv'))
+dfs = []
+for file in files_path:
+    df = pd.read_csv(file)
+    dfs.append(df)
+
+full_df = pd.concat(dfs, ignore_index=True)
+print(full_df.head())
+```
 
 [@usepa2014]

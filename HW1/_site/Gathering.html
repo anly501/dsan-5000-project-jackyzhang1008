@@ -255,7 +255,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#radnet" id="toc-radnet" class="nav-link" data-scroll-target="#radnet"><strong>RadNet</strong></a>
   <ul class="collapse">
-  <li><a href="#description-of-the-data-3" id="toc-description-of-the-data-3" class="nav-link" data-scroll-target="#description-of-the-data-3">Description of the data</a></li>
+  <li><a href="#about-the-data" id="toc-about-the-data" class="nav-link" data-scroll-target="#about-the-data"><strong>About the Data</strong></a></li>
   <li><a href="#near-real-time-air-monitoring" id="toc-near-real-time-air-monitoring" class="nav-link" data-scroll-target="#near-real-time-air-monitoring"><strong>Near-Real-Time Air Monitoring</strong></a></li>
   <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><strong>Sampling</strong></a>
   <ul class="collapse">
@@ -263,6 +263,8 @@ div.csl-indent {
   <li><a href="#precipitation" id="toc-precipitation" class="nav-link" data-scroll-target="#precipitation"><strong>Precipitation</strong></a></li>
   <li><a href="#drinking-water" id="toc-drinking-water" class="nav-link" data-scroll-target="#drinking-water"><strong>Drinking Water</strong></a></li>
   </ul></li>
+  <li><a href="#description-of-the-data-3" id="toc-description-of-the-data-3" class="nav-link" data-scroll-target="#description-of-the-data-3">Description of the data</a></li>
+  <li><a href="#get-the-data-from-csv" id="toc-get-the-data-from-csv" class="nav-link" data-scroll-target="#get-the-data-from-csv">Get the Data from CSV</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -321,6 +323,7 @@ div.csl-indent {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>usreact21 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact21.xlsx'</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usreact22 <span class="op">=</span> pd.read_excel(<span class="st">'../Data/Pre-Clean/Nuclear_Generation/usreact22.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><span class="citation" data-cites="u.s.nuc">(<a href="#ref-u.s.nuc" role="doc-biblioref"><span>“U.s. Nuclear Generation of Electricity,”</span> n.d.</a>)</span></p>
 </section>
 </section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputnuclear" class="level1">
@@ -367,6 +370,7 @@ div.csl-indent {
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns</span></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [<span class="st">'period'</span>, <span class="st">'location'</span>, <span class="st">'stateDescription'</span>, <span class="st">'sectorid'</span>, <span class="st">'sectorDescription'</span>, <span class="st">'fueltypeid'</span>, <span class="st">'fuelTypeDescription'</span>, <span class="st">'consumption-for-eg-btu'</span>, <span class="st">'consumption-for-eg-btu-units'</span>, <span class="st">'total-consumption-btu'</span>, <span class="st">'total-consumption-btu-units'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><span class="citation" data-cites="opendata">(<a href="#ref-opendata" role="doc-biblioref"><span>“Opendata - u.s. Energy Information Administration (EIA),”</span> n.d.</a>)</span></p>
 </section>
 </section>
 <section id="consumption-of-fuels-for-electricity-generation-and-useful-thermal-outputcoal" class="level1">
@@ -394,12 +398,13 @@ library(jsonlite)
 library(tidyverse)
 res &lt;- GET("https://api.eia.gov/v2/electricity/electric-power-operational-data/data/?frequency=annual&amp;data[0]=consumption-for-eg-btu&amp;data[1]=total-consumption-btu&amp;facets[fueltypeid][]=COW&amp;start=2013&amp;end=2022&amp;sort[0][column]=period&amp;sort[0][direction]=desc&amp;offset=0&amp;length=5000&amp;api_key=Bc2HtlspmpvpzuBbPfIi8HoancNTzVYN9YApx3fu")
 data &lt;- fromJSON(rawToChar(res$content))</code></pre>
+<p><span class="citation" data-cites="opendata">(<a href="#ref-opendata" role="doc-biblioref"><span>“Opendata - u.s. Energy Information Administration (EIA),”</span> n.d.</a>)</span></p>
 </section>
 </section>
 <section id="radnet" class="level1">
 <h1><strong>RadNet</strong></h1>
-<section id="description-of-the-data-3" class="level2">
-<h2 class="anchored" data-anchor-id="description-of-the-data-3">Description of the data</h2>
+<section id="about-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-data"><strong>About the Data</strong></h2>
 <p>The nationwide RadNet system monitors the nation’s air, precipitation and drinking water to track radiation in the environment. Over time, RadNet sample testing and monitoring results show the fluctuations in normal background levels of environmental radiation. The RadNet system will also detect higher than normal radiation levels during a radiological incident.</p>
 <p>RadNet has tracked radiation from both atmospheric nuclear weapons tests and nuclear reactor accidents at Chernobyl (Ukraine) and Fukushima (Japan).&nbsp;During a radiological incident, public officials use RadNet data to help make science-based decisions about protecting the public. Scientists use RadNet air monitoring data to help estimate the potential radiation dose to humans. They use both air and precipitation data to determine if contaminated rain or snow will wash radionuclides into the soil or water. Learn how&nbsp;RadNet was used during and after <a href="https://www.epa.gov/radnet/chornobyl-epas-radiological-monitoring">Chernobyl</a>and&nbsp;<a href="https://www.epa.gov/radnet/fukushima-epas-radiological-monitoring">Fukushima</a>.</p>
 </section>
@@ -434,15 +439,81 @@ data &lt;- fromJSON(rawToChar(res$content))</code></pre>
 <p>EPA’s RadNet program obtains quarterly drinking water samples from 47 sites across the country for laboratory analysis. Every sample is analyzed for tritium (H-3) quarterly. One sample from each station is analyzed for iodine-131 (I-131) once a year.</p>
 <p>An annual composite sample from each monitoring station is analyzed for gross alpha and beta radiation. Any sample with elevated gross alpha radiation (2 pCi/L) will be analyzed for radium-226 (Ra-226), plutonium (Pu-238, Pu-239 Pu-240), and uranium (U-234, U-235, and U-238). If the radium-226 result is between 3 and 5 pCi/L, then the sample is analyzed for radium-228 (Ra-228). All of the annual composite samples are also analyzed for gamma-emitting radionuclides. Twenty-five percent (25%) of the annual composite samples from each monitoring station are analyzed for strontium-90 (Sr-90).</p>
 <p><a href="https://enviro.epa.gov/enviro/erams_query_v2.simple_query">View RadNet drinking water data on the Envirofacts website.</a></p>
+</section>
+</section>
+<section id="description-of-the-data-3" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-the-data-3">Description of the data</h2>
+</section>
+<section id="get-the-data-from-csv" class="level2">
+<h2 class="anchored" data-anchor-id="get-the-data-from-csv">Get the Data from CSV</h2>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>files_path <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'../Data/Pre-Clean/rad_net/*.csv'</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> []</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files_path:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(<span class="bu">file</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    dfs.append(df)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>full_df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(full_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   LOCATION_NAME SAMPLE COLLECTION TIME  DOSE EQUIVALENT RATE (nSv/h)  \
+0  AK: ANCHORAGE    01/01/2023 00:41:00                          33.0   
+1  AK: ANCHORAGE    01/01/2023 01:41:00                          32.0   
+2  AK: ANCHORAGE    01/01/2023 02:41:00                          31.0   
+3  AK: ANCHORAGE    01/01/2023 03:42:00                          32.0   
+4  AK: ANCHORAGE    01/01/2023 04:42:00                          31.0   
+
+   GAMMA COUNT RATE R02 (CPM)  GAMMA COUNT RATE R03 (CPM)  \
+0                       657.0                       368.0   
+1                       651.0                       369.0   
+2                       645.0                       366.0   
+3                       650.0                       369.0   
+4                       647.0                       364.0   
+
+   GAMMA COUNT RATE R04 (CPM)  GAMMA COUNT RATE R05 (CPM)  \
+0                       116.0                        75.0   
+1                       114.0                        70.0   
+2                       112.0                        73.0   
+3                       114.0                        71.0   
+4                       113.0                        69.0   
+
+   GAMMA COUNT RATE R06 (CPM)  GAMMA COUNT RATE R07 (CPM)  \
+0                        41.0                        60.0   
+1                        39.0                        61.0   
+2                        38.0                        60.0   
+3                        41.0                        61.0   
+4                        40.0                        59.0   
+
+   GAMMA COUNT RATE R08 (CPM)  GAMMA COUNT RATE R09 (CPM)    STATUS  
+0                        71.0                        28.0  APPROVED  
+1                        70.0                        27.0  APPROVED  
+2                        72.0                        29.0  APPROVED  
+3                        69.0                        27.0  APPROVED  
+4                        70.0                        27.0  APPROVED  </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/4f/565zs95x5xb988rb96g8px_40000gn/T/ipykernel_17037/3056901294.py:11: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  full_df = pd.concat(dfs, ignore_index=True)</code></pre>
+</div>
+</div>
 <p><span class="citation" data-cites="usepa2014">(<a href="#ref-usepa2014" role="doc-biblioref">US EPA 2014</a>)</span></p>
 
 
 
 </section>
 </section>
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-opendata" class="csl-entry" role="listitem">
+<span>“Opendata - u.s. Energy Information Administration (EIA).”</span> n.d. <a href="https://www.eia.gov/opendata/index.php">https://www.eia.gov/opendata/index.php</a>.
+</div>
+<div id="ref-u.s.nuc" class="csl-entry" role="listitem">
+<span>“U.s. Nuclear Generation of Electricity.”</span> n.d. <a href="https://www.eia.gov/nuclear/generation/index.html">https://www.eia.gov/nuclear/generation/index.html</a>.
+</div>
 <div id="ref-usepa2014" class="csl-entry" role="listitem">
 US EPA, OAR. 2014. <span>“RadNet.”</span> <a href="https://www.epa.gov/radnet">https://www.epa.gov/radnet</a>.
 </div>
