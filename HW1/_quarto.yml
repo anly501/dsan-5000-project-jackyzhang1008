@@ -16,10 +16,7 @@ website:
       - Naïve_Bayes.qmd
       - Reduction.qmd
       - Clustering.qmd
-      - Classification.qmd
       - Decision_tree.qmd
-      - Regression.qmd
-      - ARM.qmd
       - Conclusion.qmd
 
 format:
