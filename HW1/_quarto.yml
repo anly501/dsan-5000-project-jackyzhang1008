@@ -14,9 +14,10 @@ website:
       - Cleaning.qmd
       - Exploration.qmd
       - Naïve_Bayes.qmd
+      - Decision_tree.qmd
       - Reduction.qmd
       - Clustering.qmd
-      - Decision_tree.qmd
+      - ARM.qmd
       - Conclusion.qmd
 
 format:

@@ -17,7 +17,7 @@ bibliography: references.bib
 
 6.  Is nuclear energy safe?
 
-7.  Is there any environmental problem with nuclear energy?
+7.  Problem with radiation?
 
 8.  What is the difference between fission and fusion?
 

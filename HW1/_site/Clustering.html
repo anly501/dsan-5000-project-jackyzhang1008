@@ -200,6 +200,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Decision_tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decision Tree</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Reduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reduction</span></a>
   </div>
@@ -212,8 +218,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Decision_tree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Decision Tree</span></a>
+  <a href="./ARM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ARM</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -388,16 +394,16 @@ div.csl-indent {
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>clustered_data_head, cluster_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(        LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
- 545127    WA: SPOKANE                          87.0        1
- 570409    WI: SHAWANO                          54.0        0
- 171748   HI: HONOLULU                          30.0        2
- 100574  CA: SAN DIEGO                          86.0        1
- 289035  NC: CHARLOTTE                          38.0        2,
+<pre><code>(            LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
+ 84003          CA: FRESNO                          51.0        0
+ 218263        KY: PADUCAH                          69.0        0
+ 352756  NY: NEW YORK CITY                          58.0        0
+ 23652      AL: BIRMINGHAM                          61.0        0
+ 38938     AR: LITTLE ROCK                          95.0        1,
  Cluster
- 0    4199
- 2    3944
- 1    1857
+ 0    4241
+ 2    3720
+ 1    2039
  Name: count, dtype: int64)</code></pre>
 </div>
 </div>
@@ -450,13 +456,13 @@ div.csl-indent {
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the number of clusters and the first few rows of the dataset with cluster labels</span></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>n_clusters_selected, data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>(3,
-         LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
- 545127    WA: SPOKANE                          87.0        0
- 570409    WI: SHAWANO                          54.0        0
- 171748   HI: HONOLULU                          30.0        0
- 100574  CA: SAN DIEGO                          86.0        0
- 289035  NC: CHARLOTTE                          38.0        0)</code></pre>
+<pre><code>(1,
+             LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
+ 84003          CA: FRESNO                          51.0        0
+ 218263        KY: PADUCAH                          69.0        0
+ 352756  NY: NEW YORK CITY                          58.0        0
+ 23652      AL: BIRMINGHAM                          61.0        0
+ 38938     AR: LITTLE ROCK                          95.0        0)</code></pre>
 </div>
 </div>
 </section>
