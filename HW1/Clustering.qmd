@@ -125,7 +125,7 @@ num_clusters = {}
 
 # Perform DBSCAN clustering for each eps value and store the number of clusters
 for eps in eps_values:
-    db = DBSCAN(eps=eps, min_samples=min_samples).fit(dose_data)
+    db = DBSCAN(eps=eps, min_samples=min_samples, n_jobs=-1).fit(dose_data)
     labels = db.labels_
     
     # Number of clusters in labels, ignoring noise if present

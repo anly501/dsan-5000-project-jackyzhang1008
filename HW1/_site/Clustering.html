@@ -394,16 +394,16 @@ div.csl-indent {
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>clustered_data_head, cluster_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(            LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
- 84003          CA: FRESNO                          51.0        0
- 218263        KY: PADUCAH                          69.0        0
- 352756  NY: NEW YORK CITY                          58.0        0
- 23652      AL: BIRMINGHAM                          61.0        0
- 38938     AR: LITTLE ROCK                          95.0        1,
+<pre><code>(           LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
+ 131645  FL: JACKSONVILLE                          35.0        2
+ 149503         FL: TAMPA                          33.0        2
+ 204918       KS: WICHITA                          59.0        1
+ 544611       WA: SPOKANE                          85.0        0
+ 172256      HI: HONOLULU                          31.0        2,
  Cluster
- 0    4241
- 2    3720
- 1    2039
+ 1    4146
+ 2    3977
+ 0    1877
  Name: count, dtype: int64)</code></pre>
 </div>
 </div>
@@ -423,7 +423,7 @@ div.csl-indent {
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform DBSCAN clustering for each eps value and store the number of clusters</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> eps <span class="kw">in</span> eps_values:</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> DBSCAN(eps<span class="op">=</span>eps, min_samples<span class="op">=</span>min_samples).fit(dose_data)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> DBSCAN(eps<span class="op">=</span>eps, min_samples<span class="op">=</span>min_samples, n_jobs<span class="op">=-</span><span class="dv">1</span>).fit(dose_data)</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> db.labels_</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Number of clusters in labels, ignoring noise if present</span></span>
@@ -456,13 +456,13 @@ div.csl-indent {
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the number of clusters and the first few rows of the dataset with cluster labels</span></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>n_clusters_selected, data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>(1,
-             LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
- 84003          CA: FRESNO                          51.0        0
- 218263        KY: PADUCAH                          69.0        0
- 352756  NY: NEW YORK CITY                          58.0        0
- 23652      AL: BIRMINGHAM                          61.0        0
- 38938     AR: LITTLE ROCK                          95.0        0)</code></pre>
+<pre><code>(3,
+            LOCATION_NAME  DOSE EQUIVALENT RATE (nSv/h)  Cluster
+ 131645  FL: JACKSONVILLE                          35.0        0
+ 149503         FL: TAMPA                          33.0        0
+ 204918       KS: WICHITA                          59.0        0
+ 544611       WA: SPOKANE                          85.0        0
+ 172256      HI: HONOLULU                          31.0        0)</code></pre>
 </div>
 </div>
 </section>
