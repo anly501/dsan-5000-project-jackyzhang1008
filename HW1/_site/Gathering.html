@@ -443,6 +443,7 @@ data &lt;- fromJSON(rawToChar(res$content))</code></pre>
 </section>
 <section id="description-of-the-data-3" class="level2">
 <h2 class="anchored" data-anchor-id="description-of-the-data-3">Description of the data</h2>
+<p>This data set contains columns</p>
 </section>
 <section id="get-the-data-from-csv" class="level2">
 <h2 class="anchored" data-anchor-id="get-the-data-from-csv">Get the Data from CSV</h2>
@@ -458,7 +459,8 @@ data &lt;- fromJSON(rawToChar(res$content))</code></pre>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    dfs.append(df)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>full_df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(full_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(full_df.head())</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(full_df.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   LOCATION_NAME SAMPLE COLLECTION TIME  DOSE EQUIVALENT RATE (nSv/h)  \
 0  AK: ANCHORAGE    01/01/2023 00:41:00                          33.0   
@@ -493,10 +495,11 @@ data &lt;- fromJSON(rawToChar(res$content))</code></pre>
 1                        70.0                        27.0  APPROVED  
 2                        72.0                        29.0  APPROVED  
 3                        69.0                        27.0  APPROVED  
-4                        70.0                        27.0  APPROVED  </code></pre>
+4                        70.0                        27.0  APPROVED  
+(875467, 12)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/4f/565zs95x5xb988rb96g8px_40000gn/T/ipykernel_17037/3056901294.py:11: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+<pre><code>/var/folders/4f/565zs95x5xb988rb96g8px_40000gn/T/ipykernel_18035/2109943167.py:11: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
   full_df = pd.concat(dfs, ignore_index=True)</code></pre>
 </div>
 </div>
