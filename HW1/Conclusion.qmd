@@ -58,28 +58,192 @@ title: "Conclusion"
 
 ## Data Gathering
 
-### **Nuclear Energy Utilization Factor**
+### Nuclear Energy Utilization Factor
 
-In this part I garter the information from
+-   Collected data from nine Excel files, each representing a year from 2013 to 2022.
 
-### **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
+-   The data includes detailed information about nuclear power plants in the U.S., such as State, Plant ID, Plant Name, Unit, monthly and yearly electricity generation in Megawatt-hours, Nameplate, Summer, and the Utilization Factor.
 
-### **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**
+-   The Utilization Factor is a significant metric calculated as Summer/Nameplate, indicating the efficiency of power usage.
 
-### **RadNet**
+### Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear and Coal)
+
+-   You've used Python and R APIs to extract data on fuel consumption for electricity generation, focusing on nuclear and coal energy sources.
+
+-   This dataset includes information like the period (year), location, state description, sector ID and description, fuel type ID and description, and consumption metrics in million MMBtu.
+
+### RadNet
+
+-   RadNet data provides insight into the nation’s air, precipitation, and drinking water radiation levels.
+
+-   You have compiled data from RadNet which includes various parameters like location, sample collection time, radiation dose, gamma radiation rate, and status.
+
+-   This data is crucial for understanding environmental radiation levels and for making informed decisions during radiological incidents.
 
 ## Data Cleaning
 
+### Nuclear Energy Utilization Factor:
+
+-   **Initial Processing**: Read in Excel files for each year from 2013 to 2022, making row 5 the column header, and dropping irrelevant rows and columns. This step ensures that each dataset has a uniform structure.
+
+-   **Cleaning Operations**: Replacing empty strings and "." with NaN, dropping the 'Plant ID' column, renaming 'Plant Name' to 'Plant', and converting specific columns to numeric types. These steps help in standardizing the data format and removing unnecessary details.
+
+-   **Grouping and Merging**: You've grouped data by plant and averaged the utilization factors, then merged these datasets based on the 'Plant' column for each year. This approach simplifies the data for trend analysis over the years.
+
+### Consumption of Fuels for Electricity Generation (Nuclear and Coal):
+
+-   **API Data Retrieval and Processing**: Using Python and R, extracted data from the API for both nuclear and coal energy consumption. This approach allows for the collection of the most recent and relevant data.
+
+-   **Dataframe Transformation**: Selective dropping of columns to focus on total consumption and period data. This focuses the analysis on key indicators of consumption.
+
+-   **CSV Exportation**: The cleaned data is exported for future use, ensuring that the data is preserved in a convenient format for analysis.
+
+### RadNet Monitoring Data:
+
+-   **Data Consolidation**: Consolidated multiple CSV files into a single dataframe, creating a comprehensive dataset of radiation monitoring.
+
+-   **Selective Column Dropping**: Removing unnecessary columns like various gamma count rates and status, which streamlines the dataset to focus on the dose equivalent rate.
+
+-   **Missing Value Handling**: Dropping rows with missing values ensures data integrity and accuracy.
+
+### Energy Policy Text Extraction:
+
+-   **PDF Processing**: Text extraction from a PDF document using the **`fitz`** library, ensuring that the textual data is accessible for analysis.
+
+-   **Text File Creation**: The extracted text is saved to a .txt file, making it easier to access and analyze the content.
+
 ## Exploratory Data Analysis
+
+### Nuclear Energy Utilization Factor
+
+1.  **Stable High Performance**: The majority of nuclear plants demonstrate high utilization factors, typically ranging between 90 to 100. This indicates a consistent and efficient performance in generating nuclear energy across most plants.
+
+2.  **Symmetric Distribution with Variability**: The utilization factors across the years show a relatively symmetric distribution, indicating a balanced performance across nuclear plants. However, certain years exhibit greater variability, suggesting fluctuations in operational efficiency.
+
+3.  **Positive Correlations**: The positive correlations between utilization factors across different years suggest that plants maintaining high performance in one year tend to replicate this performance in subsequent years. This pattern underscores the importance of consistent operational standards and practices.
+
+4.  **Distinguished High and Low Performers**: Specific plants, such as Peach Bottom and Calvert Cliffs Nuclear Power Plant, consistently outperform others with average utilization factors above 97. In contrast, plants like Grand Gulf and Fermi are identified as consistent low performers, indicating potential areas for operational improvements or investigations.
+
+5.  **Performance Tiers**: The categorization into performance tiers provides a clear stratification of plants based on efficiency levels. It highlights the plants that are excelling and those that might require more attention or resources to enhance their performance.
+
+6.  **Identification of Outliers**: The analysis successfully identifies outliers for each year, indicating plants that significantly deviate from the average performance. Repeated appearance of certain plants as outliers, such as Grand Gulf and Fermi, suggests persistent issues that may need targeted intervention.
 
 ## Naive Bayes
 
+### Nuclear Energy Utilization Factor Prediction:
+
+-   **Handling Outliers**: The preprocessing step included capping the utilization factors at 100% to ensure the data falls within a realistic range. This approach reflects real-world scenarios where utilization might occasionally exceed 100%.
+
+-   **Feature Selection and Categorization**: The mean utilization factor from 2013 to 2021 was used as a feature to predict the utilization category for 2022. Utilization factors were categorized as 'High' (≥ 90%) or 'Low' (\< 90%), simplifying the classification task.
+
+-   **Model Performance**:
+
+    -   The Gaussian Naïve Bayes model achieved an 80% accuracy, indicating a good level of predictive capability.
+
+    -   The model performed better in predicting the 'High' utilization category, as evidenced by higher precision, recall, and F1-scores.
+
+    -   The confusion matrix indicated a balanced number of false positives and negatives, suggesting that the model does not excessively favor one class over the other.
+
+-   **Insights and Recommendations**:
+
+    -   Given the model's relatively high accuracy, it can be a valuable tool for preliminary assessments of plant performance.
+
+    -   The model could be improved by incorporating more features or exploring other variants of Naïve Bayes.
+
+    -   This approach can aid in resource allocation, maintenance scheduling, and operational planning for nuclear plants.
+
+### Text Data Analysis on Nuclear Energy-Related Topics:
+
+-   **Text Processing and Labeling**: The text data was segmented, cleaned, and labeled based on the presence of nuclear-related keywords. This preprocessing step is crucial for effective classification.
+
+-   **Model Performance on Text Data**:
+
+    -   The Multinomial Naïve Bayes classifier achieved a 90% accuracy, indicating a strong capability in classifying text data as related or not related to nuclear energy.
+
+    -   The model showed excellent precision in identifying sentences related to nuclear energy.
+
+    -   The recall was lower for the positive class, suggesting some relevant sentences were missed.
+
+-   **Implications and Future Work**:
+
+    -   The classifier can be a useful tool for filtering and categorizing text data in the context of nuclear energy research and policy analysis.
+
+    -   Improvements can be made by refining the keyword list, incorporating more sophisticated natural language processing techniques, or using a larger and more diverse dataset for training.
+
+    -   This method can be extended to other domains where keyword-based classification is applicable.
+
 ## Decision Tree
 
-## Denomination Reduction
+### Random Forest Classifier:
+
+-   The Random Forest model, known for its robustness and ability to handle complex datasets, displayed exceptional performance with near-perfect precision, recall, and F1-scores across all categories.
+
+-   This high level of accuracy suggests that the model effectively captured the patterns and relationships in the data, providing reliable predictions.
+
+-   However, the perfect accuracy might also raise questions about overfitting, the complexity of the model, or the distinctiveness of the dataset features.
+
+### Decision Tree Classifier:
+
+-   The Decision Tree model also showed perfect performance metrics, which is unusual in practical scenarios.
+
+-   Decision Trees are simpler and more interpretable compared to Random Forests, but they are generally more prone to overfitting.
+
+-   The visualization of the Decision Tree provides valuable insights into how the model makes decisions, offering a clear and intuitive understanding of the underlying process.
+
+## Reduction
+
+### Principal Component Analysis (PCA):
+
+-   PCA was effective in reducing the dimensions of the dataset while preserving most of the variance. The cumulative explained variance plot showed a flattening curve, suggesting that a substantial amount of information can be captured with a relatively small number of components.
+
+-   The scatter plot of the first two principal components provided a high-level overview of the data's structure. However, as PCA prioritizes variance, it may miss some of the subtler, non-linear relationships present in the data.
+
+### t-Distributed Stochastic Neighbor Embedding (t-SNE):
+
+-   t-SNE provided a more nuanced view of the dataset, particularly in capturing local structures and relationships. By varying the perplexity parameter, different aspects of the data were emphasized.
+
+-   The plots with different perplexity values highlighted the importance of this parameter in t-SNE. Lower perplexity focused more on local structures, while a higher perplexity provided a more global view of the data. However, too high or too low a perplexity can lead to misleading representations.
 
 ## Clustering
 
+### K-Means Clustering:
+
+-   **Elbow Method**: The Elbow method provided a visual means to estimate the optimal number of clusters. The plot suggested a leveling off around 20-30 clusters, which is indicative of a point beyond which adding more clusters doesn't significantly improve the model.
+
+-   **Silhouette Scores**: The Silhouette analysis was used to validate the consistency within clusters. It showed how the data is grouped into clusters and the separation between them, offering a quantifiable measure to determine the optimal number of clusters.
+
+-   **Implementation and Results**: Implementing K-Means with 3 clusters based on the standard scaled data provided a clear categorization of the dose rates into distinct groups, reflecting differing levels of radiation exposure.
+
+### DBSCAN Clustering:
+
+-   **Epsilon Variation Analysis**: By varying the epsilon parameter, DBSCAN's sensitivity to the density of the dataset was explored. The optimal epsilon value was found to be around 1.0, providing a balance between cluster formation and noise recognition.
+
+-   **Noise Handling and Cluster Formation**: DBSCAN effectively identified core points and outliers, distinguishing between high-density areas and sparse regions. This characteristic made DBSCAN particularly useful for datasets with noise or anomalies.
+
+### Hierarchical Clustering:
+
+-   **Dendrogram Visualization**: The dendrogram provided a visual representation of the data aggregation process, illustrating how individual elements are grouped into clusters.
+
+-   **Agglomerative Approach**: Using an agglomerative method, the hierarchical clustering revealed the multi-level structure of the dataset, offering insights into the natural groupings present in the radiation data.
+
 # Conclusion
 
+The comprehensive analysis of nuclear energy-related data using various data science techniques revealed multifaceted insights into the operational efficiency of nuclear plants, environmental radiation levels, and thematic content in textual data. The study encompassed a range of methodologies including data cleaning, exploratory data analysis (EDA), Naïve Bayes classification, dimensionality reduction, and clustering techniques, each contributing unique perspectives to our understanding of nuclear energy and its implications.
+
 # Furture Imporvement
+
+The current analysis of nuclear energy data, while comprehensive, presents opportunities for further optimization and efficiency, particularly by leveraging GPU-accelerated libraries like cuML from RAPIDS. cuML offers significant performance improvements over traditional CPU-based libraries, making it an ideal choice for handling large datasets and complex computations more efficiently. Here are some areas for future improvement using cuML:
+
+1.  **Speeding Up Computations**: Implementing cuML can drastically reduce the time required for computationally intensive tasks like clustering, classification, and dimensionality reduction. This efficiency is particularly beneficial for iterative processes like grid search in hyperparameter tuning or cross-validation.
+
+2.  **Handling Larger Datasets**: With cuML's GPU acceleration, larger subsets of the dataset can be processed simultaneously. This capability allows for more extensive data inclusion, potentially leading to more accurate and robust models, especially in clustering and predictive analyses.
+
+3.  **Real-Time Data Processing**: For applications requiring real-time analysis, such as monitoring radiation levels or predicting plant efficiency, cuML's faster processing capabilities can enable immediate insights and timely decision-making.
+
+4.  **Enhanced Model Complexity**: The efficiency gains from cuML can allow the exploration of more complex models or the incorporation of a greater number of features without compromising on performance. This could lead to more nuanced analyses and potentially more accurate predictions.
+
+5.  **Scalability**: As the volume of nuclear energy-related data grows, cuML's scalability will be advantageous. It ensures that the analysis frameworks developed can accommodate increasing data sizes without significant rework or loss in performance.
+
+6.  **Improved Visualizations**: Faster processing also means quicker generation of visualizations, which is crucial for exploratory data analysis. Real-time updating of visualizations based on user inputs or new data becomes feasible with cuML.
+
+In summary, integrating cuML into the existing analysis pipeline can significantly enhance computational efficiency, scalability, and the overall capability to extract meaningful insights from large and complex datasets in the domain of nuclear energy. This improvement aligns with the ongoing trend towards more data-intensive approaches in scientific and industrial research.

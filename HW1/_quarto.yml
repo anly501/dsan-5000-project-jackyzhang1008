@@ -8,7 +8,8 @@ website:
       - href: Introduction.qmd
         text: Introduction
       - about.qmd
-      - Code.qmd
+      - text: Code
+        href: https://github.com/anly501/dsan-5000-project-jackyzhang1008.git
       - Data.qmd
       - Gathering.qmd
       - Cleaning.qmd
