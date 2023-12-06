@@ -1,3 +1,83 @@
 ---
 title: "Conclusion"
 ---
+
+# Question and Answers
+
+1.  What is nuclear energy?
+
+    1.  Nuclear energy is energy released from the nucleus of atoms through processes like fission or fusion. It’s a powerful source of energy harnessed for electricity generation.
+
+2.  Why are we using nuclear energy?
+
+    1.  Nuclear energy is used because it's a potent source of electricity that can meet large-scale energy demands. It's also considered a low-carbon energy source, which is important in the context of climate change and reducing greenhouse gas emissions.
+
+3.  Advantages of nuclear energy?
+
+    1.  **High Energy Density:** Nuclear energy has a much higher energy density than fossil fuels. This means a small amount of nuclear fuel can produce a large amount of energy.
+
+    2.  **Low Greenhouse Gas Emissions:** Nuclear plants do not emit carbon dioxide during operation, making them an attractive option for reducing greenhouse gas emissions.
+
+    3.  **Reliability:** Nuclear power plants operate continuously and are not subject to weather or climate conditions, unlike solar or wind energy.
+
+4.  Disadvantages of nuclear energy?
+
+    1.  **Radioactive Waste:** Managing radioactive waste, which remains hazardous for thousands of years, is a significant challenge.
+
+    2.  **Nuclear Accidents:** Though rare, nuclear accidents like Chernobyl and Fukushima have long-lasting environmental and health impacts.
+
+    3.  **High Costs:** The construction, operation, and decommissioning of nuclear power plants involve high costs.
+
+5.  How to radioactive waste is managed?
+
+    1.  Radioactive waste is managed through methods like deep geological storage, where waste is buried deep underground in stable geological formations. Reprocessing can also be used to recycle some spent fuel.
+
+6.  Is nuclear energy safe?
+
+    1.  Modern nuclear power plants are designed with multiple safety systems and are considered safe. However, the potential for severe accidents, though low, remains a concern.
+
+7.  Problem with radiation?
+
+    1.  Radiation can cause health problems like radiation sickness, increased cancer risk, and genetic damage. Therefore, controlling exposure to radiation, especially in nuclear power plants, is crucial.
+
+8.  What is the difference between fission and fusion?
+
+    1.  **Fission** is the splitting of a heavy nucleus into smaller nuclei, releasing energy. It's the process used in current nuclear power plants.
+
+    2.  **Fusion** is the joining of two light atomic nuclei to form a heavier nucleus, releasing even more energy than fission. Fusion is seen as a promising future technology but is currently not commercially viable.
+
+9.  How do nuclear power plant work?
+
+    1.  Nuclear power plants use the heat generated from nuclear fission in a contained environment to produce steam, which then drives turbines to generate electricity.
+
+10. What is the future for nuclear power?
+
+    1.  The future of nuclear power includes the development of safer, more efficient technologies like Small Modular Reactors (SMRs) and the ongoing research into nuclear fusion. Additionally, there's a focus on improving waste management and addressing public concerns about safety and environmental impact.
+
+# Summarize
+
+## Data Gathering
+
+### **Nuclear Energy Utilization Factor**
+
+### **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
+
+### **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**
+
+### **RadNet**
+
+## Data Cleaning
+
+## Exploratory Data Analysis
+
+## Naive Bayes
+
+## Decision Tree
+
+## Denomination Reduction
+
+## Clustering
+
+# Conclusion
+
+# Furture Imporvement
