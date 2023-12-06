@@ -60,6 +60,8 @@ title: "Conclusion"
 
 ### **Nuclear Energy Utilization Factor**
 
+In this part I garter the information from
+
 ### **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)**
 
 ### **Consumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)**

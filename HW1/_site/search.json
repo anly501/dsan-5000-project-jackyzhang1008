@@ -494,7 +494,7 @@
     "href": "Conclusion.html#data-gathering",
     "title": "Conclusion",
     "section": "Data Gathering",
-    "text": "Data Gathering"
+    "text": "Data Gathering\n\nNuclear Energy Utilization Factor\nIn this part I garter the information from\n\n\nConsumption of Fuels for Electricity Generation and Useful Thermal Output(Nuclear)\n\n\nConsumption of Fuels for Electricity Generation and Useful Thermal Output(Coal)\n\n\nRadNet"
   },
   {
     "objectID": "Conclusion.html#data-cleaning",
@@ -509,5 +509,33 @@
     "title": "Conclusion",
     "section": "Exploratory Data Analysis",
     "text": "Exploratory Data Analysis"
+  },
+  {
+    "objectID": "Conclusion.html#naive-bayes",
+    "href": "Conclusion.html#naive-bayes",
+    "title": "Conclusion",
+    "section": "Naive Bayes",
+    "text": "Naive Bayes"
+  },
+  {
+    "objectID": "Conclusion.html#decision-tree",
+    "href": "Conclusion.html#decision-tree",
+    "title": "Conclusion",
+    "section": "Decision Tree",
+    "text": "Decision Tree"
+  },
+  {
+    "objectID": "Conclusion.html#denomination-reduction",
+    "href": "Conclusion.html#denomination-reduction",
+    "title": "Conclusion",
+    "section": "Denomination Reduction",
+    "text": "Denomination Reduction"
+  },
+  {
+    "objectID": "Conclusion.html#clustering",
+    "href": "Conclusion.html#clustering",
+    "title": "Conclusion",
+    "section": "Clustering",
+    "text": "Clustering"
   }
 ]
