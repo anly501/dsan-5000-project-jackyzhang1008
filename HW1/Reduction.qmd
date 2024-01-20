@@ -82,8 +82,8 @@ location_encoded = encoder.fit_transform(data[['LOCATION_NAME']])
 # Combine the one-hot encoded location data with the dose equivalent rate data
 combined_data = pd.concat([pd.DataFrame(location_encoded), data['DOSE EQUIVALENT RATE (nSv/h)']], axis=1)
 
-# Device configuration - for Apple GPU
-device = torch.device('mps')
+# Device configuration
+device = torch.device('cpu')
 
 # Convert the combined data to a PyTorch tensor
 data_tensor = torch.tensor(combined_data.values, dtype=torch.float32).to(device)
@@ -104,7 +104,7 @@ def run_tsne_and_visualize(data, perplexities, n_iter=1000):
         plt.show()
 
 # List of perplexity values to explore
-perplexities = [1, 5, 10]
+perplexities = [1, 5, 10, 20, 30]
 
 # Run and visualize t-SNE for each perplexity
 run_tsne_and_visualize(data_tensor.cpu().numpy(), perplexities)
